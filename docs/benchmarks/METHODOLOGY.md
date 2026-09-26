@@ -150,8 +150,9 @@ The operator must:
 | FDM 6 | `fdm` | `fdm.exe --url URL` + **one click per URL** | Files | Semi-manual; compare on wire throughput |
 
 "Settings by hand" means the operator sets connections and concurrency in the app and
-passes `--opt <client>.confirmed=1`. Records without that option carry
-`confirmed_by: UNCONFIRMED` and must not be published under the `equalized` policy.
+passes `--opt <client>.confirmed=1`. The runner refuses to drive any installed GUI client
+(everything except `mossdl` and `aria2`) until that option is given; such clients are
+recorded as `unsupported` with the reason.
 
 MossDL modes:
 

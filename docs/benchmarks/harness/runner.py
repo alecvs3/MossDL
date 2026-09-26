@@ -125,6 +125,10 @@ def main(argv: list[str] | None = None) -> int:
     for name in dict.fromkeys(args.client):
         adapter = adapters.create(name, options.get(name))
         try:
+            # Never drive an installed GUI app until the operator has configured it
+            # (METHODOLOGY section 5) and said so.
+            if name not in ("mossdl", "aria2") and not adapter.options.get("confirmed"):
+                raise Unavailable(f"{adapter.display_name}: pass --opt {name}.confirmed=1 after configuring it")
             adapter.check()
         except Unavailable as exc:
             adapter._unavailable = str(exc)  # recorded as 'unsupported' in every scenario
