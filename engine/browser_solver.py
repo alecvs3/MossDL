@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import asyncio
 import concurrent.futures
+import importlib
 import logging
 import os
 import re
@@ -302,7 +303,7 @@ class BrowserSolverDaemon:
 
         # 2. Try Camoufox (Secondary Gecko Fallback)
         try:
-            from camoufox.async_api import AsyncCamoufox
+            AsyncCamoufox = importlib.import_module("camoufox.async_api").AsyncCamoufox
             t0 = time.perf_counter()
             cm = AsyncCamoufox(headless=True, block_images=True, block_webrtc=True)
             browser = await cm.__aenter__()

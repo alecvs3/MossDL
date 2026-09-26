@@ -246,15 +246,15 @@ class _HosterSim:
         self.solved_names: set[str] = set()
         self.solve_count = 0
 
-    def resolve(self, context: Any, resolver: Any = None) -> list[ResolvedItem]:
-        url = context.source_url
+    def resolve(self, url: str, secrets: dict[str, Any], *_args: Any) -> list[ResolvedItem]:
         name = Path(url).name
         host = (urllib.parse.urlsplit(url).hostname or "").lower()
         payload = self.payloads.get(name, b"")
         if self.scenario.share_clearance:
             # Reusable host clearance (what production should provide).
             session = self.service.get_host_session(host)
-            clearance_ok = session.get("cf_clearance") == VALID_CLEARANCE
+            clearance_ok = (session.get("cf_clearance") == VALID_CLEARANCE
+                            or secrets.get("cf_clearance") == VALID_CLEARANCE)
         else:
             # Counterfactual: each file must be solved on its own.
             clearance_ok = name in self.solved_names
@@ -360,6 +360,10 @@ def _install_solver(service: EngineService, scenario: Scenario, hoster: "_Hoster
 
     async def fake_request_solution(challenge: Any, force_automated: bool = False) -> dict[str, Any]:
         import asyncio
+        from engine import challenge_lifecycle
+
+        challenge_lifecycle.advance(challenge, challenge_lifecycle.ROUTING, "harness solver selected")
+        challenge_lifecycle.advance(challenge, challenge_lifecycle.SOLVING, "harness solver running")
 
         task_id = getattr(challenge, "task_id", None)
         hoster.solve_count += 1
@@ -369,7 +373,7 @@ def _install_solver(service: EngineService, scenario: Scenario, hoster: "_Hoster
         _mark_solved(service, hoster, task_id, None)
         if scenario.solver_timeout:
             raise TimeoutError("harness solver timed out")
-        return {
+        solution = {
             "token": "harness-token",
             "turnstile_token": "harness-token",
             "cf-turnstile-response": "harness-token",
@@ -378,6 +382,9 @@ def _install_solver(service: EngineService, scenario: Scenario, hoster: "_Hoster
             "user_agent": "harness-agent",
             "engine": "FakeClearcote",
         }
+        if not service.captcha.solve_challenge(challenge.id, solution, "harness"):
+            raise AssertionError("Harness answer was not accepted for verification")
+        return solution
 
     service.captcha.request_solution = fake_request_solution  # type: ignore[assignment]
 
@@ -537,7 +544,8 @@ def run_scenario(scenario: Scenario, workdir: Path, artifact_root: Path | None =
             stack.enter_context(unlink_fault.installed())
         service = EngineService(data_dir)
         hoster = _HosterSim(service, server.port, payloads, scenario)
-        service.resolution_broker.resolve = hoster.resolve  # type: ignore[assignment]
+        service.plugins.resolve_chain = hoster.resolve  # type: ignore[assignment]
+        service.resolution_broker.resolve = lambda context, resolver: resolver(context.source_url)  # type: ignore[assignment]
         archive_backend = _FakeArchiveBackend()
         service.archive_backend = archive_backend  # type: ignore[assignment]
         _tune_policy(service, scenario)

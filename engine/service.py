@@ -7483,11 +7483,7 @@ class EngineService:
         """Explore starts empty each launch: earlier captures are marked dismissed
         (kept so a re-sent capture is still recognised) and pasted links removed.
         Downloads and History are untouched."""
-        dismissed = 0
-        for batch in self.store.list_capture_batches(500):
-            if batch.get("state") not in {"dismissed", "imported"}:
-                self.store.update_capture_batch(batch["batch_id"], state="dismissed", acknowledged=True)
-                dismissed += 1
+        dismissed = self.store.dismiss_all_capture_batches()
         links = self.store.list_links()
         for link in links:
             self.store.delete_link(link["id"])

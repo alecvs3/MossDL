@@ -60,6 +60,7 @@ import {
   emitLog,
   clearHistory,
   getHistory,
+  windowAction,
 } from "./api";
 import { performTaskAction } from "./lib/transferActions";
 import { applyEngineEvents, extractArchiveChoices, type ArchiveChoice } from "./lib/engineEvents";
@@ -128,6 +129,7 @@ export default function App() {
   const autoOpenedCaptchaIdsRef = useRef<Set<string>>(new Set());
   const isRefreshingRef = useRef(false);
   const pendingRefreshRef = useRef(false);
+  const shownRef = useRef(false);
 
   const refresh = useCallback(async () => {
     if (isRefreshingRef.current) {
@@ -216,6 +218,7 @@ export default function App() {
           if (saved) setDestination(saved);
         }
         setMessage(`${snapshot.tasks.length} transfer${snapshot.tasks.length === 1 ? "" : "s"} loaded`);
+
       } while (pendingRefreshRef.current);
     } catch (error) {
       const errMsg = error instanceof Error ? error.message : String(error);
@@ -232,6 +235,14 @@ export default function App() {
         });
     } finally {
       isRefreshingRef.current = false;
+      if (!shownRef.current) {
+        try {
+          await windowAction("show");
+          shownRef.current = true;
+        } catch (error) {
+          console.error("[App] Could not reveal main window", error);
+        }
+      }
     }
   }, [onboardingOpen]);
 

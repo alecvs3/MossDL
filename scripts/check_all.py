@@ -25,7 +25,7 @@ def _run(name: str, command: list[str], timeout: int, temp_dir: Path) -> dict[st
     started = time.monotonic()
     temp_dir.mkdir(parents=True, exist_ok=True)
     env = os.environ.copy()
-    env.update({"TEMP": str(temp_dir), "TMP": str(temp_dir), "TMPDIR": str(temp_dir)})
+    env.update({"TEMP": str(temp_dir), "TMP": str(temp_dir), "TMPDIR": str(temp_dir), "PYTHONIOENCODING": "utf-8"})
     try:
         result = subprocess.run(
             command, cwd=ROOT, env=env, text=True, encoding="utf-8", errors="replace",
@@ -74,6 +74,7 @@ def main() -> int:
         ("ui-projection", [npm, "run", "test:projection"]),
         ("column-layout", [npm, "run", "test:columnlayout"]),
         ("explore-model", [npm, "run", "test:explore"]),
+        ("update-banner", ["node", "tests/update_banner.test.mjs"]),
         ("proxy-parse", [npm, "run", "test:proxies"]),
         ("frontend-build", [npm, "run", "build"]),
         ("rust-check", ["cargo", "check", "--manifest-path", "src-tauri/Cargo.toml"]),

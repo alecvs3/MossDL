@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { ToastHost } from "./ui/Toasts";
+import { UpdateBanner } from "./ui/UpdateBanner";
 import { hostOfUrl } from "./ui/SiteIcon";
 import { formatBytes } from "../lib/format";
 import { AddUrlWindow } from "./components/AddUrlWindow";
@@ -324,6 +325,7 @@ export default function FigmaApp(props: FigmaAppProps) {
             <MenuBar {...menuProps} />
           </TitleBar>
         </div>
+        <UpdateBanner />
         <div className="shell-chrome-toolbar" onContextMenu={handleSuppressContextMenu}>
           <GlobalToolbar
             downloads={downloadViews}

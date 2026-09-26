@@ -10,9 +10,11 @@ export function UpdateSettings() {
   const [result, setResult] = useState<UpdateCheck | null>(null);
   const [busy, setBusy] = useState<"check" | "install" | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [lastAction, setLastAction] = useState<"check" | "install">("check");
 
   const run = async (kind: "check" | "install") => {
     setBusy(kind);
+    setLastAction(kind);
     setError(null);
     try {
       if (kind === "check") setResult(await checkForUpdate());
@@ -21,7 +23,7 @@ export function UpdateSettings() {
     finally { setBusy(null); }
   };
 
-  const status = error ? `Couldn't ${busy === "install" ? "install" : "check"}: ${error}`
+  const status = error ? `Couldn't ${lastAction === "install" ? "install" : "check"}: ${error}`
     : !result ? "Not checked yet"
     : !result.configured ? "This build was not released with updates; download new versions yourself"
     : result.available ? `Version ${result.version} is available (you have ${result.current})`

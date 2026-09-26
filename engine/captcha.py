@@ -4,6 +4,8 @@ import asyncio
 import base64
 import hashlib
 import html
+import importlib
+import importlib.util
 import json
 import os
 import logging
@@ -573,10 +575,11 @@ class AutomatedBrowserSolver(CaptchaSolver):
         if any(os.path.exists(path) for path in chrome):
             return Health(True)
         try:
-            import camoufox  # noqa: F401
-            return Health(True)
+            if importlib.util.find_spec("camoufox") is not None:
+                return Health(True)
         except ImportError:
             return Health(False, "no browser installed (Clearcote, Camoufox or Chrome)")
+        return Health(False, "no browser installed (Clearcote, Camoufox or Chrome)")
 
     def can_solve(self, challenge: CaptchaChallenge) -> bool:
         if not self.enabled:

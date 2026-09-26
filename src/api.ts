@@ -108,11 +108,12 @@ export async function installUpdate(): Promise<void> {
   await invoke("update_install");
 }
 
-export async function windowAction(action: "minimize" | "toggle_maximize" | "close" | "destroy" | "start_dragging"): Promise<void> {
+export async function windowAction(action: "minimize" | "toggle_maximize" | "close" | "destroy" | "start_dragging" | "show"): Promise<void> {
   try {
     await invoke("window_action", { action });
-  } catch {
-    // Non-Tauri browser / Storybook environment
+  } catch (error) {
+    console.warn("[Window] Action failed", action, error);
+    if ("__TAURI_INTERNALS__" in window) throw error;
   }
 }
 

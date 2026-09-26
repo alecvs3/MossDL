@@ -28,10 +28,12 @@ class CaptureUiContractTests(unittest.TestCase):
         page = self.read("src/figma/pages/explore/ExplorePage.tsx")
         for field in ("selectedIds", "focusedId", "anchorId"):
             self.assertIn(field, page)
-        self.assertIn("candidateIndex", page)
-        self.assertIn("addAnyway", page)
-        self.assertIn('"duplicate"', page)
-        self.assertIn("Add anyway", page)
+        download = self.read("src/figma/pages/explore/useExploreDownload.ts")
+        self.assertIn("useExploreDownload", page)
+        self.assertIn("candidateIndex", download)
+        self.assertIn("addAnyway", download)
+        self.assertIn('"duplicate"', download)
+        self.assertIn("Add anyway", download)
         self.assertNotIn("isHighlighted", page)
         self.assertNotIn("browserQueue", page)
 

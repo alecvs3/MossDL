@@ -99,11 +99,15 @@ export function ExplorePage(props: ExplorePageProps) {
   // Drops rows for good: crawls from memory, captures dismissed, pasted links deleted.
   const discard = useCallback((nodes: ExploreNode[]) => {
     const entryIds: string[] = [];
-    for (const n of nodes) {
-      if (n.origin.kind === "crawl") data.removeCrawl(n.origin.crawlId);
-      else if (n.batchIds) n.batchIds.forEach((id) => props.onDismissCaptureBatch?.(id));
-      else if (n.origin.kind === "entry") entryIds.push(n.origin.entry.id);
-    }
+    const collect = (list: ExploreNode[]) => {
+      for (const n of list) {
+        if (n.origin.kind === "crawl") data.removeCrawl(n.origin.crawlId);
+        else if (n.batchIds) n.batchIds.forEach((id) => props.onDismissCaptureBatch?.(id));
+        else if (n.origin.kind === "entry") entryIds.push(n.origin.entry.id);
+        if (n.children.length) collect(n.children);
+      }
+    };
+    collect(nodes);
     if (entryIds.length) void props.onLinkBulkDelete?.(entryIds);
   }, [data, props]);
 

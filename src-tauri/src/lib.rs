@@ -138,7 +138,17 @@ fn start_engine(app: &tauri::AppHandle) -> Result<EngineProcess, String> {
     let sidecar = if cfg!(debug_assertions) {
         None
     } else {
-        resource_dir.as_ref().map(|dir| dir.join(sidecar_name))
+        resource_dir.as_ref().and_then(|dir| {
+            let nested = dir.join("resources").join("transfer-engine").join(sidecar_name);
+            if nested.exists() {
+                return Some(nested);
+            }
+            let flat = dir.join(sidecar_name);
+            if flat.exists() {
+                return Some(flat);
+            }
+            None
+        })
     };
     let core_name = if cfg!(target_os = "windows") {
         "transfer-core.exe"
@@ -292,7 +302,17 @@ fn dev_engine_reload_required(engine: &EngineProcess) -> bool {
 }
 
 #[tauri::command]
-fn engine_request(
+async fn engine_request(
+    app: tauri::AppHandle,
+    method: String,
+    params: Value,
+) -> Result<Value, String> {
+    tauri::async_runtime::spawn_blocking(move || {
+        engine_request_sync(app.state::<EngineState>(), app.clone(), method, params)
+    }).await.map_err(|error| format!("engine request worker failed: {error}"))?
+}
+
+fn engine_request_sync(
     state: tauri::State<'_, EngineState>,
     app: tauri::AppHandle,
     method: String,
@@ -615,6 +635,9 @@ fn window_action(window: tauri::WebviewWindow, action: String) -> Result<(), Str
         "close" => window.close(),
         "destroy" => window.destroy(),
         "start_dragging" => window.start_dragging(),
+        "show" => {
+            window.show().and_then(|_| window.unminimize()).and_then(|_| window.set_focus())
+        }
         _ => return Err(format!("unknown window action: {action}")),
     }
     .map_err(|error: tauri::Error| error.to_string())
@@ -695,7 +718,7 @@ fn check_python_environment(app: tauri::AppHandle) -> Result<Value, String> {
     };
     let sidecar_exists = resource_dir
         .as_ref()
-        .map(|dir| dir.join(sidecar_name).exists())
+        .map(|dir| dir.join(sidecar_name).exists() || dir.join("resources").join("transfer-engine").join(sidecar_name).exists())
         .unwrap_or(false);
 
     let python_cmd = if cfg!(target_os = "windows") { "python" } else { "python3" };
@@ -852,7 +875,7 @@ fn solve_multipart_captcha(
     host: String,
     page_url: String,
 ) -> Result<Value, String> {
-    engine_request(
+    engine_request_sync(
         state,
         app,
         "solve_multipart_captcha".into(),
@@ -927,12 +950,9 @@ pub fn run() {
                 }
                 window.navigate(parsed).map_err(|e| format!("could not load development frontend: {e}"))?;
             }
-            // Keep the initial packaged page hidden while a development URL
-            // is being installed. This prevents a visible white navigation
-            // flash and also makes the first displayed document deterministic.
-            let _ = window.unminimize();
-            let _ = window.show();
-            let _ = window.set_focus();
+            // Window starts hidden (tauri.conf.json visible: false). The React
+            // frontend calls window_action("show") after the first engine
+            // snapshot arrives, so users never see a frozen blank window.
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![

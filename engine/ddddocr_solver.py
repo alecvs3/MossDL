@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import asyncio
 import base64
+import importlib
 import io
 import logging
 import os
@@ -216,8 +217,8 @@ class DdddOcrSolver(CaptchaSolver):
 
     def _infer_onnx(self, image_bytes: bytes) -> str:
         try:
-            import numpy as np  # type: ignore
-            from PIL import Image  # type: ignore
+            np = importlib.import_module("numpy")  # type: ignore
+            Image = importlib.import_module("PIL.Image")  # type: ignore
         except ImportError:
             return ""
 

@@ -26,6 +26,9 @@ if (-not $SkipGate) {
 }
 
 & "$PSScriptRoot/build_engine.ps1"
+if ($LASTEXITCODE -ne 0) { throw "Engine build failed." }
+python "$PSScriptRoot/verify_packaged_engine.py"
+if ($LASTEXITCODE -ne 0) { throw "Packaged engine smoke failed." }
 
 $overrides = @{ bundle = @{ windows = @{} } }
 if ($env:WINDOWS_SIGN_COMMAND) {
@@ -36,6 +39,10 @@ if ($env:WINDOWS_SIGN_COMMAND) {
 $updates = $env:TAURI_SIGNING_PRIVATE_KEY -and $env:MOSSDL_UPDATER_PUBKEY -and $env:MOSSDL_UPDATE_URL
 if ($updates) {
   $overrides.bundle.createUpdaterArtifacts = $true
+  $overrides.plugins = @{ updater = @{
+    pubkey = $env:MOSSDL_UPDATER_PUBKEY.Trim()
+    endpoints = @($env:MOSSDL_UPDATE_URL)
+  } }
 } else {
   Write-Warning "Update signing is not configured: this build will report 'updates not configured' in Settings."
 }
@@ -44,8 +51,17 @@ New-Item -ItemType Directory -Force -Path ".build" | Out-Null
 $configFile = Join-Path (Resolve-Path ".build") "tauri.release.json"
 $overrides | ConvertTo-Json -Depth 5 | Set-Content -Encoding utf8 $configFile
 
-npx tauri build --config $configFile
-if ($LASTEXITCODE -ne 0) { throw "tauri build failed." }
+npm run build
+if ($LASTEXITCODE -ne 0) { throw "Frontend build failed." }
+$previousConfig = $env:TAURI_CONFIG
+try {
+  $env:TAURI_CONFIG = Get-Content $configFile -Raw
+  cargo build --manifest-path src-tauri/Cargo.toml --release --features custom-protocol --bin transfer-manager
+  if ($LASTEXITCODE -ne 0) { throw "Desktop build failed." }
+} finally { $env:TAURI_CONFIG = $previousConfig }
+Copy-Item src-tauri/target/release/transfer-manager.exe src-tauri/target/release/MossDL.exe
+npx tauri bundle --config $configFile
+if ($LASTEXITCODE -ne 0) { throw "Installer bundling/signing failed." }
 
 New-Item -ItemType Directory -Force -Path $out | Out-Null
 
@@ -53,18 +69,20 @@ python scripts/build_browser_extension.py package --output "$out/browser-extensi
 if ($LASTEXITCODE -ne 0) { throw "Browser extension packaging failed." }
 
 $bundle = "src-tauri/target/release/bundle"
-Get-ChildItem "$bundle/nsis/*.exe", "$bundle/msi/*.msi", "$bundle/nsis/*.sig", "$bundle/msi/*.sig" -ErrorAction SilentlyContinue |
+Get-ChildItem "$bundle/nsis/*_$($version)_*.exe", "$bundle/msi/*_$($version)_*.msi", "$bundle/nsis/*_$($version)_*.sig", "$bundle/msi/*_$($version)_*.sig" -ErrorAction SilentlyContinue |
   Copy-Item -Destination $out
 
 if ($updates) {
-  $installer = Get-ChildItem "$bundle/nsis/*-setup.exe" | Select-Object -First 1
+  $installer = Get-Item "$bundle/nsis/MossDL_$($version)_x64-setup.exe"
   $signature = Get-Content "$($installer.FullName).sig" -Raw
-  $base = if ($env:MOSSDL_DOWNLOAD_BASE_URL) { $env:MOSSDL_DOWNLOAD_BASE_URL.TrimEnd("/") } else { throw "Set MOSSDL_DOWNLOAD_BASE_URL to write latest.json." }
+  $base = if ($env:MOSSDL_DOWNLOAD_BASE_URL) { $env:MOSSDL_DOWNLOAD_BASE_URL.TrimEnd("/") } else { "https://github.com/alecvs3/MossDL/releases/download/v$version" }
   @{
     version = $version
     pub_date = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
     platforms = @{ "windows-x86_64" = @{ signature = $signature.Trim(); url = "$base/$($installer.Name)" } }
   } | ConvertTo-Json -Depth 5 | Set-Content -Encoding utf8 (Join-Path $out "latest.json")
+  python "$PSScriptRoot/verify_release.py" $out
+  if ($LASTEXITCODE -ne 0) { throw "Release signature verification failed." }
 }
 
 Write-Host "Release $version is in $out"

@@ -15,6 +15,20 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
 
+
+class OptionalBrowserHealthTests(unittest.TestCase):
+    def test_missing_optional_browser_reports_unhealthy(self):
+        from engine.captcha import AutomatedBrowserSolver
+        from engine.challenge_routing import Health
+
+        with patch("engine.clearcote_manager.get_clearcote_executable", return_value=None), \
+                patch("os.path.exists", return_value=False), \
+                patch("importlib.util.find_spec", return_value=None):
+            result = AutomatedBrowserSolver().health()
+        self.assertIsInstance(result, Health)
+        self.assertFalse(result.healthy)
+        self.assertIn("no browser installed", result.reason)
+
 from engine.captcha import (
     CaptchaChallenge,
     CaptchaManager,

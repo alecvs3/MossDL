@@ -264,10 +264,12 @@ class SharedClearanceBenefitTests(unittest.TestCase):
             for task_id in result.task_ids:
                 self.assertEqual(result.final_states[task_id], "completed")
 
-        # One shared challenge/solve vs one per part.
-        self.assertEqual(shared.challenge_count, 1, "shared run should need one challenge")
+        # Sibling resolution overlaps the first solve. Until the site accepts
+        # its answer, another sibling may legitimately encounter a challenge.
+        # Verified clearance must still save work compared with per-file solves.
+        self.assertGreaterEqual(shared.challenge_count, 1)
+        self.assertLess(shared.challenge_count, unshared.challenge_count)
         self.assertEqual(unshared.challenge_count, 4, "per-part run should need four challenges")
-        self.assertEqual(shared.solve_count, 1)
         self.assertEqual(unshared.solve_count, 4)
         self.assertLess(shared.solve_count, unshared.solve_count)
 

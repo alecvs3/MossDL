@@ -902,6 +902,15 @@ class TaskStore:
                 row = self.db.execute("SELECT * FROM capture_batches WHERE request_id=?", (request_id,)).fetchone()
         return self._row_to_capture_batch(row) if row else None
 
+    def dismiss_all_capture_batches(self) -> int:
+        """Clear the entire Explore inbox without losing capture deduplication."""
+        with self._lock:
+            cursor = self.db.execute(
+                "UPDATE capture_batches SET state='dismissed', acknowledged=1 WHERE state != 'dismissed'"
+            )
+            self.db.commit()
+            return cursor.rowcount
+
     def list_capture_batches(self, limit: int = 100) -> list[dict[str, Any]]:
         with self._lock:
             rows = self.db.execute("SELECT * FROM capture_batches ORDER BY updated_at DESC LIMIT ?",

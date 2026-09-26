@@ -66,6 +66,23 @@ class RelaunchTests(unittest.TestCase):
         finally:
             service.close()
 
+    def test_explore_wipe_clears_more_than_one_page_including_imported(self):
+        service = EngineService(self.data)
+        try:
+            for index in range(505):
+                service.store.save_capture_batch({
+                    "batch_id": f"batch-{index}", "request_id": f"request-{index}",
+                    "protocol_version": "1", "state": "imported" if index % 2 else "pending",
+                })
+            service._wipe_explore_on_launch()
+            self.assertEqual(service.store.dismiss_all_capture_batches(), 0)
+            for index in range(505):
+                batch = service.store.get_capture_batch(f"batch-{index}")
+                self.assertEqual(batch["state"], "dismissed")
+                self.assertTrue(batch["acknowledged"])
+        finally:
+            service.close()
+
 
 if __name__ == "__main__":
     unittest.main()
