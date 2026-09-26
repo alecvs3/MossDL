@@ -1,0 +1,77 @@
+{
+  "crawler": "imagevenue",
+  "generated": {
+    "source_sha256": "790c4b169bf976fa3c58ad80087f1abc4c70f9830b5be54f4dedba11ef8f675d",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "imagevenue",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/imagevenue.py",
+    "source_file": "cyberdrop_dl/crawlers/imagevenue.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "imagevenue",
+    "crawler_class": "ImageVenueCrawler",
+    "decorators": [],
+    "domain": "imagevenue",
+    "fixture_cases": [
+      {
+        "count": 1,
+        "url": "https://www.imagevenue.com/ME1CO3FX"
+      },
+      {
+        "url": "https://www.imagevenue.com/ME1BEWWG"
+      },
+      {
+        "url": "https://cdn-thumbs.imagevenue.com/d2/90/5c/ME1BEWWG_t.jpg"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/imagevenue.py",
+    "local_hook_target": {
+      "class": "ImageVenueProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__async_post_init__",
+      "_request_img",
+      "fetch",
+      "image",
+      "transform_url"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "imagevenue",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "#main-image",
+      ".jpg",
+      "_t.jpg",
+      "a[data-target-url][title='Continue to ImageVenue']",
+      "cdn-thumbs.",
+      "img.php"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/imagevenue.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Image": [
+        "/<image_id>",
+        "/view/o?i=<image_id>",
+        "/img.php?image=<image_id>"
+      ],
+      "Thumbnail": "cdn-thumbs.imagevenue.com/.../<image_id>_t.jpg"
+    },
+    "warnings": []
+  }
+}

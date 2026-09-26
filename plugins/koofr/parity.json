@@ -1,0 +1,66 @@
+{
+  "crawler": "koofr",
+  "generated": {
+    "source_sha256": "14be2046da98af81537f8e7100af9fd2cf5d0d06ab655a9a20c69fd18a7ecc7f",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "koofr",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/koofr.py",
+    "source_file": "cyberdrop_dl/crawlers/koofr.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "koofr",
+    "crawler_class": "KooFrCrawler",
+    "decorators": [
+      "Crawler.db_path_builder"
+    ],
+    "domain": "koofr",
+    "fixture_cases": [
+      {
+        "url": "https://k00.fr/sngg51ex"
+      },
+      {
+        "url": "https://k00.fr/b372of1c"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/koofr.py",
+    "local_hook_target": {
+      "class": "KoofrProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__post_init__",
+      "_file",
+      "_walk_folder",
+      "fetch",
+      "share"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "koofr",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "koofr.eu",
+      "koofr.net"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/koofr.py",
+    "supported_domains": [],
+    "supported_paths": {},
+    "warnings": []
+  }
+}

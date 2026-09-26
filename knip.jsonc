@@ -1,0 +1,17 @@
+{
+  "entry": [
+    "src/main.tsx",
+    "src/figma/FigmaApp.tsx",
+    "tests/**/*.test.ts",
+    "tests/**/*.ts"
+  ],
+  "project": [
+    "src/**/*.{ts,tsx}"
+  ],
+  "ignore": [
+    "src/api.ts"
+  ],
+  "ignoreDependencies": [
+    "tailwindcss"
+  ]
+}

@@ -1,0 +1,10 @@
+# Generated and runtime output should never restart the native dev window.
+.test-artifacts/
+.pytest_cache/
+__pycache__/
+.build/
+downloads/
+validation_*/
+src-tauri/target/
+src-tauri/gen/
+src-tauri/resources/

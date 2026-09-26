@@ -1,0 +1,83 @@
+{
+  "crawler": "gofile",
+  "generated": {
+    "source_sha256": "c6fd02697ac7702e2ef3020fa823e8ebd0b2f3358f84a0b0d64fc53d41396b86",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "gofile",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/gofile.py",
+    "source_file": "cyberdrop_dl/crawlers/gofile.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "gofile",
+    "crawler_class": "GoFileCrawler",
+    "decorators": [
+      "HTTPConfig"
+    ],
+    "domain": "gofile",
+    "fixture_cases": [
+      {
+        "count": 1,
+        "url": "https://gofile.io/d/pZLspCZv"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/gofile.py",
+    "local_hook_target": {
+      "class": "GofileProvider",
+      "module": "engine.providers.gofile"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__async_post_init__",
+      "__json_resp_check__",
+      "__post_init__",
+      "_file",
+      "_handle_node",
+      "_iter_nodes",
+      "_prepare_headers",
+      "fetch",
+      "folder",
+      "single_file",
+      "web_url"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "gofile",
+    "rate_limits": {
+      "rate_limit_window_seconds": 10,
+      "requests_per_second": 0.4
+    },
+    "request_contracts": [],
+    "selectors": [
+      "::",
+      "Unknown node type:"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/gofile.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "**NOTE**": [
+        "Use `password` as a query param to download password protected folders",
+        "ex: https://gofile.io/d/ABC654?password=1234"
+      ],
+      "Direct link": [
+        "/download/<content_id>/<filename>",
+        "/download/web/<content_id>/<filename>"
+      ],
+      "Folder / File": "/d/<content_id>"
+    },
+    "warnings": []
+  }
+}

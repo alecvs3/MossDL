@@ -1,0 +1,125 @@
+{
+ "version": "responses-v1",
+ "collected_on": "2026-09-25",
+ "provenance": "Minimal hand-written reproductions of each family's marker markup; no captured pages.",
+ "redaction": "No cookies, tokens, site keys of real sites or URLs of real downloads.",
+ "cases": [
+  {
+   "id": "cf-interstitial",
+   "family": "cloudflare",
+   "status": 403,
+   "headers": {
+    "content-type": "text/html; charset=utf-8"
+   },
+   "body": "<html><head><title>Just a moment...</title></head><body><script src='/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1'></script></body></html>"
+  },
+  {
+   "id": "cf-turnstile-403",
+   "family": "cloudflare",
+   "status": 403,
+   "headers": {
+    "content-type": "text/html; charset=utf-8"
+   },
+   "body": "<div class=\"cf-turnstile\" data-sitekey=\"0x4AAA\"></div><script src=\"https://challenges.cloudflare.com/turnstile/v0/api.js\"></script>"
+  },
+  {
+   "id": "cf-turnstile-page",
+   "family": "cloudflare",
+   "status": 200,
+   "headers": {
+    "content-type": "text/html; charset=utf-8"
+   },
+   "body": "<form><div class=\"cf-turnstile\" data-sitekey=\"0x4AAA\"></div><button>Download</button></form>"
+  },
+  {
+   "id": "recaptcha-page",
+   "family": "recaptcha",
+   "status": 200,
+   "headers": {
+    "content-type": "text/html; charset=utf-8"
+   },
+   "body": "<script src=\"https://www.google.com/recaptcha/api.js\"></script><div class=\"g-recaptcha\" data-sitekey=\"6Le\"></div>"
+  },
+  {
+   "id": "hcaptcha-page",
+   "family": "hcaptcha",
+   "status": 200,
+   "headers": {
+    "content-type": "text/html; charset=utf-8"
+   },
+   "body": "<script src=\"https://hcaptcha.com/1/api.js\"></script><div class=\"h-captcha\" data-sitekey=\"10000\"></div>"
+  },
+  {
+   "id": "ddos-guard",
+   "family": "ddos_guard",
+   "status": 403,
+   "headers": {
+    "content-type": "text/html; charset=utf-8"
+   },
+   "body": "<html><title>DDoS-Guard</title><body>Checking your browser before accessing</body></html>"
+  },
+  {
+   "id": "plain-page",
+   "family": null,
+   "status": 200,
+   "headers": {
+    "content-type": "text/html; charset=utf-8"
+   },
+   "body": "<html><body><h1>Some Game v1.2</h1><a href='/mirror'>Download</a></body></html>"
+  },
+  {
+   "id": "article-about-captchas",
+   "family": null,
+   "status": 200,
+   "headers": {
+    "content-type": "text/html; charset=utf-8"
+   },
+   "body": "<article>Cloudflare Turnstile and reCAPTCHA are captcha systems; hCaptcha too.</article>"
+  },
+  {
+   "id": "not-found",
+   "family": null,
+   "status": 404,
+   "headers": {
+    "content-type": "text/html; charset=utf-8"
+   },
+   "body": "<html><body>Not found</body></html>"
+  },
+  {
+   "id": "zip",
+   "family": null,
+   "status": 200,
+   "headers": {
+    "content-type": "application/zip"
+   },
+   "body": "PK\u0003\u0004binary"
+  },
+  {
+   "id": "json-api",
+   "family": null,
+   "status": 200,
+   "headers": {
+    "content-type": "application/json"
+   },
+   "body": "{\"status\":\"ok\",\"link\":\"https://cdn.test/f\"}"
+  },
+  {
+   "id": "rate-limited",
+   "family": null,
+   "status": 429,
+   "headers": {
+    "content-type": "text/html; charset=utf-8"
+   },
+   "body": "Too many requests"
+  },
+  {
+   "id": "login",
+   "family": null,
+   "status": 401,
+   "headers": {
+    "content-type": "text/html; charset=utf-8"
+   },
+   "body": "Please log in"
+  }
+ ]
+}

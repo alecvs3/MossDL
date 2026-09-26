@@ -1,0 +1,55 @@
+{
+  "crawler": "send_now",
+  "generated": {
+    "source_sha256": "ec3700fb399eddde6963b169325c2216e28ce2b386bb49b42df942501c7ff031",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "send_now",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/send_now.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "send_now",
+    "crawler_class": "SendNowCrawler",
+    "decorators": [],
+    "domain": "send.now",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "SendNowProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "_get_cookies",
+      "fetch",
+      "file"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "send_now",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".zip",
+      "send.now"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/send_now.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Direct links": ""
+    },
+    "warnings": []
+  }
+}

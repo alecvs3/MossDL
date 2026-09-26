@@ -1,0 +1,29 @@
+{
+  "cases": [
+    {
+      "url": "https://www.mediafire.com/file/ctppmpm7giofsgv/ADOFAI.vpk/file"
+    },
+    {
+      "url": "https://www.mediafire.com/?511jd1358yxvf26="
+    },
+    {
+      "count": 11,
+      "url": "https://www.mediafire.com/folder/ixh40veo6hrc5/kcc_samples"
+    },
+    {
+      "count": 18,
+      "url": "https://www.mediafire.com/folder/m3sij67rizpb4/XJTU-SY_Bearing_Datasets"
+    },
+    {
+      "count": 36,
+      "url": "https://www.mediafire.com/folder/9a6a91cgbd7m8"
+    },
+    {
+      "description": "DMCA folder",
+      "fail": 410,
+      "url": "https://www.mediafire.com/folder/ujs6wzw0cecof/"
+    }
+  ],
+  "crawler": "mediafire",
+  "provider_id": "mediafire"
+}

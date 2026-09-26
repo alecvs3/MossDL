@@ -1,0 +1,18 @@
+{
+  "cases": [
+    {
+      "url": "https://mega.nz/folder/yAkimbjQ"
+    },
+    {
+      "description": "single file within folder",
+      "url": "https://mega.nz/folder/yAkimbjQ"
+    },
+    {
+      "count": 5,
+      "description": "subfolder within folder",
+      "url": "https://mega.nz/folder/yAkimbjQ"
+    }
+  ],
+  "crawler": "mega_nz",
+  "provider_id": "mega"
+}

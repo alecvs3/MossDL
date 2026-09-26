@@ -1,0 +1,54 @@
+name: Plugin request
+description: Ask for MossDL to support a site it can't download from yet.
+title: "Plugin request: "
+labels: ["plugin request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! Check **Settings → Plugins** first; the site may already be supported under another name.
+        Please don't paste links to copyrighted material you don't have the right to download.
+  - type: input
+    id: site
+    attributes:
+      label: Site
+      description: The site's address.
+      placeholder: https://example-host.com
+    validations:
+      required: true
+  - type: input
+    id: example
+    attributes:
+      label: Example link
+      description: A public, legal test link (a sample file or your own upload) so the plugin can be built and tested.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What does the site host?
+      options:
+        - Files (file host)
+        - Cloud storage / shared folders
+        - Video
+        - Images / galleries
+        - Audio
+        - Other
+    validations:
+      required: true
+  - type: checkboxes
+    id: needs
+    attributes:
+      label: What does downloading involve?
+      options:
+        - label: A countdown or "download" button to click through
+        - label: A captcha
+        - label: An account or login
+        - label: Folders with many files
+  - type: textarea
+    id: now
+    attributes:
+      label: What happens in MossDL today?
+      description: E.g. it saves the web page instead of the file, or Explore finds nothing. Logs (the Logs button, top right) help.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else

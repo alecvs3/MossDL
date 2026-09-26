@@ -1,0 +1,42 @@
+{
+  "display_name": "MEGA",
+  "category": "cloud",
+  "capabilities": {
+    "accounts": true,
+    "encrypted": true,
+    "folders": true,
+    "ranges": true,
+    "refresh": true
+  },
+  "hooks": {
+    "enumerate": "enumerate",
+    "refresh": "refresh",
+    "resolve": "resolve"
+  },
+  "hosts": [
+    "mega.nz"
+  ],
+  "id": "mega",
+  "implementation": "python",
+  "limits": {
+    "max_concurrent_items": 1,
+    "requests_per_second": 4
+  },
+  "match": {
+    "path_regex": "^/(file|folder)/",
+    "schemes": [
+      "https"
+    ]
+  },
+  "permissions": {
+    "hosts": [
+      "mega.nz"
+    ],
+    "secrets": []
+  },
+  "roles": [
+    "resolver"
+  ],
+  "schema_version": 2,
+  "version": "cyberdrop-import-cyberdrop-import-1.0.0"
+}

@@ -1,0 +1,19 @@
+{
+  "cases": [
+    {
+      "count": 1,
+      "url": "https://webmshare.com/o13vQ"
+    },
+    {
+      "count": 1,
+      "url": "https://webmshare.com/play/o13vQ"
+    },
+    {
+      "count": 1,
+      "description": "NSWF wall",
+      "url": "https://webmshare.com/zBGAg"
+    }
+  ],
+  "crawler": "webmshare",
+  "provider_id": "webmshare"
+}

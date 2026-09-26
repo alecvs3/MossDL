@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MossDL social preview</title>
+<script src="../kit/load.js"></script>
+<link rel="stylesheet" href="scenes.css">
+</head>
+<body>
+<div class="stage" id="stage"></div>
+<script src="common.js"></script>
+<script>
+  const stage = document.getElementById("stage");
+  stage.innerHTML = `
+    ${topo(1280, 640, [{ cx: 1080, cy: 90, count: 18, r0: 26, gap: 30, seed: 2 }, { cx: 120, cy: 700, count: 11, r0: 60, gap: 34, seed: 5, tilt: 0.4 }])}
+    <div class="glow" style="left:820px;top:260px;width:520px;height:360px;background:rgba(47,158,104,0.35)"></div>
+    ${K.frame({ x: 560, y: 70, w: 676, h: 620, zoom: 1.04, inner: K.shell({ theme: "evergreen", page: "downloads", showToolbar: false,
+      body: K.downloadsPage({ list: S.downloads(), t: 3, columns: ["select", ["name", "minmax(120px,1fr)"], ["status", "104px"], ["speed", "112px"], ["pct", "96px"]] }) }) })}
+    ${K.exploreCard({ x: 520, y: 382, w: 440, zoom: 1.1, theme: "evergreen", followed: true, files: 0, match: false })}
+    <div style="left:64px;top:62px">${S.lockup()}</div>
+    <h1 class="headline" style="left:64px;top:150px;font-size:50px">Point it at a page.<br><em>Get the file.</em></h1>
+    <span class="rule" style="left:66px;top:286px"></span>
+    <ul class="checks" style="left:64px;top:316px">${S.checks([
+      "Segmented downloads on a Rust core",
+      "Explores pages into files and mirrors",
+      "Follows download buttons, ads blocked",
+      "WireGuard VPN routes per download",
+      "Captchas, solved or handed to you",
+    ])}</ul>
+    <div class="pills" style="left:64px;top:560px">${S.pill("heart", "Free &amp; open source · GPL-3.0")}${S.pill("windows", "Windows")}</div>
+    <div class="grain"></div>`;
+  markReady();
+</script>
+</body>
+</html>

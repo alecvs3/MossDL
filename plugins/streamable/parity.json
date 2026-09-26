@@ -1,0 +1,51 @@
+{
+  "crawler": "streamable",
+  "generated": {
+    "source_sha256": "25b6f93e194c805f44cbc856ef0562d58a6554f39181a4af18d1f20372a9862d",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "streamable",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/streamable.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "streamable",
+    "crawler_class": "StreamableCrawler",
+    "decorators": [],
+    "domain": "streamable",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "StreamableProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "fetch",
+      "video"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "streamable",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [],
+    "source_file": "cyberdrop_dl/crawlers/streamable.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Video": "/..."
+    },
+    "warnings": []
+  }
+}

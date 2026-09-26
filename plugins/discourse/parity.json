@@ -1,0 +1,73 @@
+{
+  "crawler": "discourse",
+  "generated": {
+    "source_sha256": "3c3b6f8ce95cb1a5581a83856f28fc00267ef358fa32c2b4f2fd92a0a31686f1",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "discourse",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/discourse/__init__.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "discourse",
+    "crawler_class": "DiscourseCrawler",
+    "decorators": [],
+    "domain": null,
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "DiscourseProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__post_init__",
+      "extract_links",
+      "fetch",
+      "handle_internal_link",
+      "is_attachment",
+      "iter_links",
+      "iter_posts",
+      "make_request",
+      "parse_thread",
+      "parse_url",
+      "post",
+      "process_posts",
+      "thread",
+      "topic",
+      "topic_from_id"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "discourse",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".json",
+      "html.parser",
+      "post_ids[]"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/discourse/__init__.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "**NOTE**": "If the URL includes <post_number>, posts with a number lower that it won't be scraped",
+      "Attachments": "/uploads/...",
+      "Topic": [
+        "/t/<topic_name>/<topic_id>",
+        "/t/<topic_name>/<topic_id>/<post_number>"
+      ]
+    },
+    "warnings": []
+  }
+}

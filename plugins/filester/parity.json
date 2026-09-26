@@ -1,0 +1,71 @@
+{
+  "crawler": "filester",
+  "generated": {
+    "source_sha256": "9f63764c7cb7faea03f2ded6b1193183e2798bbd04b472cee164d590803533a3",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "filester",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/filester.py",
+    "source_file": "cyberdrop_dl/crawlers/filester.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "filester",
+    "crawler_class": "FilesterCrawler",
+    "decorators": [
+      "DownloadConfig",
+      "HTTPConfig"
+    ],
+    "domain": "filester",
+    "fixture_cases": [],
+    "fixture_file": "tests/crawlers/test_cases/filester.py",
+    "local_hook_target": {
+      "class": "FilesterProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__post_init__",
+      "_folder_pager",
+      "_iter_children",
+      "_request_soup_w_pass",
+      "fetch",
+      "file",
+      "folder"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "filester",
+    "rate_limits": {
+      "rate_limit_window_seconds": 1,
+      "requests_per_second": 4.0
+    },
+    "request_contracts": [],
+    "selectors": [
+      "#detailsContent",
+      "#nonce",
+      "#password-form",
+      ".file-item[onclick]",
+      ".subfolder-item[href]"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/filester.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "File": "/d/<slug>",
+      "Folder": "/f/<slug>"
+    },
+    "warnings": []
+  }
+}

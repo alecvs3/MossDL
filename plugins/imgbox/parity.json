@@ -1,0 +1,60 @@
+{
+  "crawler": "imgbox",
+  "generated": {
+    "source_sha256": "709d8d1ade1bd7c47586428ed31a54161fa326c4b3bea813717cb5be3d4b7e2c",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "imgbox",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/imgbox.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "imgbox",
+    "crawler_class": "ImgBoxCrawler",
+    "decorators": [],
+    "domain": "imgbox",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "ImgBoxProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "album",
+      "fetch",
+      "image"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "imgbox",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "div#gallery-view h1",
+      "div#gallery-view-content img",
+      "img#img"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/imgbox.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Album": "/g/...",
+      "Direct links": "",
+      "Image": "/..."
+    },
+    "warnings": []
+  }
+}

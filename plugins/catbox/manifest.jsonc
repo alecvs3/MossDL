@@ -1,0 +1,47 @@
+{
+  "category": "file-host",
+  "capabilities": {
+    "folders": false,
+    "http": true,
+    "ranges": true,
+    "refresh": true
+  },
+  "display_name": "Catbox",
+  "hooks": {
+    "refresh": "refresh",
+    "resolve": "resolve"
+  },
+  "hosts": [
+    "catbox.moe",
+    "litter.catbox.moe",
+    "files.catbox.moe",
+    "fatbox.moe"
+  ],
+  "id": "catbox",
+  "implementation": "python",
+  "limits": {
+    "max_concurrent_items": 2,
+    "requests_per_second": 3
+  },
+  "match": {
+    "path_regex": ".*",
+    "schemes": [
+      "https",
+      "http"
+    ]
+  },
+  "permissions": {
+    "hosts": [
+      "catbox.moe",
+      "litter.catbox.moe",
+      "files.catbox.moe",
+      "fatbox.moe"
+    ],
+    "secrets": []
+  },
+  "roles": [
+    "resolver"
+  ],
+  "schema_version": 2,
+  "version": "cyberdrop-import-cyberdrop-import-1.0.0"
+}

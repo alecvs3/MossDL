@@ -1,0 +1,40 @@
+{
+  // Declarative recipe for XFileSharing cyberlockers.
+  // Matches standard POST op=download2 form and direct button links.
+  "limits": {
+    "response_bytes": 4194304,
+    "redirects": 5,
+    "pages": 2,
+    "items": 10
+  },
+  "operations": {
+    "resolve": {
+      "request": {
+        "url": "{url.value}",
+        "method": "GET"
+      },
+      "extract": {
+        "fields": {
+          "name": "css:input[name='fname']::attr(value)",
+          "item_id": "css:input[name='id']::attr(value)",
+          "url": "css:a[href*='/d/']::attr(href)",
+          "size": "css:input[name='size']::attr(value)"
+        }
+      }
+    }
+  },
+  "errors": [
+    {
+      "category": "not_found",
+      "status": [404]
+    },
+    {
+      "category": "password_required",
+      "status": [401, 403]
+    },
+    {
+      "category": "retryable",
+      "status": [429, 500, 502, 503, 504]
+    }
+  ]
+}

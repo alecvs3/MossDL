@@ -1,0 +1,101 @@
+{
+  "crawler": "mega_nz",
+  "generated": {
+    "source_sha256": "e55c6ce7a6540f47124b514a16469d8eccc6f9580612e33831131bfde3cbe529",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "mega",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/mega_nz.py",
+    "source_file": "cyberdrop_dl/crawlers/mega_nz.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "mega_nz",
+    "crawler_class": "MegaNzCrawler",
+    "decorators": [
+      "Crawler.db_path_builder",
+      "HTTPConfig.default_headers",
+      "URLConfig"
+    ],
+    "domain": "mega.nz",
+    "fixture_cases": [
+      {
+        "url": "https://mega.nz/folder/yAkimbjQ"
+      },
+      {
+        "description": "single file within folder",
+        "url": "https://mega.nz/folder/yAkimbjQ"
+      },
+      {
+        "count": 5,
+        "description": "subfolder within folder",
+        "url": "https://mega.nz/folder/yAkimbjQ"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/mega_nz.py",
+    "local_hook_target": {
+      "class": "MegaProvider",
+      "module": "engine.providers.mega"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__async_post_init__",
+      "__post_init__",
+      "_file",
+      "_filesystem",
+      "_login",
+      "fetch",
+      "file",
+      "folder",
+      "handle_media_item",
+      "password",
+      "transform_url",
+      "user"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "mega",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "Downloads can not be resumed. Partial downloads will always be deleted and new downloads will start over",
+      "Login into mega.nz",
+      "Unable to log into mega.nz",
+      "[MegaNZ]",
+      "mega.co.nz",
+      "mega.io",
+      "mega.nz"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/mega_nz.py",
+    "supported_domains": [
+      "mega.io",
+      "mega.nz"
+    ],
+    "supported_paths": {
+      "**NOTE**": "Downloads can not be resumed. Partial downloads will always be deleted and new downloads will start over",
+      "File": [
+        "/file/<file_id>#<share_key>",
+        "/folder/<folder_id>#<share_key>/file/<file_id>",
+        "/!#<file_id>!<share_key>"
+      ],
+      "Folder": [
+        "/folder/<folder_id>#<share_key>",
+        "/F!#<folder_id>!<share_key>"
+      ],
+      "Subfolder": "/folder/<folder_id>#<share_key>/folder/<subfolder_id>"
+    },
+    "warnings": []
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "category": "video",
+  "capabilities": {
+    "folders": false,
+    "http": true,
+    "ranges": true,
+    "refresh": true
+  },
+  "display_name": "TikTok",
+  "hooks": {
+    "refresh": "refresh",
+    "resolve": "resolve"
+  },
+  "hosts": [
+    "tiktok.com",
+    "www.tiktok.com",
+    "vm.tiktok.com",
+    "vt.tiktok.com"
+  ],
+  "id": "tiktok",
+  "implementation": "python",
+  "limits": {
+    "max_concurrent_items": 2,
+    "requests_per_second": 3
+  },
+  "match": {
+    "path_regex": ".*",
+    "schemes": [
+      "https",
+      "http"
+    ]
+  },
+  "permissions": {
+    "hosts": [
+      "tiktok.com",
+      "www.tiktok.com",
+      "vm.tiktok.com",
+      "vt.tiktok.com"
+    ],
+    "secrets": []
+  },
+  "roles": [
+    "resolver"
+  ],
+  "schema_version": 2,
+  "version": "cyberdrop-import-cyberdrop-import-1.0.0"
+}

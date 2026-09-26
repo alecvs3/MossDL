@@ -1,0 +1,2314 @@
+/* Native Windows 11 type. Nothing is fetched at startup: the UI font is the
+   system font, and the two historical family names are aliased onto it so the
+   existing components keep working unchanged. */
+@font-face {
+  font-family: 'Inter';
+  src: local('Segoe UI Variable Text'), local('Segoe UI'), local('Inter'), local('system-ui');
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('Cascadia Mono'), local('Consolas'), local('JetBrains Mono'), local('Segoe UI Mono');
+  font-weight: 100 900;
+  font-display: swap;
+}
+/* Keep Tailwind's independent candidate scanner inside application source.
+   Vite watch exclusions do not constrain Tailwind's automatic root scan. */
+@import 'tailwindcss' source(none);
+@source "../";
+
+/* The persisted appearance setting is the single theme source-of-truth. The
+   shell supplies the accent value; these tokens keep every page, including
+   Settings, on the same palette. */
+:root {
+  --app-bg: #0d0d14;
+  --app-bg-deep: #0a0a12;
+  --titlebar-bg: rgba(10,10,14,0.98);
+  --surface-1: rgba(255,255,255,0.028);
+  --surface-2: rgba(255,255,255,0.045);
+  --surface-3: rgba(255,255,255,0.07);
+  --surface-strong: rgba(16,16,24,0.98);
+  --surface-menu: rgba(20, 22, 32, 0.98);
+  --text-primary: rgba(255,255,255,0.9);
+  --text-strong: rgba(255,255,255,0.86);
+  --text-secondary: rgba(255,255,255,0.6);
+  --text-muted: rgba(255,255,255,0.5);
+  --text-subtle: rgba(255,255,255,0.42);
+  --text-faint: rgba(255,255,255,0.34);
+  --text-disabled: rgba(255,255,255,0.18);
+  --border-subtle: rgba(255,255,255,0.05);
+  --border: rgba(255,255,255,0.07);
+  --border-strong: rgba(255,255,255,0.1);
+  --accent: #0078d4;
+  --accent-light: #4da6f5;
+  --accent-soft: rgba(0,120,212,0.16);
+  --accent-line: rgba(77,166,245,0.25);
+  --accent-glow: rgba(0,120,212,0.8);
+  --control-hover: rgba(255,255,255,0.09);
+  --close-hover: rgba(196,43,28,0.9);
+  --success: #34d399;
+  --warning: #f59e0b;
+  --danger: #f87171;
+  --on-accent: #fff;
+  --font-ui: 'Segoe UI Variable Text', 'Segoe UI', Inter, system-ui, sans-serif;
+  --font-mono: 'Cascadia Mono', Consolas, 'JetBrains Mono', ui-monospace, monospace;
+  /* Ink ladder: text strength, lightest to faintest. */
+  --ink-90: rgba(255, 255, 255, 0.9);
+  --ink-85: rgba(255, 255, 255, 0.85);
+  --ink-80: rgba(255, 255, 255, 0.8);
+  --ink-70: rgba(255, 255, 255, 0.7);
+  --ink-60: rgba(255, 255, 255, 0.6);
+  --ink-50: rgba(255, 255, 255, 0.5);
+  --ink-45: rgba(255, 255, 255, 0.45);
+  --ink-40: rgba(255, 255, 255, 0.4);
+  --ink-35: rgba(255, 255, 255, 0.46);
+  --ink-30: rgba(255, 255, 255, 0.42);
+  --ink-25: rgba(255, 255, 255, 0.38);
+  --ink-20: rgba(255, 255, 255, 0.32);
+  /* Surface ladder: raised panels, rows and hover fills. */
+  --surface-02: rgba(255, 255, 255, 0.02);
+  --surface-03: rgba(255, 255, 255, 0.03);
+  --surface-04: rgba(255, 255, 255, 0.04);
+  --surface-05: rgba(255, 255, 255, 0.05);
+  --surface-06: rgba(255, 255, 255, 0.06);
+  --surface-08: rgba(255, 255, 255, 0.08);
+  --surface-10: rgba(255, 255, 255, 0.1);
+  --surface-12: rgba(255, 255, 255, 0.12);
+  --surface-20: rgba(255, 255, 255, 0.2);
+  /* Line ladder: separators and outlines. */
+  --line-05: rgba(255, 255, 255, 0.05);
+  --line-06: rgba(255, 255, 255, 0.06);
+  --line-07: rgba(255, 255, 255, 0.07);
+  --line-09: rgba(255, 255, 255, 0.09);
+  --line-10: rgba(255, 255, 255, 0.1);
+  --line-12: rgba(255, 255, 255, 0.12);
+  --line-20: rgba(255, 255, 255, 0.2);
+  --radius-control: 4px;
+  --radius-card: 8px;
+  color-scheme: dark;
+}
+
+:root[data-theme="daylight"],
+.figma-shell[data-theme="daylight"] {
+  --app-bg: #f4f7fb;
+  --app-bg-deep: #e9eef5;
+  --titlebar-bg: #e7edf5;
+  --surface-1: rgba(20,35,55,0.035);
+  --surface-2: rgba(20,35,55,0.06);
+  --surface-3: rgba(20,35,55,0.1);
+  --surface-strong: rgba(255,255,255,0.98);
+  --surface-menu: rgba(248, 250, 253, 0.98);
+  --text-primary: rgba(16,24,36,0.94);
+  --text-strong: rgba(16,24,36,0.9);
+  --text-secondary: rgba(16,24,36,0.78);
+  --text-muted: rgba(16,24,36,0.7);
+  --text-subtle: rgba(16,24,36,0.64);
+  --text-faint: rgba(16,24,36,0.56);
+  --text-disabled: rgba(16,24,36,0.42);
+  --border-subtle: rgba(20,35,55,0.09);
+  --border: rgba(20,35,55,0.13);
+  --border-strong: rgba(20,35,55,0.2);
+  --accent-light: #0b68b5;
+  --accent-soft: rgba(0,120,212,0.12);
+  --accent-line: rgba(0,100,190,0.25);
+  --accent-glow: rgba(0,100,190,0.32);
+  --control-hover: rgba(20,35,55,0.1);
+  --close-hover: rgba(196,43,28,0.18);
+  --on-accent: #fff;
+  /* Deep shades: the dark themes' pastels fall under 2:1 on a light surface. */
+  --success: #0f7a55;
+  --warning: #9a6700;
+  --danger: #c42b1c;
+  --ink-90: rgba(20, 31, 46, 0.92);
+  --ink-85: rgba(20, 31, 46, 0.88);
+  --ink-80: rgba(20, 31, 46, 0.84);
+  --ink-70: rgba(20, 31, 46, 0.74);
+  --ink-60: rgba(16, 24, 36, 0.76);
+  --ink-50: rgba(16, 24, 36, 0.72);
+  --ink-45: rgba(16, 24, 36, 0.7);
+  --ink-40: rgba(16, 24, 36, 0.68);
+  --ink-35: rgba(16, 24, 36, 0.64);
+  --ink-30: rgba(16, 24, 36, 0.6);
+  --ink-25: rgba(16, 24, 36, 0.56);
+  --ink-20: rgba(16, 24, 36, 0.58);
+  --surface-02: rgba(20, 35, 55, 0.024);
+  --surface-03: rgba(20, 35, 55, 0.036);
+  --surface-04: rgba(20, 35, 55, 0.048);
+  --surface-05: rgba(20, 35, 55, 0.06);
+  --surface-06: rgba(20, 35, 55, 0.072);
+  --surface-08: rgba(20, 35, 55, 0.096);
+  --surface-10: rgba(20, 35, 55, 0.12);
+  --surface-12: rgba(20, 35, 55, 0.144);
+  --surface-20: rgba(20, 35, 55, 0.24);
+  --line-05: rgba(20, 35, 55, 0.09);
+  --line-06: rgba(20, 35, 55, 0.108);
+  --line-07: rgba(20, 35, 55, 0.126);
+  --line-09: rgba(20, 35, 55, 0.162);
+  --line-10: rgba(20, 35, 55, 0.18);
+  --line-12: rgba(20, 35, 55, 0.216);
+  --line-20: rgba(20, 35, 55, 0.36);
+  color-scheme: light;
+}
+
+
+/* Graphite: the neutral Windows 11 dark, no colour cast. */
+[data-theme="graphite"] {
+  --app-bg: #1b1b1f;
+  --app-bg-deep: #141417;
+  --titlebar-bg: rgba(20,20,23,0.98);
+  --glass-tint: rgba(24, 24, 27, 0.90);
+  --glass-titlebar: rgba(18, 18, 21, 0.3);
+  --surface-strong: rgba(32,32,36,0.98);
+  --surface-menu: rgba(38,38,42,0.98);
+  --accent: #4cc2ff;
+  --accent-light: #76d0ff;
+  --accent-soft: rgba(76,194,255,0.16);
+  --accent-line: rgba(118,208,255,0.28);
+  --accent-glow: rgba(76,194,255,0.6);
+  --success: #6ccb5f;
+  --warning: #fce100;
+  --danger: #ff99a4;
+  --ink-90: rgba(255, 255, 255, 0.9);
+  --ink-85: rgba(255, 255, 255, 0.85);
+  --ink-80: rgba(255, 255, 255, 0.8);
+  --ink-70: rgba(255, 255, 255, 0.7);
+  --ink-60: rgba(255, 255, 255, 0.6);
+  --ink-50: rgba(255, 255, 255, 0.5);
+  --ink-45: rgba(255, 255, 255, 0.45);
+  --ink-40: rgba(255, 255, 255, 0.4);
+  --ink-35: rgba(255, 255, 255, 0.46);
+  --ink-30: rgba(255, 255, 255, 0.42);
+  --ink-25: rgba(255, 255, 255, 0.38);
+  --ink-20: rgba(255, 255, 255, 0.32);
+  --surface-02: rgba(255, 255, 255, 0.02);
+  --surface-03: rgba(255, 255, 255, 0.03);
+  --surface-04: rgba(255, 255, 255, 0.04);
+  --surface-05: rgba(255, 255, 255, 0.05);
+  --surface-06: rgba(255, 255, 255, 0.06);
+  --surface-08: rgba(255, 255, 255, 0.08);
+  --surface-10: rgba(255, 255, 255, 0.1);
+  --surface-12: rgba(255, 255, 255, 0.12);
+  --surface-20: rgba(255, 255, 255, 0.2);
+  --line-05: rgba(255, 255, 255, 0.05);
+  --line-06: rgba(255, 255, 255, 0.06);
+  --line-07: rgba(255, 255, 255, 0.07);
+  --line-09: rgba(255, 255, 255, 0.09);
+  --line-10: rgba(255, 255, 255, 0.1);
+  --line-12: rgba(255, 255, 255, 0.12);
+  --line-20: rgba(255, 255, 255, 0.2);
+  --surface-1: rgba(255, 255, 255, 0.028);
+  --surface-2: rgba(255, 255, 255, 0.045);
+  --surface-3: rgba(255, 255, 255, 0.07);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.07);
+  --border-strong: rgba(255, 255, 255, 0.1);
+  --control-hover: rgba(255, 255, 255, 0.09);
+  --text-primary: rgba(255, 255, 255, 0.9);
+  --text-strong: rgba(255, 255, 255, 0.86);
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --text-muted: rgba(255, 255, 255, 0.5);
+  --text-subtle: rgba(255, 255, 255, 0.42);
+  --text-faint: rgba(255, 255, 255, 0.34);
+  --text-disabled: rgba(255, 255, 255, 0.18);
+  color-scheme: dark;
+}
+
+/* Indigo: cool blue-violet, deeper contrast. */
+[data-theme="indigo"] {
+  --app-bg: #12121f;
+  --app-bg-deep: #0c0c16;
+  --titlebar-bg: rgba(15,15,26,0.98);
+  --glass-tint: rgba(18, 18, 33, 0.90);
+  --glass-titlebar: rgba(12, 12, 24, 0.3);
+  --surface-strong: rgba(24,24,42,0.98);
+  --surface-menu: rgba(28,28,48,0.98);
+  --accent: #7c6cff;
+  --accent-light: #a79bff;
+  --accent-soft: rgba(124,108,255,0.18);
+  --accent-line: rgba(167,155,255,0.3);
+  --accent-glow: rgba(124,108,255,0.7);
+  --success: #5ee0b0;
+  --warning: #ffc95c;
+  --danger: #ff8096;
+  --ink-90: rgba(233, 233, 255, 0.9);
+  --ink-85: rgba(233, 233, 255, 0.85);
+  --ink-80: rgba(233, 233, 255, 0.8);
+  --ink-70: rgba(233, 233, 255, 0.7);
+  --ink-60: rgba(233, 233, 255, 0.6);
+  --ink-50: rgba(233, 233, 255, 0.5);
+  --ink-45: rgba(233, 233, 255, 0.45);
+  --ink-40: rgba(233, 233, 255, 0.4);
+  --ink-35: rgba(233, 233, 255, 0.46);
+  --ink-30: rgba(233, 233, 255, 0.42);
+  --ink-25: rgba(233, 233, 255, 0.38);
+  --ink-20: rgba(233, 233, 255, 0.32);
+  --surface-02: rgba(233, 233, 255, 0.02);
+  --surface-03: rgba(233, 233, 255, 0.03);
+  --surface-04: rgba(233, 233, 255, 0.04);
+  --surface-05: rgba(233, 233, 255, 0.05);
+  --surface-06: rgba(233, 233, 255, 0.06);
+  --surface-08: rgba(233, 233, 255, 0.08);
+  --surface-10: rgba(233, 233, 255, 0.1);
+  --surface-12: rgba(233, 233, 255, 0.12);
+  --surface-20: rgba(233, 233, 255, 0.2);
+  --line-05: rgba(233, 233, 255, 0.05);
+  --line-06: rgba(233, 233, 255, 0.06);
+  --line-07: rgba(233, 233, 255, 0.07);
+  --line-09: rgba(233, 233, 255, 0.09);
+  --line-10: rgba(233, 233, 255, 0.1);
+  --line-12: rgba(233, 233, 255, 0.12);
+  --line-20: rgba(233, 233, 255, 0.2);
+  --surface-1: rgba(233, 233, 255, 0.028);
+  --surface-2: rgba(233, 233, 255, 0.045);
+  --surface-3: rgba(233, 233, 255, 0.07);
+  --border-subtle: rgba(233, 233, 255, 0.05);
+  --border: rgba(233, 233, 255, 0.07);
+  --border-strong: rgba(233, 233, 255, 0.1);
+  --control-hover: rgba(233, 233, 255, 0.09);
+  --text-primary: rgba(233, 233, 255, 0.9);
+  --text-strong: rgba(233, 233, 255, 0.86);
+  --text-secondary: rgba(233, 233, 255, 0.6);
+  --text-muted: rgba(233, 233, 255, 0.5);
+  --text-subtle: rgba(233, 233, 255, 0.42);
+  --text-faint: rgba(233, 233, 255, 0.34);
+  --text-disabled: rgba(233, 233, 255, 0.18);
+  color-scheme: dark;
+}
+
+/* Evergreen: warm-neutral dark with a green signal colour. */
+[data-theme="evergreen"] {
+  --app-bg: #101613;
+  --app-bg-deep: #0b100e;
+  --titlebar-bg: rgba(13,19,16,0.98);
+  --glass-tint: rgba(16, 24, 20, 0.90);
+  --glass-titlebar: rgba(11, 17, 14, 0.3);
+  --surface-strong: rgba(20,30,25,0.98);
+  --surface-menu: rgba(24,36,30,0.98);
+  --accent: #2f9e68;
+  --accent-light: #5ecb92;
+  --accent-soft: rgba(47,158,104,0.18);
+  --accent-line: rgba(94,203,146,0.3);
+  --accent-glow: rgba(47,158,104,0.7);
+  --success: #5ecb92;
+  --warning: #e2b53f;
+  --danger: #e8736d;
+  --ink-90: rgba(232, 243, 236, 0.9);
+  --ink-85: rgba(232, 243, 236, 0.85);
+  --ink-80: rgba(232, 243, 236, 0.8);
+  --ink-70: rgba(232, 243, 236, 0.7);
+  --ink-60: rgba(232, 243, 236, 0.6);
+  --ink-50: rgba(232, 243, 236, 0.5);
+  --ink-45: rgba(232, 243, 236, 0.45);
+  --ink-40: rgba(232, 243, 236, 0.4);
+  --ink-35: rgba(232, 243, 236, 0.46);
+  --ink-30: rgba(232, 243, 236, 0.42);
+  --ink-25: rgba(232, 243, 236, 0.38);
+  --ink-20: rgba(232, 243, 236, 0.32);
+  --surface-02: rgba(232, 243, 236, 0.02);
+  --surface-03: rgba(232, 243, 236, 0.03);
+  --surface-04: rgba(232, 243, 236, 0.04);
+  --surface-05: rgba(232, 243, 236, 0.05);
+  --surface-06: rgba(232, 243, 236, 0.06);
+  --surface-08: rgba(232, 243, 236, 0.08);
+  --surface-10: rgba(232, 243, 236, 0.1);
+  --surface-12: rgba(232, 243, 236, 0.12);
+  --surface-20: rgba(232, 243, 236, 0.2);
+  --line-05: rgba(232, 243, 236, 0.05);
+  --line-06: rgba(232, 243, 236, 0.06);
+  --line-07: rgba(232, 243, 236, 0.07);
+  --line-09: rgba(232, 243, 236, 0.09);
+  --line-10: rgba(232, 243, 236, 0.1);
+  --line-12: rgba(232, 243, 236, 0.12);
+  --line-20: rgba(232, 243, 236, 0.2);
+  --surface-1: rgba(232, 243, 236, 0.028);
+  --surface-2: rgba(232, 243, 236, 0.045);
+  --surface-3: rgba(232, 243, 236, 0.07);
+  --border-subtle: rgba(232, 243, 236, 0.05);
+  --border: rgba(232, 243, 236, 0.07);
+  --border-strong: rgba(232, 243, 236, 0.1);
+  --control-hover: rgba(232, 243, 236, 0.09);
+  --text-primary: rgba(232, 243, 236, 0.9);
+  --text-strong: rgba(232, 243, 236, 0.86);
+  --text-secondary: rgba(232, 243, 236, 0.6);
+  --text-muted: rgba(232, 243, 236, 0.5);
+  --text-subtle: rgba(232, 243, 236, 0.42);
+  --text-faint: rgba(232, 243, 236, 0.34);
+  --text-disabled: rgba(232, 243, 236, 0.18);
+  color-scheme: dark;
+}
+
+/* ── Dialog primitives (Add window, confirmations) ─────────── */
+/* Windows 11 dialogs read as: a titled header, content grouped into cards on a
+   faint fill with a hairline, then a command bar. These classes carry that
+   rhythm so every dialog in the app lines up the same way. */
+.dlg-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--line-05);
+}
+.dlg-header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: var(--radius-control);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+  color: var(--accent-light);
+}
+.dlg-title { margin: 0; font-size: 13.5px; font-weight: 600; color: var(--ink-90); line-height: 1.25; }
+.dlg-subtitle { margin: 1px 0 0; font-size: 10.5px; color: var(--ink-40); }
+.dlg-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-control);
+  color: var(--ink-45);
+  flex-shrink: 0;
+}
+.dlg-close:hover { background: var(--surface-10); color: var(--ink-90); }
+
+.dlg-body { padding: 16px 20px; display: flex; flex-direction: column; gap: 12px; }
+.dlg-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-70);
+}
+.dlg-input {
+  width: 100%;
+  padding: 9px 11px;
+  border-radius: var(--radius-control);
+  border: 1px solid var(--line-10);
+  background: var(--surface-04);
+  color: var(--ink-90);
+  font-size: 12px;
+  line-height: 1.55;
+  resize: none;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+.dlg-input::placeholder { color: var(--ink-30); }
+.dlg-input:hover { background: var(--surface-05); }
+.dlg-input:focus {
+  outline: none;
+  border-color: var(--accent-light);
+  background: var(--surface-05);
+  box-shadow: 0 1px 0 0 var(--accent-light);
+}
+/* Fixed height so the dialog never jumps as the status text changes. */
+.dlg-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 18px;
+  font-size: 10.5px;
+  color: var(--ink-40);
+}
+
+.dlg-card {
+  border: 1px solid var(--line-06);
+  border-radius: var(--radius-card);
+  background: var(--surface-02);
+  overflow: hidden;
+}
+.dlg-card-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line-05);
+}
+.dlg-card-row:last-child { border-bottom: none; }
+.dlg-card-icon { color: var(--ink-45); flex-shrink: 0; margin-top: 1px; }
+.dlg-card-title { margin: 0; font-size: 11.5px; font-weight: 600; color: var(--ink-80); }
+.dlg-card-sub { margin: 1px 0 0; font-size: 10.5px; color: var(--ink-40); line-height: 1.45; }
+
+.dlg-footer {
+  padding: 12px 20px;
+  border-top: 1px solid var(--line-07);
+  background: var(--surface-02);
+}
+.dlg-commands { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+.dlg-hint { font-size: 10px; color: var(--ink-30); }
+.dlg-button {
+  min-width: 96px;
+  height: 32px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: var(--radius-control);
+  font-size: 11.5px;
+  font-weight: 600;
+  border: 1px solid var(--line-09);
+  background: var(--surface-06);
+  color: var(--ink-80);
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+.dlg-button:hover { background: var(--surface-10); }
+.dlg-button.primary {
+  background: var(--accent);
+  border-color: transparent;
+  color: var(--on-accent);
+}
+.dlg-button.primary:hover { background: var(--accent-light); }
+.dlg-button:disabled { opacity: 0.4; cursor: not-allowed; }
+.dlg-button:disabled:hover { background: var(--surface-06); }
+.dlg-button.primary:disabled:hover { background: var(--accent); }
+
+/* ── Shortcuts (Settings → Shortcuts) ──────────────────────── */
+.shortcut-intro {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  border-radius: var(--radius-card);
+  background: var(--surface-03);
+  border: 1px solid var(--line-06);
+}
+.shortcut-group { margin-bottom: 16px; }
+.shortcut-group-title {
+  margin: 0 0 6px 2px;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-35);
+}
+.shortcut-card {
+  border: 1px solid var(--line-06);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--surface-02);
+}
+.shortcut-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--line-05);
+}
+.shortcut-row:last-child { border-bottom: none; }
+.shortcut-row:hover { background: var(--surface-03); }
+.shortcut-label { margin: 0; font-size: 11.5px; font-weight: 500; color: var(--ink-85); }
+.shortcut-sub { margin: 2px 0 0; font-size: 10px; color: var(--ink-40); }
+.shortcut-warning {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 3px 0 0;
+  font-size: 10px;
+  color: var(--warning);
+}
+.shortcut-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: var(--radius-control);
+  border: 1px solid var(--line-10);
+  background: var(--surface-06);
+  color: var(--ink-80);
+  font-family: var(--font-ui);
+  font-size: 10.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.shortcut-chip.empty { color: var(--ink-30); font-weight: 500; font-style: italic; }
+.shortcut-chip.recording {
+  border-color: var(--accent-line);
+  background: var(--accent-soft);
+  color: var(--accent-light);
+  outline: none;
+}
+.shortcut-note { font-size: 10px; color: var(--ink-30); padding: 0 4px; }
+.shortcut-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 22px;
+  padding: 0 8px;
+  border-radius: var(--radius-control);
+  border: 1px solid var(--line-09);
+  background: var(--surface-04);
+  color: var(--ink-70);
+  font-size: 10.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+.shortcut-action:hover { background: var(--surface-10); color: var(--ink-90); }
+
+/* ── Theme gallery (Settings → Appearance) ─────────────────── */
+.theme-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.theme-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  text-align: left;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border);
+  background: var(--surface-1);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.theme-card:hover { background: var(--surface-2); border-color: var(--border-strong); }
+.theme-card.active { border-color: var(--accent-light); background: var(--accent-soft); }
+.theme-swatch {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 42px;
+  padding: 5px;
+  border-radius: var(--radius-control);
+  border: 1px solid var(--line-10);
+}
+.theme-swatch span { flex: 1; height: 12px; border-radius: 2px; }
+.theme-swatch span:first-child { height: 22px; }
+.theme-name { font-size: 11.5px; font-weight: 600; color: var(--text-primary); }
+.theme-sub { font-size: 10px; color: var(--text-muted); }
+
+.app-root { height: 100%; min-height: 0; overflow: hidden; }
+.figma-shell { position: relative; min-height: 0; background: var(--app-bg); color: var(--text-primary); }
+/* Rows never blur: one backdrop-filter per visible row costs a repaint of the
+   whole list on every scroll, hover and progress tick. The window material
+   behind the app already provides the glass. */
+.dl-row,
+.dl-row-small,
+.grab-session,
+.now-playing-bar {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.figma-shell > .absolute { z-index: 0; }
+.figma-shell > :not(.absolute) { position: relative; z-index: 1; }
+.figma-shell > .app-titlebar,
+.app-titlebar { position: relative; z-index: 100; }
+.figma-shell > .menu-bar,
+.menu-bar { position: relative; z-index: 90 !important; }
+.figma-shell > .dl-toolbar,
+.dl-toolbar { position: relative; z-index: 20; }
+/* Wrappers around the title bar and toolbar carry their layer, or menus drop behind the page. */
+.figma-shell > .shell-chrome-top { z-index: 100; }
+.figma-shell > .shell-chrome-toolbar { z-index: 20; }
+.app-titlebar [data-tauri-drag-region] { user-select: none; }
+
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+/* Windows 11 scrollbars: a thin resting rail that thickens under the pointer. */
+* { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.18) transparent; }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.16);
+  border-radius: 8px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+  transition: background 0.15s ease;
+}
+*::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.34); background-clip: content-box; }
+*::-webkit-scrollbar-corner { background: transparent; }
+[data-theme="daylight"] *::-webkit-scrollbar-thumb { background: rgba(20,35,55,0.22); background-clip: content-box; }
+
+/* Keyboard focus is visible everywhere, the way native controls behave. */
+:focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 1px;
+  border-radius: var(--radius-control);
+}
+
+/* Windows 11 dialog motion: a short fade with a small rise, and nothing at all
+   for anyone who asked the system to reduce motion. */
+@keyframes win-dialog-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes win-overlay-in { from { opacity: 0; } to { opacity: 1; } }
+.modal-overlay { animation: win-overlay-in 140ms ease-out; }
+.modal-panel { animation: win-dialog-in 180ms cubic-bezier(0.1, 0.9, 0.2, 1); }
+@media (prefers-reduced-motion: reduce) {
+  .modal-overlay, .modal-panel { animation: none; }
+}
+
+/* ── Base ──────────────────────────────────────────────────── */
+body {
+  background: var(--app-bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-family, var(--font-ui));
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  user-select: none;
+  -webkit-user-select: none;
+}
+input, textarea, select, option, [contenteditable="true"], .copyable, pre, code {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+/* ── Windows backdrop material ─────────────────────────────── */
+/* Set on <html> only once Windows actually painted Mica/Acrylic behind the
+   transparent window. Surfaces then tint the material instead of hiding it. */
+html.window-glass,
+html.window-glass body,
+html.window-glass #root { background: transparent; }
+html.window-glass .app-root { border-radius: 8px; overflow: hidden; }
+html.window-glass .figma-shell { background: var(--glass-tint, rgba(13, 13, 20, 0.90)); }
+html.window-glass .app-titlebar { background: var(--glass-titlebar, rgba(10, 10, 14, 0.28)); }
+html.window-glass .menu-bar,
+html.window-glass .dl-toolbar { background: rgba(14, 14, 18, 0.28); }
+html.window-glass .app-sidebar { background: rgba(255, 255, 255, 0.022); }
+html.window-glass .dl-col-header { background: color-mix(in srgb, var(--app-bg) 70%, transparent); backdrop-filter: blur(14px); }
+html.window-glass[data-theme="daylight"] .figma-shell { background: rgba(246, 249, 253, 0.76); }
+html.window-glass[data-theme="daylight"] .app-titlebar { background: rgba(231, 237, 245, 0.45); }
+html.window-glass[data-theme="daylight"] .menu-bar,
+html.window-glass[data-theme="daylight"] .dl-toolbar { background: rgba(231, 237, 245, 0.35); }
+
+/* ── Acrylic / Mica layers ─────────────────────────────────── */
+.acrylic-base {
+  background: rgba(18, 18, 24, 0.75);
+  backdrop-filter: blur(32px) saturate(200%) brightness(0.95);
+  -webkit-backdrop-filter: blur(32px) saturate(200%) brightness(0.95);
+}
+
+.acrylic-panel {
+  position: relative;
+  background: rgba(255,255,255,0.045);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(255,255,255,0.09);
+  overflow: hidden;
+}
+/* glass highlight — top-edge light catch */
+.acrylic-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  border-left: 1px solid rgba(255,255,255,0.08);
+  pointer-events: none;
+  z-index: 1;
+}
+/* noise grain */
+.acrylic-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.acrylic-row {
+  background: rgba(255,255,255,0.028);
+  border: 1px solid rgba(255,255,255,0.055);
+  transition: background 0.15s, border-color 0.15s;
+}
+.acrylic-row:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* ── Sidebar item ──────────────────────────────────────────── */
+.nav-item {
+  position: relative;
+  color: var(--text-muted);
+  background: transparent;
+  transition: background 0.12s, color 0.12s;
+}
+.nav-item:hover { background: var(--surface-3); color: var(--text-primary); }
+.nav-item:focus-visible { outline: 1px solid var(--accent-line); outline-offset: -1px; }
+.nav-item.active {
+  background: var(--accent-soft);
+  color: var(--accent-light);
+}
+/* Captchas gets its own amber identity so it never reads as the VPN entry. */
+.nav-item.nav-item-captcha:hover { color: #fcd34d; background: rgba(245, 158, 11, 0.08); }
+.nav-item.nav-item-captcha.active { background: rgba(245, 158, 11, 0.14); color: var(--warning); }
+.nav-item.nav-item-captcha.has-pending { color: var(--warning); }
+.nav-item.nav-item-captcha.has-pending svg { filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.55)); }
+.nav-item.active::before {
+  content: none;
+}
+
+/* ── Progress bar ──────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -250% 0; }
+  100% { background-position: 250% 0; }
+}
+.progress-shimmer {
+  background: linear-gradient(90deg,
+    rgba(0,120,212,0.52) 0%,
+    rgba(0,120,212,0.55) 35%,
+    rgba(0,120,212,0.62) 50%,
+    rgba(0,120,212,0.55) 65%,
+    rgba(0,120,212,0.52) 100%
+  );
+  background-size: 250% 100%;
+  animation: shimmer 3.5s ease-in-out infinite;
+}
+
+/* ── Pulse dot ─────────────────────────────────────────────── */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+.pulse-dot { animation: pulse-dot 1.6s ease-in-out infinite; }
+
+/* ── Glow button ───────────────────────────────────────────── */
+.btn-accent {
+  background: var(--accent);
+  color: white;
+  border: 1px solid rgba(77,166,245,0.35);
+  box-shadow: 0 0 0 0 rgba(0,120,212,0);
+  transition: background 0.15s, box-shadow 0.15s;
+}
+.btn-accent:hover {
+  background: var(--accent-light);
+  box-shadow: 0 0 14px rgba(0,120,212,0.45);
+}
+
+/* ── Toggle ────────────────────────────────────────────────── */
+.win-toggle {
+  position: relative;
+  width: 38px;
+  height: 21px;
+  border-radius: 11px;
+  cursor: default;
+  transition: background 0.2s, box-shadow 0.2s;
+  flex-shrink: 0;
+}
+.win-toggle.on {
+  box-shadow: 0 0 10px rgba(0,120,212,0.4);
+}
+.win-toggle::after {
+  content: '';
+  position: absolute;
+  top: 2.5px;
+  left: 2.5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+.win-toggle.on::after {
+  transform: translateX(17px);
+  background: white;
+}
+
+/* ── Form inputs ───────────────────────────────────────────── */
+.win-input, .win-select {
+  background: rgba(255,255,255,0.055);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-control);
+  color: rgba(255,255,255,0.88);
+  font-family: var(--font-ui);
+  font-size: 11.5px;
+  padding: 5px 10px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+.win-input:focus, .win-select:focus {
+  border-color: var(--accent);
+  background: rgba(0,120,212,0.08);
+  box-shadow: 0 0 0 2px rgba(0,120,212,0.2);
+}
+.win-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='rgba(255,255,255,0.35)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 26px;
+  cursor: pointer;
+}
+.win-select option { background: #1a1a22; color: white; }
+
+/* ── Stat card glow ────────────────────────────────────────── */
+.stat-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.stat-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  pointer-events: none;
+}
+
+/* ── Menu bar ──────────────────────────────────────────────── */
+.menu-bar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 4px;
+  height: 100%;
+  background: transparent;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1000;
+  user-select: none;
+}
+.menu-trigger {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: background 0.1s, color 0.1s;
+  position: relative;
+}
+.menu-trigger:hover, .menu-trigger.open {
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.9);
+}
+.menu-dropdown {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  min-width: 220px;
+  background: var(--surface-menu);
+  background-color: rgba(20, 22, 32, 0.98);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid var(--border-strong);
+  border-radius: 7px;
+  box-shadow: 0 18px 48px rgba(0,0,0,0.75), 0 2px 8px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
+  padding: 4px;
+  z-index: 1100;
+  isolation: isolate;
+  pointer-events: auto;
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.1s, color 0.1s;
+  min-height: 26px;
+  pointer-events: auto;
+}
+.menu-item:hover {
+  background: color-mix(in srgb, var(--accent) 30%, transparent);
+  color: var(--text-primary);
+}
+.menu-item.disabled {
+  color: rgba(255,255,255,0.28);
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+.menu-sep {
+  height: 1px;
+  background: rgba(255,255,255,0.07);
+  margin: 3px 4px;
+}
+.menu-item-icon { flex-shrink: 0; color: rgba(255,255,255,0.4); }
+.menu-item:hover .menu-item-icon { color: rgba(255,255,255,0.7); }
+.menu-item-kbd {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: rgba(255,255,255,0.28);
+}
+.menu-item-check { width: 14px; flex-shrink: 0; color: var(--accent-light); }
+
+/* ── Modal ─────────────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-panel {
+  background: rgba(20,20,28,0.97);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-card);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 2px 12px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+  width: 520px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 48px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── CAPTCHA warning ───────────────────────────────────────── */
+.captcha-warning {
+  background: rgba(245,158,11,0.1);
+  border: 1px solid rgba(245,158,11,0.3);
+  border-radius: 8px;
+  padding: 12px 14px;
+  position: relative;
+  overflow: hidden;
+}
+.captcha-warning::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-top: 1px solid rgba(245,158,11,0.4);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.captcha-danger {
+  background: rgba(239,68,68,0.1);
+  border: 1px solid rgba(239,68,68,0.3);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+/* ── Route card ────────────────────────────────────────────── */
+.route-card {
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-card);
+  position: relative;
+  overflow: hidden;
+}
+.route-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.route-location-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 12px;
+  border-radius: var(--radius-control);
+  cursor: default;
+  transition: background 0.12s;
+  font-size: 11.5px;
+}
+.route-location-row:hover { background: rgba(255,255,255,0.05); }
+.route-location-row.active {
+  background: rgba(0,120,212,0.18);
+  border: 1px solid rgba(77,166,245,0.25);
+}
+
+/* ── Compact download row ──────────────────────────────────── */
+@keyframes rowIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.dl-row {
+  position: relative;
+  display: grid;
+  align-items: center;
+  column-gap: 8px;
+  padding: 0 10px 0 14px;
+  height: 44px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.028);
+  border: 1px solid rgba(255,255,255,0.055);
+  overflow: hidden;
+  transition: background 0.12s, border-color 0.12s, box-shadow 0.12s;
+  cursor: default;
+  animation: rowIn 0.18s ease-out;
+}
+.dl-row:hover {
+  background: rgba(255,255,255,0.048);
+  border-color: rgba(255,255,255,0.09);
+  box-shadow: inset 2px 0 0 rgba(0,120,212,0.35);
+}
+
+/* ── Tables ────────────────────────────────────────────────────
+   One scroll container per table carries the grid template in --dt-cols
+   (set by TableScroll, repainted live while a column is dragged). The header
+   is pinned inside it, so header and rows always share one width. Every row
+   type and the header take the same inset and a 1px border (transparent on
+   the header), which keeps each column edge on the same pixel. */
+.dt-scroll {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  outline: none;
+}
+.dt-content { min-width: var(--dt-min, 0); }
+.dt-scroll .dl-col-header,
+.dt-scroll .dl-row,
+.dt-scroll .dl-row-small,
+.dt-scroll .dt-row {
+  display: grid;
+  grid-template-columns: var(--dt-cols);
+  column-gap: 8px;
+  padding-left: 14px;
+  padding-right: 10px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+}
+.dt-row {
+  align-items: center;
+  min-height: 30px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+}
+body.col-resizing, body.col-resizing * { cursor: col-resize !important; user-select: none; }
+
+/* ── Column header ─────────────────────────────────────────── */
+.dl-col-header {
+  display: grid;
+  align-items: center;
+  column-gap: 8px;
+  height: 26px;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  border: 1px solid transparent;
+  border-bottom-color: var(--line-05);
+  background: var(--app-bg);
+  margin-bottom: 4px;
+}
+.dl-col-head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  height: 100%;
+  cursor: default;
+  user-select: none;
+}
+.dl-col-head-label {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--ink-30);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: inherit;
+}
+.dl-col-head-label.sortable { cursor: pointer; border-radius: 3px; }
+.dl-col-head-label.sortable:hover { color: var(--ink-70); }
+.dl-col-head-label.sortable:focus-visible { outline: 2px solid var(--accent-light); outline-offset: -2px; }
+.dl-col-sort { font-size: 7px; color: var(--accent-light); }
+.dl-col-head.dragging { opacity: 0.45; }
+.dl-col-head.drop-target::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 10%;
+  bottom: 10%;
+  width: 2px;
+  border-radius: 1px;
+  background: var(--accent-light);
+}
+/* The grab area straddles the divider, like Explorer's. */
+.dl-col-grip {
+  position: absolute;
+  right: -6px;
+  top: 0;
+  bottom: 0;
+  width: 11px;
+  cursor: col-resize;
+  z-index: 2;
+  touch-action: none;
+  outline: none;
+}
+.dl-col-grip::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 18%;
+  bottom: 18%;
+  width: 1px;
+  background: var(--line-07);
+  transition: background 0.12s ease, width 0.12s ease;
+}
+.dl-col-grip:hover::after,
+.dl-col-grip:focus-visible::after,
+.dl-col-head.resizing .dl-col-grip::after { background: var(--accent-light); width: 2px; left: 4.5px; }
+
+/* Text never touches a column divider. The header and the body cells take the
+   same inset, so the two stay aligned. */
+.dl-col-head,
+.download-cell {
+  padding-left: 2px;
+  padding-right: 8px;
+}
+.dl-col-head[data-header-cell="select"],
+.dl-col-head[data-header-cell="actions"],
+.dl-col-head[data-header-cell="expand"],
+.download-cell.col-select,
+.download-cell.col-actions,
+.download-cell.col-expand {
+  padding-left: 0;
+  padding-right: 0;
+}
+.dl-col-head[data-header-cell="select"],
+.dl-col-head[data-header-cell="expand"] { justify-content: center; }
+
+/* Body cells carry the column dividers so they follow resized columns. */
+.download-cell {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+.download-cell::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  right: -5px;
+  bottom: 20%;
+  width: 1px;
+  background: var(--border-subtle);
+  pointer-events: none;
+}
+/* Affordance columns carry no divider: a line beside the selection icon reads
+   as a column boundary that cannot be dragged. */
+.download-cell.col-select::after,
+.download-cell.col-actions::after,
+.download-cell.col-expand::after { display: none; }
+
+.column-menu { padding: 4px; min-width: 190px; }
+.column-menu-title {
+  padding: 4px 8px 6px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-30);
+}
+.column-menu .context-menu-item:focus-visible { background: var(--accent-soft); outline: none; }
+.column-menu .context-menu-item:disabled { opacity: 0.4; }
+
+/* bottom-edge progress underline */
+.dl-row-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  border-radius: 0;
+  background: rgba(255,255,255,0.06);
+  width: 100%;
+}
+.dl-row-progress-fill {
+  height: 100%;
+  border-radius: 0;
+  transition: width 0.4s linear;
+}
+
+/* ── Small / Large row variants ───────────────────────────── */
+.dl-row-small {
+  position: relative;
+  display: grid;
+  align-items: center;
+  column-gap: 8px;
+  height: 30px;
+  padding: 0 10px 0 14px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.022);
+  border: 1px solid rgba(255,255,255,0.045);
+  overflow: hidden;
+  cursor: default;
+  animation: rowIn 0.18s ease-out;
+  transition: background 0.12s;
+}
+.dl-row-small:hover { background: rgba(255,255,255,0.044); border-color: rgba(255,255,255,0.08); }
+.dl-row-large { height: 60px; }
+.dl-row.selected, .dl-row-small.selected {
+  background: var(--accent-soft);
+  border-color: var(--accent-line);
+  box-shadow: inset 2px 0 var(--accent-light);
+}
+.dl-row.focused:not(.selected), .dl-row-small.focused:not(.selected) {
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+  border-color: var(--accent-line);
+  box-shadow: inset 2px 0 var(--accent-light), 0 0 0 1px color-mix(in srgb, var(--accent) 12%, transparent);
+}
+.dl-row.focused.selected, .dl-row-small.focused.selected {
+  box-shadow: inset 3px 0 var(--accent-light), 0 0 0 1px var(--accent-line);
+}
+.download-select-trigger {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: var(--accent-light);
+  background: transparent;
+  cursor: pointer;
+  flex: none;
+  transition: color .12s, background .12s, border-color .12s, transform .12s;
+}
+.dl-row-small .download-select-trigger { width: 20px; height: 20px; }
+.selection-cell { display: flex; align-items: center; justify-content: center; }
+.selection-cell .download-select-trigger { margin: 0; }
+.download-select-trigger:hover, .download-select-trigger:focus-visible {
+  color: var(--accent-light);
+  background: var(--accent-soft);
+  border-color: var(--accent-line);
+  outline: none;
+}
+.download-select-trigger.selected {
+  color: var(--on-accent);
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+.download-select-trigger.selected svg { display: block; }
+.download-select-trigger svg { display: block; flex: none; }
+
+/* The provider picker is fed by the backend's enumerate/ResolvedItem tree. */
+.provider-tree {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-1);
+}
+.provider-tree-heading {
+  margin: 0;
+  color: var(--text-subtle);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.provider-tree-select-all {
+  color: var(--accent-light);
+  font-size: 9.5px;
+  font-weight: 600;
+}
+.provider-tree-list {
+  max-height: 220px;
+  overflow: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+}
+.provider-tree-row {
+  display: flex;
+  align-items: center;
+  min-height: 28px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.provider-tree-row:last-child { border-bottom: 0; }
+.provider-tree-expander,
+.provider-tree-expander-spacer {
+  width: 18px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  color: var(--text-subtle);
+}
+.provider-tree-expander:hover { color: var(--text-primary); }
+.provider-tree-check {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  margin-right: 5px;
+  color: var(--on-accent);
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+  line-height: 0;
+}
+.provider-tree-check.checked { background: var(--accent); border-color: var(--accent); }
+.provider-tree-mixed { width: 7px; height: 2px; border-radius: 2px; background: var(--accent-light); }
+.provider-tree-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  flex: 1;
+  padding: 2px 6px 2px 0;
+  color: var(--text-secondary);
+  font-size: 10.5px;
+  text-align: left;
+}
+.provider-tree-label:hover { color: var(--text-primary); }
+.provider-tree-label svg { flex: none; color: var(--text-subtle); }
+.provider-tree-count,
+.provider-tree-size,
+.provider-tree-summary {
+  margin-left: auto;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  white-space: nowrap;
+}
+.provider-tree-summary { margin: 7px 0 0; }
+.provider-tree-status { color: var(--text-secondary); font-size: 10px; }
+.provider-tree-status.error { color: var(--danger); }
+
+/* ── Segmented control ─────────────────────────────────────── */
+.segmented {
+  display: flex;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-control);
+  padding: 2px;
+  gap: 1px;
+}
+.segmented-btn {
+  flex: 1;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--ink-45);
+  cursor: default;
+  transition: background 0.15s, color 0.15s;
+  text-align: center;
+  white-space: nowrap;
+}
+.segmented-btn.active {
+  background: rgba(0,120,212,0.35);
+  color: var(--accent-light);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+/* ── Spinning animation ────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.spin { animation: spin 0.8s linear infinite; }
+
+/* ── Download group header ─────────────────────────────────── */
+.dl-group-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: default;
+  user-select: none;
+  transition: background 0.1s;
+}
+.dl-group-header:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+/* ── Batch select action bar ───────────────────────────────── */
+.dl-select-bar {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 10px;
+  background: rgba(24,24,32,0.96);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
+  z-index: 20;
+  white-space: nowrap;
+}
+
+/* ── Sparkline ─────────────────────────────────────────────── */
+.sparkline { overflow: visible; }
+
+/* ── Status accent bar on dl-row ───────────────────────────── */
+.dl-row-accent {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  border-radius: 0 2px 2px 0;
+}
+
+/* ── Checkbox ──────────────────────────────────────────────── */
+.dl-check {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  background: transparent;
+  flex-shrink: 0;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color 0.15s, background 0.15s;
+  position: relative;
+}
+.dl-check:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.dl-check:checked::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 1px;
+  width: 5px;
+  height: 8px;
+  border: 1.5px solid white;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+.dl-check:hover:not(:checked) {
+  border-color: rgba(255,255,255,0.5);
+}
+
+/* ── Download detail sheet ─────────────────────────────────── */
+.dl-sheet {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  z-index: 40;
+  background: rgba(16,16,24,0.98);
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px 12px 0 0;
+  /* No shadow while parked below the window: it bled up over the list. */
+  box-shadow: none;
+  transform: translateY(100%);
+  transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s;
+  max-height: 54%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.dl-sheet.dl-sheet-open {
+  transform: translateY(0);
+  box-shadow: 0 -12px 48px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+/* ── Right-click context menu ──────────────────────────────── */
+.context-menu {
+  position: fixed;
+  z-index: 90;
+  background: rgba(20,20,28,0.98);
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  box-shadow: 0 8px 36px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.07);
+  padding: 4px;
+  min-width: 200px;
+  animation: fadeIn 0.08s ease;
+}
+.context-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.8);
+  cursor: default;
+  user-select: none;
+  transition: background 0.07s, color 0.07s;
+}
+.context-menu-item:hover {
+  background: rgba(0,120,212,0.22);
+  color: #fff;
+}
+.context-menu-item.danger { color: var(--danger); }
+.context-menu-item.danger:hover { background: rgba(239,68,68,0.2); color: #fca5a5; }
+.context-menu-sep {
+  height: 1px;
+  background: rgba(255,255,255,0.07);
+  margin: 3px 4px;
+}
+.add-explore-link {
+  display: inline-flex; align-items: center; gap: 6px; margin: 2px 0 8px; padding: 4px 8px;
+  border: 1px solid var(--accent-line); border-radius: 5px; background: var(--accent-soft);
+  color: var(--accent-light); font-size: 11px; font-weight: 600; cursor: pointer;
+}
+.add-explore-link:hover, .add-explore-link:focus-visible { background: color-mix(in srgb, var(--accent) 28%, transparent); outline: none; }
+
+.site-icon { flex-shrink: 0; object-fit: contain; border-radius: 3px; }
+.site-letter { display: inline-grid; place-items: center; flex-shrink: 0; border-radius: 4px; background: var(--surface-10); color: var(--ink-70); font-weight: 700; line-height: 1; }
+
+.dl-progress-cell { display: flex; align-items: center; gap: 7px; width: 100%; min-width: 0; overflow: hidden; }
+.dl-progress-bar { flex: 1; min-width: 24px; height: 5px; border-radius: 3px; background: var(--surface-10); overflow: hidden; }
+.dl-progress-bar > span { display: block; height: 100%; border-radius: 3px; background: var(--ink-35); transition: width 0.4s linear; }
+.dl-progress-bar.active > span { background: var(--accent-light); }
+.dl-progress-bar.done > span { background: var(--success); }
+.dl-progress-bar.paused > span { background: var(--warning); }
+.dl-progress-bar.error > span { background: var(--danger); }
+.dl-progress-pct { flex-shrink: 0; width: 30px; text-align: right; font: 10px var(--font-mono); color: var(--ink-50); }
+.dl-size-cell { font: 10px var(--font-mono); color: var(--ink-40); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.dl-size-done { color: var(--ink-70); }
+.dl-host-cell { display: flex; align-items: center; gap: 6px; min-width: 0; font-size: 11px; color: var(--ink-55, var(--ink-50)); }
+.kind-tile { display: inline-grid; place-items: center; flex-shrink: 0; border-radius: 5px; }
+
+.dl-status { flex-shrink: 0; height: 28px; display: flex; align-items: center; gap: 14px; padding: 0 16px; border-top: 1px solid var(--line-06); font-size: 11px; color: var(--ink-45); }
+.dl-status .grow { flex: 1; }
+.dl-status > span:not(.grow) + span:not(.grow):not(.dl-status-speed)::before { content: ""; display: inline-block; width: 1px; height: 11px; margin-right: 14px; vertical-align: -1px; background: var(--line-12); }
+.dl-status-active { color: var(--accent-light); }
+.dl-status-bad { color: var(--danger); }
+.dl-status-speed { display: inline-flex; align-items: center; gap: 5px; font-family: var(--font-mono); color: var(--ink-60); }
+
+/* History: each finished download is a card, like a Downloads row. */
+.hist-card { position: relative; margin-bottom: 3px; border: 1px solid var(--line-07); border-radius: 8px; background: var(--surface-03); box-shadow: inset 3px 0 0 var(--hist-accent, transparent); transition: background 0.12s, border-color 0.12s; }
+.hist-card:hover { background: var(--surface-05); border-color: var(--line-10); }
+.hist-card.selected { background: var(--accent-soft); border-color: var(--accent-line); }
+.hist-card.expanded { background: var(--surface-04); border-color: var(--line-12); }
+.hist-card.nested { margin: 2px 6px 2px 18px; background: var(--surface-02); }
+.hist-card.package > .dt-row { font-weight: 600; }
+.hist-card .dt-row { border-radius: 7px; }
+/* The card border stands in for the row border, so columns stay on the header's pixels. */
+.dt-scroll .hist-card > .dt-row { border-left-width: 0; border-right-width: 0; }
+
+/* Toasts */
+.toast-host {
+  position: fixed;
+  left: 50%;
+  bottom: 56px;
+  transform: translateX(-50%);
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+}
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 34px;
+  max-width: 560px;
+  padding: 6px 14px;
+  border-radius: 7px;
+  background: var(--surface-menu);
+  border: 1px solid var(--line-12);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.28);
+  font-size: 11.5px;
+  color: var(--ink-85);
+  animation: toastIn 0.16s ease-out;
+  transition: opacity 0.25s, transform 0.25s;
+}
+.toast:has(.toast-action) { padding-right: 6px; }
+.toast.ok { border-color: rgba(52,211,153,0.35); }
+.toast.danger { border-color: rgba(248,113,113,0.4); }
+.toast.leaving { opacity: 0; transform: translateY(6px); }
+.toast-action {
+  height: 24px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--accent-light);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.toast-action:hover, .toast-action:focus-visible { background: var(--accent-soft); outline: none; }
+@keyframes toastIn { from { opacity: 0; transform: translateY(6px); } }
+
+/* ActionMenu: button items, keyboard focus drives the highlight. */
+.action-menu { max-width: 340px; }
+.action-menu .context-menu-item {
+  width: 100%;
+  height: 28px;
+  padding: 0 10px 0 8px;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 11.5px;
+  text-align: left;
+  outline: none;
+}
+.action-menu .context-menu-item:focus { background: var(--accent); color: #fff; }
+.action-menu .context-menu-item.danger:focus { background: rgba(239,68,68,0.85); color: #fff; }
+.action-menu .context-menu-item[aria-disabled="true"] { color: var(--ink-25); background: none; }
+.action-menu-icon { width: 14px; display: inline-grid; place-items: center; flex-shrink: 0; color: var(--ink-50); }
+.action-menu .context-menu-item:focus .action-menu-icon { color: inherit; }
+.action-menu-label { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.action-menu-kbd { font: 10.5px var(--font-mono); color: var(--ink-30); }
+.action-menu .context-menu-item:focus .action-menu-kbd { color: rgba(255,255,255,0.75); } /* on the accent, in every theme */
+.action-menu-heading {
+  padding: 6px 10px 3px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-30);
+}
+
+/* ── Downloads toolbar ─────────────────────────────────────── */
+.dl-toolbar {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.018);
+  flex-shrink: 0;
+}
+.dl-toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  flex: 1;
+  min-width: 0;
+  max-width: 20%;
+}
+.dl-toolbar-btn {
+  flex: 1;
+  min-width: 0;
+  height: 46px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink-70);
+  cursor: pointer;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 2px 4px;
+}
+.dl-toolbar-label {
+  color: var(--ink-80);
+  transition: color 0.15s ease;
+  line-height: 1;
+}
+.dl-toolbar-icon {
+  transition: color 0.15s ease, stroke 0.15s ease, filter 0.15s ease;
+}
+
+/* Default Icon Colors */
+.dl-toolbar-btn.btn-resume .dl-toolbar-icon { color: var(--success); }
+.dl-toolbar-btn.btn-pause .dl-toolbar-icon { color: var(--warning); }
+.dl-toolbar-btn.btn-stop .dl-toolbar-icon { color: var(--danger); }
+.dl-toolbar-btn.btn-retry .dl-toolbar-icon { color: #a78bfa; }
+.dl-toolbar-btn.btn-clear .dl-toolbar-icon { color: #94a3b8; }
+.dl-toolbar-btn.btn-folder .dl-toolbar-icon { color: #60a5fa; }
+.dl-toolbar-btn.btn-delete .dl-toolbar-icon { color: #fb7185; }
+.dl-toolbar-btn.btn-copy .dl-toolbar-icon { color: #38bdf8; }
+.dl-toolbar-btn.btn-add-url .dl-toolbar-icon { color: #22d3ee; }
+
+/* Interactive Hover States - background matches hue, icon brightens to full ink */
+.dl-toolbar-btn:hover {
+  background: var(--surface-08);
+  color: var(--text-primary);
+}
+.dl-toolbar-btn:hover .dl-toolbar-label {
+  color: var(--text-primary);
+}
+.dl-toolbar-btn:hover .dl-toolbar-icon {
+  color: var(--text-primary) !important;
+  filter: drop-shadow(0 0 4px var(--surface-20));
+}
+/* Daylight: the pastel icon tints wash out on a light bar; use their deep shades. */
+.figma-shell[data-theme="daylight"] .dl-toolbar-btn.btn-resume .dl-toolbar-icon { color: #0f7a55; }
+.figma-shell[data-theme="daylight"] .dl-toolbar-btn.btn-pause .dl-toolbar-icon { color: #9a6700; }
+.figma-shell[data-theme="daylight"] .dl-toolbar-btn.btn-stop .dl-toolbar-icon { color: #c42b1c; }
+.figma-shell[data-theme="daylight"] .dl-toolbar-btn.btn-retry .dl-toolbar-icon { color: #6d4fd6; }
+.figma-shell[data-theme="daylight"] .dl-toolbar-btn.btn-clear .dl-toolbar-icon { color: #4b5b70; }
+.figma-shell[data-theme="daylight"] .dl-toolbar-btn.btn-folder .dl-toolbar-icon { color: #1d64c8; }
+.figma-shell[data-theme="daylight"] .dl-toolbar-btn.btn-delete .dl-toolbar-icon { color: #c2264a; }
+.figma-shell[data-theme="daylight"] .dl-toolbar-btn.btn-copy .dl-toolbar-icon { color: #0b72a6; }
+.figma-shell[data-theme="daylight"] .dl-toolbar-btn.btn-add-url .dl-toolbar-icon { color: #0a7f95; }
+
+.dl-toolbar-btn.btn-resume:hover { background: rgba(52,211,153,0.18); }
+.dl-toolbar-btn.btn-pause:hover { background: rgba(251,191,36,0.18); }
+.dl-toolbar-btn.btn-stop:hover { background: rgba(248,113,113,0.18); }
+.dl-toolbar-btn.btn-retry:hover { background: rgba(167,139,250,0.18); }
+.dl-toolbar-btn.btn-clear:hover { background: rgba(148,163,184,0.18); }
+.dl-toolbar-btn.btn-folder:hover { background: rgba(96,165,250,0.18); }
+.dl-toolbar-btn.btn-delete:hover { background: rgba(251,113,133,0.18); }
+.dl-toolbar-btn.btn-copy:hover { background: rgba(56,189,248,0.18); }
+.dl-toolbar-btn.btn-add-url:hover { background: rgba(34,211,238,0.2); }
+
+/* Disabled toolbar buttons: keep icon tint at reduced opacity (don't grey out to invisible) */
+.dl-toolbar-btn:disabled .dl-toolbar-icon {
+  filter: none !important;
+}
+.dl-toolbar-btn:disabled .dl-toolbar-label {
+  opacity: 0.38 !important;
+}
+/* Per-variant disabled tints — keeps the colour identity visible */
+.dl-toolbar-btn.btn-resume:disabled .dl-toolbar-icon { color: rgba(52,211,153,0.40) !important; }
+.dl-toolbar-btn.btn-pause:disabled .dl-toolbar-icon  { color: rgba(251,191,36,0.40) !important; }
+.dl-toolbar-btn.btn-stop:disabled .dl-toolbar-icon   { color: rgba(248,113,113,0.40) !important; }
+.dl-toolbar-btn.btn-retry:disabled .dl-toolbar-icon  { color: rgba(167,139,250,0.40) !important; }
+.dl-toolbar-btn.btn-clear:disabled .dl-toolbar-icon  { color: rgba(148,163,184,0.38) !important; }
+.dl-toolbar-btn.btn-folder:disabled .dl-toolbar-icon { color: rgba(96,165,250,0.40) !important; }
+.dl-toolbar-btn.btn-delete:disabled .dl-toolbar-icon { color: rgba(251,113,133,0.40) !important; }
+.dl-toolbar-btn.btn-copy:disabled .dl-toolbar-icon   { color: rgba(56,189,248,0.40) !important; }
+.dl-toolbar-btn.btn-add-url:disabled .dl-toolbar-icon { color: rgba(34,211,238,0.40) !important; }
+/* Fallback for any variant not listed above */
+.dl-toolbar-btn:disabled .dl-toolbar-icon { color: rgba(255,255,255,0.28); }
+
+.dl-toolbar-btn:disabled {
+  opacity: 1;  /* no overall dim — per-icon tints do the job */
+  cursor: not-allowed;
+}
+/* :disabled:hover — subtle glow shows the button *would* work */
+.dl-toolbar-btn:disabled:hover { background: transparent; }
+.dl-toolbar-btn.btn-resume:disabled:hover  { background: rgba(52,211,153,0.08); }
+.dl-toolbar-btn.btn-pause:disabled:hover   { background: rgba(251,191,36,0.08); }
+.dl-toolbar-btn.btn-stop:disabled:hover    { background: rgba(248,113,113,0.08); }
+.dl-toolbar-btn.btn-retry:disabled:hover   { background: rgba(167,139,250,0.08); }
+.dl-toolbar-btn.btn-clear:disabled:hover   { background: rgba(148,163,184,0.06); }
+.dl-toolbar-btn.btn-folder:disabled:hover  { background: rgba(96,165,250,0.08); }
+.dl-toolbar-btn.btn-delete:disabled:hover  { background: rgba(251,113,133,0.08); }
+.dl-toolbar-btn.btn-copy:disabled:hover    { background: rgba(56,189,248,0.08); }
+.dl-toolbar-btn.btn-add-url:disabled:hover { background: rgba(34,211,238,0.08); }
+.column-reset { color: var(--ink-30); background: transparent; border: 1px solid transparent; font-size: 9px; padding: 4px 7px; border-radius: 5px; cursor: pointer; }
+.column-reset:hover { color: var(--ink-70); background: var(--surface-06); border-color: var(--line-10); }
+.dl-toolbar-sep {
+  width: 1px;
+  height: 22px;
+  background: rgba(255,255,255,0.08);
+  margin: 0 8px;
+  flex-shrink: 0;
+}
+
+/* ── Now-playing bar ───────────────────────────────────────── */
+.now-playing-bar {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background: rgba(10,10,18,0.95);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 45;
+}
+.now-playing-title { flex: 0 1 clamp(140px, 24vw, 260px); min-width: 0; }
+.now-playing-title > [data-interactive-control="true"] { min-width: 0; }
+.now-playing-title p { max-width: none !important; }
+.now-playing-progress { flex: 1 1 auto; min-width: 72px; }
+.now-playing-actions { flex: 0 0 auto; margin-left: auto; }
+.now-playing-hover-btn.resume-control { color: var(--success); background: rgba(52,211,153,0.12); }
+.now-playing-hover-btn.resume-control:hover { background: rgba(52,211,153,0.28); color: #86efac; }
+.now-playing-hover-btn.pause-control { color: rgba(255,180,0,0.75); background: rgba(255,180,0,0.12); }
+.now-playing-hover-btn.pause-control:hover { background: rgba(255,180,0,0.28); color: rgba(255,200,60,0.95); }
+@media (max-width: 720px) {
+  .now-playing-bar { gap: 6px; padding-inline: 8px; }
+  .now-playing-title { flex-basis: 180px; }
+  .now-playing-speed, .now-playing-eta { display: none; }
+}
+
+.menu-item.disabled {
+  opacity: 0.34;
+  cursor: not-allowed;
+}
+.menu-item.disabled:hover { background: transparent; color: rgba(255,255,255,0.45); }
+/* (disabled styles now above, with per-variant coloured tints) */
+.history-action {
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 5px;
+  padding: 5px 9px;
+  color: rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.07);
+  font-size: 10.5px;
+  cursor: pointer;
+}
+.history-action:hover { background: rgba(255,255,255,0.13); }
+.history-action.danger { color: var(--danger); background: rgba(239,68,68,0.1); }
+.history-action.danger:hover { background: rgba(239,68,68,0.22); }
+.history-clear { margin-left: auto; color: rgba(255,255,255,0.3); font-size: 16px; line-height: 1; }
+.now-playing-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.55);
+  cursor: pointer;
+  transition: background 0.1s, color 0.1s;
+  flex-shrink: 0;
+}
+.now-playing-btn:hover {
+  background: rgba(0,120,212,0.25);
+  color: var(--accent-light);
+}
+.now-playing-btn.resume-control { color: var(--success); }
+.now-playing-btn.resume-control:hover { background: rgba(52,211,153,0.18); color: #86efac; }
+.now-playing-btn.pause-control:hover { background: rgba(245,158,11,0.18); color: #fcd34d; }
+.now-playing-btn.stop-control:hover { background: rgba(239,68,68,0.18); color: #fca5a5; }
+.now-playing-btn.restart-control { width: auto; min-width: 62px; padding: 0 8px; border-radius: 6px; color: var(--success); background: rgba(22,101,52,0.35); }
+.now-playing-btn.restart-control:hover { color: #86efac; background: rgba(22,101,52,0.58); }
+.grab-empty { display: flex; align-items: center; justify-content: center; min-height: 160px; color: rgba(255,255,255,0.3); font-size: 11px; }
+
+/* ── Link Grabber ──────────────────────────────────────────── */
+.grab-session {
+  background: rgba(255,255,255,0.028);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.grab-asset-row {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: background 0.1s;
+  user-select: none;
+}
+.grab-asset-row:hover {
+  background: rgba(255,255,255,0.04);
+}
+.grab-asset-row.queued {
+  opacity: 0.38;
+  cursor: default;
+  pointer-events: none;
+}
+.grab-asset-row.unselected {
+  opacity: 0.45;
+}
+
+/* Theme application for the live shell. Keep these selectors at the end so
+   they also cover legacy compact rules above without changing their layout. */
+.figma-shell[data-theme="daylight"] .menu-bar,
+.figma-shell[data-theme="daylight"] .dl-toolbar,
+.figma-shell[data-theme="daylight"] .app-sidebar {
+  background: var(--surface-1);
+  border-color: var(--border-subtle);
+}
+.figma-shell[data-theme="daylight"] .menu-trigger,
+.figma-shell[data-theme="daylight"] .dl-toolbar-btn,
+.figma-shell[data-theme="daylight"] .column-reset,
+.figma-shell[data-theme="daylight"] .history-clear,
+.figma-shell[data-theme="daylight"] .now-playing-btn {
+  color: var(--text-muted);
+}
+.figma-shell[data-theme="daylight"] .menu-trigger:hover,
+.figma-shell[data-theme="daylight"] .menu-trigger.open,
+.figma-shell[data-theme="daylight"] .dl-toolbar-btn:hover,
+.figma-shell[data-theme="daylight"] .column-reset:hover {
+  color: var(--text-primary);
+  background: var(--surface-3);
+}
+.figma-shell[data-theme="daylight"] .menu-dropdown,
+.figma-shell[data-theme="daylight"] .modal-panel,
+.figma-shell[data-theme="daylight"] .context-menu,
+.figma-shell[data-theme="daylight"] .dl-sheet.dl-sheet-open,
+.figma-shell[data-theme="daylight"] .dl-select-bar {
+  background: var(--surface-menu);
+  border-color: var(--border-strong);
+  box-shadow: 0 18px 55px rgba(30,45,70,.2);
+}
+.figma-shell[data-theme="daylight"] .dl-sheet {
+  background: var(--surface-menu);
+  border-color: var(--border-strong);
+}
+.figma-shell[data-theme="daylight"] .menu-item,
+.figma-shell[data-theme="daylight"] .context-menu-item,
+.figma-shell[data-theme="daylight"] .history-action,
+.figma-shell[data-theme="daylight"] .now-playing-btn {
+  color: var(--text-secondary);
+}
+.figma-shell[data-theme="daylight"] .menu-item:hover,
+.figma-shell[data-theme="daylight"] .context-menu-item:hover,
+.figma-shell[data-theme="daylight"] .history-action:hover,
+.figma-shell[data-theme="daylight"] .now-playing-btn:hover {
+  color: var(--text-primary);
+  background: var(--accent-soft);
+}
+.figma-shell[data-theme="daylight"] .win-input,
+.figma-shell[data-theme="daylight"] .win-select,
+.figma-shell[data-theme="daylight"] .segmented {
+  color: var(--text-primary);
+  background: var(--surface-2);
+  border-color: var(--border-strong);
+}
+.figma-shell[data-theme="daylight"] .win-input:focus,
+.figma-shell[data-theme="daylight"] .win-select:focus {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+.figma-shell[data-theme="daylight"] .win-select option { color: var(--text-primary); background: #fff; }
+.figma-shell[data-theme="daylight"] .dl-row,
+.figma-shell[data-theme="daylight"] .dl-row-small,
+.figma-shell[data-theme="daylight"] .grab-session {
+  color: var(--text-primary);
+  background: var(--surface-1);
+  border-color: var(--border);
+}
+.figma-shell[data-theme="daylight"] .dl-row:hover,
+.figma-shell[data-theme="daylight"] .dl-row-small:hover,
+.figma-shell[data-theme="daylight"] .grab-asset-row:hover {
+  background: var(--surface-2);
+  border-color: var(--border-strong);
+}
+.figma-shell[data-theme="daylight"] .figma-shell,
+.figma-shell[data-theme="daylight"] .figma-page,
+.figma-shell[data-theme="daylight"] .figma-setting-copy strong,
+.figma-shell[data-theme="daylight"] .figma-link-main strong,
+.figma-shell[data-theme="daylight"] .figma-history-row,
+.figma-shell[data-theme="daylight"] .figma-settings-tabs button {
+  color: var(--text-primary);
+}
+.figma-shell[data-theme="daylight"] .figma-settings-tabs button.active,
+.figma-shell[data-theme="daylight"] .figma-filter-tabs button.active,
+.figma-shell[data-theme="daylight"] .sidebar-item.active {
+  color: var(--accent-light);
+  background: var(--accent-soft);
+  border-color: var(--accent-line);
+}
+.figma-shell[data-theme="daylight"] .figma-settings-tabs button:hover,
+.figma-shell[data-theme="daylight"] .figma-filter-tabs button:hover {
+  color: var(--accent-light);
+  background: var(--surface-2);
+}
+.figma-shell[data-theme="daylight"] .figma-group-heading,
+.figma-shell[data-theme="daylight"] .figma-resource-grid > div,
+.figma-shell[data-theme="daylight"] .task-sheet-grid,
+.figma-shell[data-theme="daylight"] .task-sheet-chart {
+  background: var(--surface-2);
+  border-color: var(--border);
+}
+.figma-shell[data-theme="daylight"] .now-playing-bar { background: rgba(231,237,245,.96); border-color: var(--border); }
+.figma-shell[data-theme="daylight"] .figma-empty-state { color: var(--text-muted); border-color: var(--border-strong); }
+
+/* Now-playing menus are portaled to document.body, so they inherit the
+   document-level theme marker rather than relying on the shell ancestor. */
+:root[data-theme="daylight"] .now-playing-dropdown {
+  background: var(--surface-menu) !important;
+  border-color: var(--border-strong) !important;
+  box-shadow: 0 12px 40px rgba(30,45,70,.2) !important;
+}
+
+/* Inline styles in the legacy JSX intentionally carry layout values. These
+   narrow overrides make their neutral white palette follow the same tokens in
+   Light mode while retaining semantic success/warning/error colors. */
+.figma-shell[data-theme="daylight"] [style*="color:rgba(255,255,255"],
+.figma-shell[data-theme="daylight"] [style*="color: rgba(255,255,255"] {
+  color: var(--text-secondary) !important;
+}
+.figma-shell[data-theme="daylight"] [style*="background:rgba(255,255,255"],
+.figma-shell[data-theme="daylight"] [style*="background: rgba(255,255,255"] {
+  background: var(--surface-2) !important;
+}
+.figma-shell[data-theme="daylight"] [style*="border:1px solid rgba(255,255,255"],
+.figma-shell[data-theme="daylight"] [style*="border: 1px solid rgba(255,255,255"] {
+  border-color: var(--border-strong) !important;
+}
+.figma-shell[data-theme="daylight"] [style*="background:#0078D4"],
+.figma-shell[data-theme="daylight"] [style*="background: #0078D4"],
+.figma-shell[data-theme="daylight"] [style*="background:#0078d4"],
+.figma-shell[data-theme="daylight"] [style*="background: #0078d4"] {
+  background: var(--accent) !important;
+}
+.figma-shell[data-theme="daylight"] [style*="color:#fff"],
+.figma-shell[data-theme="daylight"] [style*="color: #fff"],
+.figma-shell[data-theme="daylight"] [style*="color:white"],
+.figma-shell[data-theme="daylight"] [style*="color: white"] {
+  color: var(--on-accent) !important;
+}
+.figma-shell[data-theme="daylight"] [style*="color:#4da6f5"],
+.figma-shell[data-theme="daylight"] [style*="color: #4da6f5"],
+.figma-shell[data-theme="daylight"] [style*="color:#0078D4"],
+.figma-shell[data-theme="daylight"] [style*="color: #0078D4"] {
+  color: var(--accent-light) !important;
+}
+/* The same overrides for styles React sets: the browser serialises them with
+   spaces ("rgba(255, 255, 255, 0.45)", "#4da6f5" as "rgb(77, 166, 245)"), and
+   each declaration either opens the attribute or follows "; ". */
+.figma-shell[data-theme="daylight"] [style^="color: rgba(255, 255, 255"],
+.figma-shell[data-theme="daylight"] [style*="; color: rgba(255, 255, 255"] {
+  color: var(--text-secondary) !important;
+}
+.figma-shell[data-theme="daylight"] [style^="background: rgba(255, 255, 255"],
+.figma-shell[data-theme="daylight"] [style*="; background: rgba(255, 255, 255"],
+.figma-shell[data-theme="daylight"] [style^="background-color: rgba(255, 255, 255"],
+.figma-shell[data-theme="daylight"] [style*="; background-color: rgba(255, 255, 255"] {
+  background: var(--surface-2) !important;
+}
+.figma-shell[data-theme="daylight"] [style*="solid rgba(255, 255, 255"] {
+  border-color: var(--border-strong) !important;
+}
+.figma-shell[data-theme="daylight"] [style^="color: rgb(77, 166, 245)"],
+.figma-shell[data-theme="daylight"] [style*="; color: rgb(77, 166, 245)"],
+.figma-shell[data-theme="daylight"] [style^="color: rgb(0, 120, 212)"],
+.figma-shell[data-theme="daylight"] [style*="; color: rgb(0, 120, 212)"] {
+  color: var(--accent-light) !important;
+}
+.window-control {
+  color: var(--text-muted);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.window-control:hover,
+.window-control:focus-visible {
+  color: var(--text-primary);
+  background: var(--control-hover);
+  outline: none;
+}
+.window-control:active { background: var(--accent-soft); }
+.window-control.close:hover,
+.window-control.close:focus-visible { background: var(--close-hover); }
+.window-control.close:active { background: var(--danger); color: var(--on-accent); }
+.figma-shell[data-theme="daylight"] .now-playing-btn.resume-control {
+  color: var(--success);
+  background: color-mix(in srgb, var(--success) 12%, transparent);
+}
+.figma-shell[data-theme="daylight"] .now-playing-btn.resume-control:hover {
+  color: var(--success);
+  background: color-mix(in srgb, var(--success) 22%, transparent);
+}
+
+/* ── Large Monitor & High-Res Accessibility Scaling ───────── */
+@media (min-width: 1750px) {
+  .app-titlebar {
+    height: 36px !important;
+  }
+  .app-titlebar span {
+    font-size: 11.5px !important;
+  }
+  .window-control {
+    width: 44px !important;
+    height: 36px !important;
+  }
+  .menu-bar {
+    height: 32px !important;
+    padding: 0 16px !important;
+  }
+  .menu-trigger {
+    font-size: 12.5px !important;
+    padding: 5px 10px !important;
+  }
+  .app-sidebar {
+    width: 76px !important;
+  }
+  .app-sidebar .nav-item {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .app-sidebar .nav-item span {
+    font-size: 11.5px !important;
+  }
+  .dl-toolbar {
+    padding: 6px 14px;
+  }
+  .dl-toolbar-btn {
+    height: 48px;
+    font-size: 11px;
+  }
+  .dl-toolbar-btn .dl-toolbar-icon {
+    transform: scale(1.15);
+  }
+  .download-row {
+    min-height: 38px;
+  }
+  .download-cell {
+    font-size: 12px;
+  }
+  .figma-header-cell {
+    font-size: 10px;
+  }
+  .win-input, select.win-input {
+    font-size: 13px !important;
+    padding: 6px 10px !important;
+  }
+  .settings-section-card {
+    padding: 20px !important;
+  }
+}
+
+@media (min-width: 2500px) {
+  .app-titlebar {
+    height: 42px !important;
+  }
+  .app-titlebar span {
+    font-size: 13px !important;
+  }
+  .window-control {
+    width: 50px !important;
+    height: 42px !important;
+  }
+  .menu-bar {
+    height: 38px !important;
+    padding: 0 20px !important;
+  }
+  .menu-trigger {
+    font-size: 14px !important;
+    padding: 6px 12px !important;
+  }
+  .app-sidebar {
+    width: 76px !important;
+  }
+  .app-sidebar .nav-item {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  .app-sidebar .nav-item span {
+    font-size: 12.5px !important;
+  }
+  .dl-toolbar {
+    padding: 8px 18px;
+  }
+  .dl-toolbar-btn {
+    height: 52px;
+    font-size: 12px;
+  }
+  .dl-toolbar-btn .dl-toolbar-icon {
+    transform: scale(1.3);
+  }
+  .download-row {
+    min-height: 46px;
+  }
+  .download-cell {
+    font-size: 13.5px;
+  }
+  .figma-header-cell {
+    font-size: 12px;
+  }
+  .win-input, select.win-input {
+    font-size: 14.5px !important;
+    padding: 8px 12px !important;
+  }
+}
+
+/* Download Row Action Buttons */
+.row-action-btn {
+  background: var(--surface-08);
+  color: var(--ink-50);
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+}
+
+.row-action-btn:hover {
+  background: var(--surface-12);
+  color: var(--text-primary);
+}
+
+.row-action-btn-primary:hover {
+  background: var(--accent-soft) !important;
+  color: var(--accent-light) !important;
+  border-color: var(--accent-line);
+}
+
+.row-action-btn-danger:hover {
+  background: rgba(239, 68, 68, 0.2) !important;
+  color: var(--danger) !important;
+  border-color: rgba(239, 68, 68, 0.35);
+}
+
+/* Tailwind's text-white in older views: readable ink on light themes, unless
+   the element paints its own coloured background (buttons, badges, gradients). */
+.figma-shell[data-theme="daylight"] .text-white:not([class*="bg-"]):not([class*="from-"]):not(.btn-accent) {
+  color: var(--text-primary);
+}
+
+
+/* Page shell shared by tabbed pages (Connections, Captchas): header, tabs, panels, small switches. */
+.page-shell { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.page-head { height: 44px; flex-shrink: 0; display: flex; align-items: stretch; gap: 10px; padding: 0 16px; border-bottom: 1px solid var(--line-06); }
+.page-head .grow { flex: 1; }
+.page-tabs { display: flex; gap: 22px; }
+.page-tab { position: relative; display: flex; align-items: center; gap: 6px; padding: 0; border: 0; background: none; font-size: 13.5px; font-weight: 600; color: var(--ink-40); cursor: pointer; }
+.page-tab:hover { color: var(--ink-70); }
+.page-tab.on { color: var(--ink-90); }
+.page-tab.on::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; border-radius: 2px; background: var(--accent-light); }
+.page-tab:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 3px; }
+.page-tab-count { font-size: 10.5px; font-weight: 500; color: var(--ink-30); }
+.head-switch { align-self: center; display: flex; align-items: center; gap: 8px; padding: 3px 4px; border: 0; border-radius: 4px; background: none; color: var(--ink-50); font-size: 11.5px; cursor: pointer; }
+.head-switch:hover { color: var(--ink-85); }
+.head-switch:focus-visible { outline: 2px solid var(--accent-light); }
+.page-panel { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.page-panel[hidden] { display: none; }
+.page-scroll { overflow-y: auto; }
+.mini-switch { width: 28px; height: 16px; padding: 0; border: 0; border-radius: 8px; background: var(--surface-10); position: relative; flex-shrink: 0; cursor: pointer; }
+.mini-switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 10px; height: 10px; border-radius: 50%; background: var(--ink-60); transition: left 0.12s; }
+.mini-switch.on { background: var(--accent); }
+.mini-switch.on::after { left: 15px; background: #fff; }
+button.mini-switch:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 1px; }
+.page-tab-count.alert { min-width: 16px; padding: 0 5px; border-radius: 8px; background: #fbbf24; color: #1a1300; font-weight: 700; text-align: center; }

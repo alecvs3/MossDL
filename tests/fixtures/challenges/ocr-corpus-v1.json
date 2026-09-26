@@ -1,0 +1,14 @@
+{
+  "version": "ocr-corpus-v1",
+  "collected_on": "2026-09-25",
+  "provenance": "Synthetic prompts written for this harness; no captured provider images.",
+  "redaction": "No provider data, cookies, tokens or URLs are stored.",
+  "cases": [
+    {"id": "math-add", "family": "text_math", "captcha_type": "image_text", "params": {"text_prompt": "What is 4 + 7?"}, "expected": "11"},
+    {"id": "math-mul", "family": "text_math", "captcha_type": "image_text", "params": {"text_prompt": "6 x 7 ="}, "expected": "42"},
+    {"id": "math-sub", "family": "text_math", "captcha_type": "image_text", "params": {"text_prompt": "Solve 20 - 5"}, "expected": "15"},
+    {"id": "raw-5", "family": "ascii_code", "captcha_type": "image_text", "params": {"raw_text": "k 9 x p 7"}, "expected": "k9xp7"},
+    {"id": "raw-noise", "family": "ascii_code", "captcha_type": "image_text", "params": {"raw_text": "O0lI1-8B"}, "expected": "O0l1B8"},
+    {"id": "no-text", "family": "image_only", "captcha_type": "image_text", "params": {"image_url": "fixture://blank.png"}, "expected": "x7Kq2"}
+  ]
+}

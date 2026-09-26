@@ -1,0 +1,62 @@
+{
+  "crawler": "giphy",
+  "generated": {
+    "source_sha256": "62e9a444fc1222af40aac24e8493da5db148df8f8de542e3f5f4a131a06228a3",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "giphy",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/giphy.py",
+    "source_file": "cyberdrop_dl/crawlers/giphy.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "giphy",
+    "crawler_class": "GiPhyCrawler",
+    "decorators": [],
+    "domain": "giphy",
+    "fixture_cases": [
+      {
+        "count": 1,
+        "url": "https://giphy.com/gifs/grandma-grandmother-offline-granny-B3s64Jh73fIk7qYLB5"
+      },
+      {
+        "count": 1,
+        "url": "https://media2.giphy.com/media/B3s64Jh73fIk7qYLB5/giphy.gif"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/giphy.py",
+    "local_hook_target": {
+      "class": "GiphyProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "fetch",
+      "gif",
+      "transform_url"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "giphy",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [],
+    "source_file": "cyberdrop_dl/crawlers/giphy.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Direct Link": "https://media*.giphy.com/media/<gif_id>",
+      "Gif": "/gifs/<slug>-<gif-id>"
+    },
+    "warnings": []
+  }
+}

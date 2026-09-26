@@ -1,0 +1,3 @@
+# deterministic URL list
+https://files.example.test/root/one.zip
+https://files.example.test/root/two.zip?download=1

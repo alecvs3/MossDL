@@ -1,0 +1,69 @@
+{
+  "crawler": "postimg",
+  "generated": {
+    "source_sha256": "04cd0fa31e5d4d49c426dee099d8f5ffcc6b7c6310525a2de6e0dd08eaca45e8",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "postimg",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/postimg.py",
+    "source_file": "cyberdrop_dl/crawlers/postimg.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "postimg",
+    "crawler_class": "PostImgCrawler",
+    "decorators": [],
+    "domain": "postimg",
+    "fixture_cases": [
+      {
+        "url": "https://postimg.cc/XZH6FJ3D"
+      },
+      {
+        "url": "https://postimg.cc/gallery/RmsPQD5"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/postimg.py",
+    "local_hook_target": {
+      "class": "PostImgProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "album",
+      "fetch",
+      "image"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "postimg",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".mb-4 + h6",
+      "a#download",
+      "i.postimg.cc",
+      "postimages.org",
+      "postimg.org"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/postimg.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Album": "/gallery/<album_id>/...",
+      "Direct links": "i.postimg.cc/<image_id>/...",
+      "Image": "/<image_id>/..."
+    },
+    "warnings": []
+  }
+}

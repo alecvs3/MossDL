@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "extension_version": "0.1.0",
+  "protocol_version": "browser-capture/1",
+  "native_host_name": "ai.transfer.manager.browser",
+  "extension_ids": {
+    "chrome": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "edge": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "firefox": "transfer-manager@openai.example"
+  },
+  "allowed_origins": ["http://*/*", "https://*/*"],
+  "passive_capture_default": false
+}

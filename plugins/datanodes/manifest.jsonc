@@ -1,0 +1,41 @@
+{
+  "category": "file-host",
+  "capabilities": {
+    "folders": false,
+    "http": true,
+    "ranges": true,
+    "refresh": true
+  },
+  "display_name": "DataNodes",
+  "hooks": {
+    "refresh": "refresh",
+    "resolve": "resolve"
+  },
+  "hosts": [
+    "datanodes.to"
+  ],
+  "id": "datanodes",
+  "implementation": "python",
+  "limits": {
+    "max_concurrent_items": 4,
+    "requests_per_second": 0.5
+  },
+  "match": {
+    "path_regex": ".*",
+    "schemes": [
+      "https",
+      "http"
+    ]
+  },
+  "permissions": {
+    "hosts": [
+      "datanodes.to"
+    ],
+    "secrets": []
+  },
+  "roles": [
+    "resolver"
+  ],
+  "schema_version": 2,
+  "version": "1.0.0"
+}

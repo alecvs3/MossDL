@@ -1,0 +1,41 @@
+{
+  "category": "file-host",
+  "capabilities": {
+    "http": true,
+    "passwords": true,
+    "ranges": true,
+    "refresh": true
+  },
+  "display_name": "1fichier",
+  "hooks": {
+    "refresh": "refresh",
+    "resolve": "resolve"
+  },
+  "hosts": [
+    "1fichier.com"
+  ],
+  "id": "1fichier",
+  "implementation": "python",
+  "limits": {
+    "max_concurrent_items": 1,
+    "requests_per_second": 2
+  },
+  "match": {
+    "path_regex": ".*",
+    "schemes": [
+      "https"
+    ]
+  },
+  "permissions": {
+    "secrets": [
+      "password",
+      "cookie",
+      "account_ref"
+    ]
+  },
+  "roles": [
+    "resolver"
+  ],
+  "schema_version": 2,
+  "version": "cyberdrop-import-cyberdrop-import-1.0.0"
+}

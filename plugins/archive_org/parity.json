@@ -1,0 +1,89 @@
+{
+  "crawler": "archive_org",
+  "generated": {
+    "source_sha256": "00f6692903f14ef75619f353a96feb9ede99cceaf83bc084876d4d7ac4aac606",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "archive_org",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/archive_org.py",
+    "source_file": "cyberdrop_dl/crawlers/archive_org.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "archive_org",
+    "crawler_class": "ArchiveOrgCrawler",
+    "decorators": [
+      "HTTPConfig",
+      "HTTPConfig.default_headers"
+    ],
+    "domain": "archive.org",
+    "fixture_cases": [
+      {
+        "count": 1,
+        "description": "single files on multi file item with '+' encoded URL",
+        "url": "https://archive.org/details/science-fiction-theatre-season-2/2-05+When+a+Camera+Fails.mp4"
+      },
+      {
+        "count": 65,
+        "description": "Original files (.mov) are private",
+        "url": "https://archive.org/details/irelandthemakingofarepublic"
+      },
+      {
+        "count": 29,
+        "description": "item with subfolders",
+        "url": "https://archive.org/download/Anime_Campuran"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/archive_org.py",
+    "local_hook_target": {
+      "class": "ArchiveOrgProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__post_init__",
+      "_file",
+      "fetch",
+      "item"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "archive_org",
+    "rate_limits": {
+      "rate_limit_window_seconds": 1,
+      "requests_per_second": 3.0
+    },
+    "request_contracts": [],
+    "selectors": [
+      ".sqlite",
+      ".torrent",
+      "archive.org",
+      "web.archive.org"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/archive_org.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Files": [
+        "/details/<identifier>/<subpath>",
+        "/download/<identifier>/<subpath>"
+      ],
+      "Item": [
+        "/details/<identifier>",
+        "/download/<identifier>"
+      ]
+    },
+    "warnings": []
+  }
+}

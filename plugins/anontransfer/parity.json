@@ -1,0 +1,65 @@
+{
+  "crawler": "anontransfer",
+  "generated": {
+    "source_sha256": "4c16b8388f382a6f1677bdc6260bf87b4e90861063c968cc17deaf1bbcfb049d",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "anontransfer",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/anontransfer.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "anontransfer",
+    "crawler_class": "AnonTransferCrawler",
+    "decorators": [],
+    "domain": "anontransfer.com",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "AnonTransferProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "fetch",
+      "file",
+      "folder",
+      "transform_url"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "anontransfer",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".file-actions button[data-url][data-filename]",
+      "a#downloadButton",
+      "anontransfer.com"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/anontransfer.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Direct Link": [
+        "/download-direct.php?dir=<file_id>&file=<filename>",
+        "/uploads/<file_id>/<filename>"
+      ],
+      "File": "/d/<file_id>",
+      "Folder": "/f/<folder_uuid>"
+    },
+    "warnings": [
+      "reference operations not implemented locally: enumerate"
+    ]
+  }
+}

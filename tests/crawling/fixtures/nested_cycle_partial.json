@@ -1,0 +1,16 @@
+{
+  "source": "https://crawl.example.test/root",
+  "items": [
+    {
+      "item_id": "folder-a",
+      "source_url": "https://crawl.example.test/folder-a",
+      "display_name": "Folder A",
+      "folder_path": "Package/Folder A",
+      "children": [
+        {"item_id": "file-1", "source_url": "https://cdn.example.test/file-1.bin", "display_name": "file-1.bin", "folder_path": "Package/Folder A"},
+        {"item_id": "cycle", "source_url": "https://crawl.example.test/root", "display_name": "Cycle back to root"}
+      ]
+    },
+    {"item_id": "file-1-duplicate", "source_url": "https://cdn.example.test/file-1.bin?signature=fixture-secret", "display_name": "duplicate"}
+  ]
+}

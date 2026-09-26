@@ -1,0 +1,77 @@
+{
+  "crawler": "webmshare",
+  "generated": {
+    "source_sha256": "177086fcf76eee454959840ff251920ca4d96240f5b5f0638676fb1eec0460b6",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "webmshare",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/webmshare.py",
+    "source_file": "cyberdrop_dl/crawlers/webmshare.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "webmshare",
+    "crawler_class": "WebmShareCrawler",
+    "decorators": [],
+    "domain": "webmshare",
+    "fixture_cases": [
+      {
+        "count": 1,
+        "url": "https://webmshare.com/o13vQ"
+      },
+      {
+        "count": 1,
+        "url": "https://webmshare.com/play/o13vQ"
+      },
+      {
+        "count": 1,
+        "description": "NSWF wall",
+        "url": "https://webmshare.com/zBGAg"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/webmshare.py",
+    "local_hook_target": {
+      "class": "WebmshareProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "fetch",
+      "request_soup_w_form",
+      "search",
+      "transform_url",
+      "video"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "webmshare",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".",
+      "[search]",
+      "form#is_adult"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/webmshare.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Search": "/results?q=<query>",
+      "Video": [
+        "/<video_id>",
+        "/play/<video_id>",
+        "/download-webm/<video_id>"
+      ]
+    },
+    "warnings": []
+  }
+}

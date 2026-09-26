@@ -1,0 +1,73 @@
+{
+  "crawler": "box_dot_com",
+  "generated": {
+    "source_sha256": "618a95ce9e74de71f38ea5f0f516a8984da81c1522860389a23d324af1ceb744",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "box",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/box_dot_com.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "box_dot_com",
+    "crawler_class": "BoxDotComCrawler",
+    "decorators": [],
+    "domain": "box.com",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "BoxProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__post_init__",
+      "_file",
+      "_walk_nodes",
+      "fetch",
+      "file",
+      "folder",
+      "share",
+      "transform_url"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "box",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".box.com",
+      "box.com",
+      "index.php"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/box_dot_com.py",
+    "supported_domains": [
+      ".box.com"
+    ],
+    "supported_paths": {
+      "Shared file/folder": [
+        "/s?sh=<share_name>",
+        "/s/<share_name>",
+        "/s/<share_name>/file/<file_id>",
+        "/s/<share_name>/folder/<folder_id>",
+        "/embed/s?sh=<share_name>",
+        "/embed_widget/s?sh=<share_name>"
+      ]
+    },
+    "warnings": [
+      "reference operations not implemented locally: enumerate"
+    ]
+  }
+}

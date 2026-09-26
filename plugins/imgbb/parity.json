@@ -1,0 +1,80 @@
+{
+  "crawler": "imgbb",
+  "generated": {
+    "source_sha256": "9af9f1f9a619adf2929f5851ac88272e11b273a383062677a88cee751c64120f",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "imgbb",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/imgbb.py",
+    "source_file": "cyberdrop_dl/crawlers/imgbb.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "imgbb",
+    "crawler_class": "ImgBBCrawler",
+    "decorators": [
+      "URLConfig"
+    ],
+    "domain": "imgbb",
+    "fixture_cases": [
+      {
+        "url": "https://ibb.co/FbtMCg43"
+      },
+      {
+        "url": "https://i.ibb.co/DDnyT5fW/Long-toes-are-the-best.jpg"
+      },
+      {
+        "count": 1537,
+        "url": "https://ibb.co/album/yhdTNv"
+      },
+      {
+        "count": 10,
+        "url": "https://ibb.co/album/DDcTkZ"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/imgbb.py",
+    "local_hook_target": {
+      "class": "ImgBBProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "_get_final_album_url",
+      "fetch"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "imgbb",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".imgbb.",
+      "i.ibb.co",
+      "ibb.co",
+      "imgbb.co"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/imgbb.py",
+    "supported_domains": [
+      "ibb.co",
+      "imgbb.co"
+    ],
+    "supported_paths": {
+      "Album": "/album/<album_id>",
+      "Image": "/<image_id>",
+      "Profile": "<user_name>.imgbb.co/"
+    },
+    "warnings": []
+  }
+}

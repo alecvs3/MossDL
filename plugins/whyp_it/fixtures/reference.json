@@ -1,0 +1,18 @@
+{
+  "cases": [
+    {
+      "count": 1,
+      "description": "Private track (requires the ?token param to access)",
+      "url": "https://whyp.it/tracks/reading-your-shy-besties-mind-4eyNuDoUzLk1"
+    },
+    {
+      "count": 3,
+      "url": "https://whyp.it/users/brad-cGgThTrh8wcG"
+    },
+    {
+      "url": "https://whyp.it/collections/example-collection-hNdBmugKbF85"
+    }
+  ],
+  "crawler": "whyp_it",
+  "provider_id": "whyp_it"
+}

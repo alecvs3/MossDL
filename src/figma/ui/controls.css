@@ -1,0 +1,33 @@
+/* Small shared controls for the newer pages (Connections, Captchas): buttons,
+   status dots, chips, inputs, notes and inline verdicts. Theme variables only. */
+.ui-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex-shrink: 0; background: var(--ink-20); }
+.ui-dot.ok { background: var(--success); box-shadow: 0 0 0 3px rgba(52,211,153,0.14); }
+.ui-dot.bad { background: var(--danger); }
+.ui-dot.busy { background: var(--accent-light); animation: uiPulse 1s ease-in-out infinite; }
+.ui-empty { padding: 8px; font-size: 11px; color: var(--ink-40); }
+.ui-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.ui-chip { flex-shrink: 0; font-size: 10.5px; padding: 1px 6px; border-radius: 3px; background: var(--surface-06); color: var(--ink-60); white-space: nowrap; }
+.ui-chip.ok { background: rgba(52,211,153,0.12); color: var(--success); }
+.ui-btn { height: 28px; display: inline-flex; align-items: center; gap: 6px; padding: 0 11px; border-radius: 5px; border: 1px solid var(--line-09); background: var(--surface-06); color: var(--ink-85); font-size: 11.5px; white-space: nowrap; cursor: pointer; }
+.ui-btn:hover { background: var(--surface-10); }
+.ui-btn:disabled { opacity: 0.45; cursor: default; }
+.ui-btn.ghost { border-color: transparent; background: none; color: var(--ink-60); }
+.ui-btn.ghost:hover { background: var(--surface-06); color: var(--ink-90); }
+.ui-btn.danger { color: var(--danger); }
+.ui-btn.sm { height: 22px; padding: 0 9px; font-size: 11px; }
+.ui-primary { height: 28px; display: inline-flex; align-items: center; gap: 6px; padding: 0 12px; border-radius: 5px; font-size: 11.5px; font-weight: 600; }
+.ui-primary:disabled { opacity: 0.45; }
+.ui-link { border: 0; background: none; padding: 0; color: var(--accent-light); font: inherit; font-size: 11.5px; text-decoration: none; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; }
+.ui-link:hover { text-decoration: underline; }
+.ui-link:disabled { opacity: 0.5; }
+.ui-empty-table { padding: 40px; display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--ink-40); font-size: 12px; }
+.ui-empty-table p { margin: 0; }
+.ui-note { display: flex; gap: 8px; margin: 14px 0 0; padding: 9px 12px; border: 1px solid var(--line-06); border-radius: 6px; background: var(--surface-03); font-size: 11.5px; line-height: 1.45; color: var(--ink-60); }
+.ui-note svg { flex-shrink: 0; margin-top: 2px; color: var(--ink-40); }
+.ui-links { display: flex; flex-direction: column; gap: 4px; margin-top: 12px; }
+.ui-label { display: block; margin: 12px 0 5px; font-size: 11px; color: var(--ink-40); }
+.ui-inline { display: flex; gap: 8px; margin-top: 8px; }
+.ui-input { flex: 1; min-width: 0; height: 28px; padding: 0 10px; border-radius: 5px; border: 1px solid var(--line-09); background: var(--surface-04); color: var(--ink-90); font-size: 12px; outline: none; }
+.ui-verdict { min-height: 16px; margin-top: 6px; font-size: 11.5px; color: var(--ink-40); }
+.ui-verdict.ok { color: var(--success); } .ui-verdict.bad { color: var(--danger); }
+@keyframes uiPulse { 50% { opacity: 0.35; } }

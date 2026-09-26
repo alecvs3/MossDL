@@ -1,0 +1,35 @@
+{
+  "category": "images",
+  "schema_version": 1,
+  "roles": [
+    "resolver"
+  ],
+  "id": "chevereto_generic",
+  "version": "1.0.0",
+  "display_name": "Chevereto galleries",
+  "hosts": [
+    "*chevereto*"
+  ],
+  "match": {
+    "schemes": [
+      "https",
+      "http"
+    ],
+    "path_regex": ".*"
+  },
+  "capabilities": {
+    "http": true,
+    "folders": true,
+    "refresh": true,
+    "ranges": true
+  },
+  "limits": {
+    "max_concurrent_items": 2,
+    "requests_per_second": 3
+  },
+  "hooks": {
+    "resolve": "resolve",
+    "refresh": "refresh",
+    "enumerate": "enumerate"
+  }
+}

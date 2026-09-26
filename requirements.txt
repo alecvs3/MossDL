@@ -1,0 +1,4 @@
+PyCryptodome>=3.20
+keyring>=25.0
+httpx[socks]>=0.27
+PySocks>=1.7  # SOCKS routes for urllib callers (engine/route_http.py)

@@ -1,0 +1,35 @@
+{
+  "category": "file-host",
+  "schema_version": 1,
+  "roles": [
+    "resolver"
+  ],
+  "id": "vikingfile",
+  "version": "1.0.0",
+  "display_name": "Vikingfile",
+  "hosts": [
+    "vikingfile.com",
+    "vik1ngfile.site"
+  ],
+  "match": {
+    "schemes": [
+      "https",
+      "http"
+    ],
+    "path_regex": ".*"
+  },
+  "capabilities": {
+    "http": true,
+    "folders": false,
+    "refresh": true,
+    "ranges": true
+  },
+  "limits": {
+    "max_concurrent_items": 2,
+    "requests_per_second": 3
+  },
+  "hooks": {
+    "resolve": "resolve",
+    "refresh": "refresh"
+  }
+}

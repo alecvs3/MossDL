@@ -1,0 +1,12 @@
+{
+  "cases": [
+    {
+      "url": "https://0101.bandcamp.com/track/mal-damour"
+    },
+    {
+      "url": "https://wetleg.bandcamp.com/album/moisturizer"
+    }
+  ],
+  "crawler": "bandcamp",
+  "provider_id": "bandcamp"
+}

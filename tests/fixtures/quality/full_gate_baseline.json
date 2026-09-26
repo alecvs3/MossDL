@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "source": "Phase 3/4 verification artifacts",
+  "allowed_outcomes": [
+    {
+      "failed_check": "python-tests",
+      "signature": "test_engine.EngineTests.test_tracer_auto_selection_emits_redacted_metrics",
+      "assertion": "0 != 1",
+      "failure_count": 1,
+      "error_count": 0
+    }
+  ]
+}

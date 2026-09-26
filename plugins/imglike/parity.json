@@ -1,0 +1,65 @@
+{
+  "crawler": "imglike",
+  "generated": {
+    "source_sha256": "290989296d9b2a73a6298f143ad5069159ef3c2740dfa18307a287a4cd249167",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "imglike",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/imglike.py",
+    "source_file": "cyberdrop_dl/crawlers/imglike.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "imglike",
+    "crawler_class": "ImgLikeCrawler",
+    "decorators": [],
+    "domain": "imglike.com",
+    "fixture_cases": [
+      {
+        "url": "https://imglike.com/image/Palm-Desert-Resuscitation-Education-%28YourCPRMD.com%29.L1xHc"
+      },
+      {
+        "url": "https://imglike.com/album/Kara-Del-Toro-Naked.cG7l"
+      },
+      {
+        "url": "https://imglike.com/bonton18/albums"
+      },
+      {
+        "count": 10,
+        "description": "Fails with aiohttp and works with curl-cffi",
+        "url": "https://imglike.com/album/D%C3%A9sir%C3%A9e-Nick-Boob-Slip-at-unesco-benefiz-gala%2C-2001.vihF"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/imglike.py",
+    "local_hook_target": {
+      "class": "ImgLikeProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "imglike",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "imglike.com"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/imglike.py",
+    "supported_domains": [],
+    "supported_paths": {},
+    "warnings": []
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "category": "file-host",
+  "capabilities": {
+    "folders": false,
+    "http": true,
+    "ranges": true,
+    "refresh": true
+  },
+  "display_name": "Pillowcase",
+  "hooks": {
+    "refresh": "refresh",
+    "resolve": "resolve"
+  },
+  "hosts": [
+    "pillowcase.su",
+    "pillowcase.zip",
+    "pillows.su"
+  ],
+  "id": "pillowcase",
+  "implementation": "python",
+  "limits": {
+    "max_concurrent_items": 2,
+    "requests_per_second": 3
+  },
+  "match": {
+    "path_regex": ".*",
+    "schemes": [
+      "https",
+      "http"
+    ]
+  },
+  "permissions": {
+    "hosts": [
+      "pillowcase.su",
+      "pillowcase.zip",
+      "pillows.su"
+    ],
+    "secrets": []
+  },
+  "roles": [
+    "resolver"
+  ],
+  "schema_version": 2,
+  "version": "cyberdrop-import-cyberdrop-import-1.0.0"
+}

@@ -1,0 +1,83 @@
+{
+  "crawler": "pcloud",
+  "generated": {
+    "source_sha256": "1812f7280f5a4e26b3336df2a8643166ea1f88a61c4a928928be4ee5e06cf70b",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "pcloud",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/pcloud.py",
+    "source_file": "cyberdrop_dl/crawlers/pcloud.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "pcloud",
+    "crawler_class": "PCloudCrawler",
+    "decorators": [],
+    "domain": "pcloud",
+    "fixture_cases": [
+      {
+        "url": "https://u.pcloud.link/publink/show?code=XZKzRR5ZtNIEruF9jnuCXd8YUGkTyksJUy4X"
+      },
+      {
+        "url": "http://e.pc.cd/Ef3otalK"
+      },
+      {
+        "url": "https://e.pcloud.link/publink/show?code=XZwaxTZmBATjuuptQQrYgMAveYGTL4IjKVX"
+      },
+      {
+        "url": "https://u.pcloud.link/publink/show?code=kZr2shVZJrIIKrMiY8kOSUH6wO8yRp3sJWry"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/pcloud.py",
+    "local_hook_target": {
+      "class": "PCloudProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "_api_request",
+      "_file",
+      "_iter_nodes",
+      "_request_download_url",
+      "fetch",
+      "public_link"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "pcloud",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "Access denied. You do not have permissions to perform this operation",
+      "e.",
+      "e.pc.cd",
+      "pc.cd"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/pcloud.py",
+    "supported_domains": [
+      "e.pc.cd",
+      "pc.cd",
+      "pcloud"
+    ],
+    "supported_paths": {
+      "Public File or folder": [
+        "?code=<share_code>",
+        "e.pc.cd/<short_code>",
+        "u.pc.cd/<short_code>"
+      ]
+    },
+    "warnings": []
+  }
+}

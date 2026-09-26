@@ -1,0 +1,67 @@
+{
+  "crawler": "dailymotion",
+  "generated": {
+    "source_sha256": "f32caf6b93533f89e8e2c780f9cd3943d2d80b95f5e08b81ad58dc5fdd3aaef5",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "dailymotion",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/dailymotion.py",
+    "source_file": "cyberdrop_dl/crawlers/dailymotion.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "dailymotion",
+    "crawler_class": "DailyMotionCrawler",
+    "decorators": [],
+    "domain": "dailymotion",
+    "fixture_cases": [
+      {
+        "count": 1,
+        "url": "https://www.dailymotion.com/video/x2pnrag"
+      },
+      {
+        "count": 5,
+        "url": "https://www.dailymotion.com/playlist/x74j59"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/dailymotion.py",
+    "local_hook_target": {
+      "class": "DailyMotionProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__json_resp_check__",
+      "__post_init__",
+      "fetch",
+      "playlist",
+      "video"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "dailymotion",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".m3u8",
+      ".mp4"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/dailymotion.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Playlist": "/playlist/<slug>",
+      "Video": "/video/<video_uid>"
+    },
+    "warnings": []
+  }
+}

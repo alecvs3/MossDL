@@ -1,0 +1,17 @@
+{
+  "cases": [
+    {
+      "url": "https://tiktok.com/@_sophialocke_/video/7271803599443791146"
+    },
+    {
+      "count": 2,
+      "url": "https://www.tiktok.com/@ploense"
+    },
+    {
+      "count": null,
+      "url": "https://www.tiktok.com/@ggwendollyn/photo/7545228111973977374"
+    }
+  ],
+  "crawler": "tiktok",
+  "provider_id": "tiktok"
+}

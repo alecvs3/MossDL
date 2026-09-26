@@ -1,0 +1,21 @@
+{
+  "cases": [
+    {
+      "count": 1,
+      "description": "single files on multi file item with '+' encoded URL",
+      "url": "https://archive.org/details/science-fiction-theatre-season-2/2-05+When+a+Camera+Fails.mp4"
+    },
+    {
+      "count": 65,
+      "description": "Original files (.mov) are private",
+      "url": "https://archive.org/details/irelandthemakingofarepublic"
+    },
+    {
+      "count": 29,
+      "description": "item with subfolders",
+      "url": "https://archive.org/download/Anime_Campuran"
+    }
+  ],
+  "crawler": "archive_org",
+  "provider_id": "archive_org"
+}

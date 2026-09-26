@@ -1,0 +1,20 @@
+{
+  "cases": [
+    {
+      "url": "https://imglike.com/image/Palm-Desert-Resuscitation-Education-%28YourCPRMD.com%29.L1xHc"
+    },
+    {
+      "url": "https://imglike.com/album/Kara-Del-Toro-Naked.cG7l"
+    },
+    {
+      "url": "https://imglike.com/bonton18/albums"
+    },
+    {
+      "count": 10,
+      "description": "Fails with aiohttp and works with curl-cffi",
+      "url": "https://imglike.com/album/D%C3%A9sir%C3%A9e-Nick-Boob-Slip-at-unesco-benefiz-gala%2C-2001.vihF"
+    }
+  ],
+  "crawler": "imglike",
+  "provider_id": "imglike"
+}

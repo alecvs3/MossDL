@@ -1,0 +1,96 @@
+{
+  "crawler": "bunkr",
+  "generated": {
+    "source_sha256": "c264d2fdaeca1563f07021e2ad5ae22beef605c22cb358ebe56525ac2c559618",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "bunkr",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/bunkr.py",
+    "source_file": "cyberdrop_dl/crawlers/bunkr.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "bunkr",
+    "crawler_class": "BunkrCrawler",
+    "decorators": [
+      "DownloadConfig",
+      "HTTPConfig"
+    ],
+    "domain": "bunkr",
+    "fixture_cases": [],
+    "fixture_file": "tests/crawlers/test_cases/bunkr.py",
+    "local_hook_target": {
+      "class": "BunkrProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__db_path__",
+      "__post_init__",
+      "_file",
+      "_request_soup_lenient",
+      "_try_request_soup",
+      "album",
+      "check_complete_from_referer",
+      "fetch",
+      "file",
+      "file_download",
+      "request_redirect",
+      "transform_url"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "bunkr",
+    "rate_limits": {
+      "rate_limit_window_seconds": 1,
+      "requests_per_second": 5.0
+    },
+    "request_contracts": [],
+    "selectors": [
+      "\":",
+      ".",
+      ".mp4",
+      ":",
+      "a.btn.ic-download-01",
+      "bunkr.black",
+      "bunkr.cr",
+      "bunkr.is",
+      "bunkr.la",
+      "bunkr.ph",
+      "bunkr.se",
+      "bunkr.site",
+      "bunkr.su",
+      "bunkrr.su",
+      "cdn.bunkr.ru",
+      "dl.bunkr.cr",
+      "get.bunkrr.su"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/bunkr.py",
+    "supported_domains": [
+      "bunkr"
+    ],
+    "supported_paths": {
+      "Album": "/a/<album_id>",
+      "File": [
+        "/f/<slug>",
+        "/d/<slug>",
+        "/i/<slug>"
+      ],
+      "Stream redirect": "/<slug>",
+      "Video": "/v/<slug>"
+    },
+    "warnings": []
+  }
+}

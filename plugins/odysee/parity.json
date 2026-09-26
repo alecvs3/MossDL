@@ -1,0 +1,75 @@
+{
+  "crawler": "odysee",
+  "generated": {
+    "source_sha256": "8eef71e466c6b6aee989646e7433de8d629cd1eca789737b6135cdf6ba3bc9f1",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "odysee",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/odysee.py",
+    "source_file": "cyberdrop_dl/crawlers/odysee.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "odysee",
+    "crawler_class": "OdyseeCrawler",
+    "decorators": [
+      "Crawler.db_path_builder"
+    ],
+    "domain": "odysee",
+    "fixture_cases": [
+      {
+        "url": "https://odysee.com/@fireship:6/robot-demos-have-a-dirty-little:c"
+      },
+      {
+        "url": "https://odysee.com/$/embed/@wickedtruths:2/Biotechnological-Invasion-of-Skin-(April-2023):4"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/odysee.py",
+    "local_hook_target": {
+      "class": "OdyseeProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__post_init__",
+      "fetch",
+      "get_filename_and_ext",
+      "transform_url",
+      "video"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "odysee",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "#",
+      ".m3u8",
+      ".mp4",
+      ".webp",
+      "2.0",
+      ":"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/odysee.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Embed": [
+        "/$/embed/@channel:uri"
+      ],
+      "Video": [
+        "/@channel:uri"
+      ]
+    },
+    "warnings": []
+  }
+}

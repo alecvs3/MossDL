@@ -1,0 +1,29 @@
+{
+  "cases": [
+    {
+      "count": 0,
+      "description": "URLs from non whitelisted domains should be ignored",
+      "url": "https://evil-pixeldrain.net/u/QMMLJjmb"
+    },
+    {
+      "count": 1,
+      "url": "https://pixeldrain.net/u/QMMLJjmb"
+    },
+    {
+      "count": 1,
+      "url": "https://pd.1drv.eu.org/QMMLJjmb"
+    },
+    {
+      "count": 1,
+      "description": "folder with an specific file selected (#4, index 3)",
+      "url": "https://pixeldrain.net/l/xe5AJy9v"
+    },
+    {
+      "count": 4,
+      "description": "folder",
+      "url": "https://pixeldrain.net/l/xe5AJy9v"
+    }
+  ],
+  "crawler": "pixeldrain",
+  "provider_id": "pixeldrain"
+}

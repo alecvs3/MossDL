@@ -1,0 +1,79 @@
+{
+  "crawler": "imgur",
+  "generated": {
+    "source_sha256": "f5da8febf18b56d082f9481842fb4992f50acc940c9b7fa8cffe83e738d4d1ce",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "imgur",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/imgur.py",
+    "source_file": "cyberdrop_dl/crawlers/imgur.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "imgur",
+    "crawler_class": "ImgurCrawler",
+    "decorators": [],
+    "domain": "imgur",
+    "fixture_cases": [
+      {
+        "url": "https://imgur.com/gallery/something-wholesome-uvh9Obt"
+      },
+      {
+        "url": "https://imgur.com/a/uvh9Obt"
+      },
+      {
+        "url": "https://imgur.com/rKn1KVv"
+      },
+      {
+        "url": "https://imgur.com/gallery/broken-egg-by-huleeb-42gHAIK"
+      },
+      {
+        "url": "https://imgur.com/download/rKn1KVv"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/imgur.py",
+    "local_hook_target": {
+      "class": "ImgurProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__async_post_init__",
+      "__json_resp_check__",
+      "__post_init__",
+      "_api_request",
+      "_get_client_id",
+      "_image",
+      "album",
+      "fetch",
+      "image",
+      "transform_url"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "imgur",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".",
+      "apiClientId:\""
+    ],
+    "source_file": "cyberdrop_dl/crawlers/imgur.py",
+    "supported_domains": [],
+    "supported_paths": {},
+    "warnings": [
+      "reference operations not implemented locally: enumerate"
+    ]
+  }
+}

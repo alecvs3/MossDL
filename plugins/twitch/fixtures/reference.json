@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "url": "https://www.twitch.tv/fanfan/clip/GeniusDifficultSproutPhilosoraptor-5i5Qz2jiQArtBROM"
+    },
+    {
+      "url": "https://clips.twitch.tv/GeniusDifficultSproutPhilosoraptor-5i5Qz2jiQArtBROM"
+    },
+    {
+      "url": "https://clips.twitch.tv/embed?clip=GeniusDifficultSproutPhilosoraptor-5i5Qz2jiQArtBROM"
+    },
+    {
+      "url": "https://m.twitch.tv/clip/GeniusDifficultSproutPhilosoraptor-5i5Qz2jiQArtBROM"
+    },
+    {
+      "description": "hidden m3u8 data",
+      "url": "https://www.twitch.tv/videos/1744169736"
+    },
+    {
+      "count": 8,
+      "url": "https://www.twitch.tv/collections/3d4MEgywDhcOUg?filter=collections"
+    }
+  ],
+  "crawler": "twitch",
+  "provider_id": "twitch"
+}

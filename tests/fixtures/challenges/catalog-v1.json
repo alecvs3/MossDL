@@ -1,0 +1,12 @@
+{
+  "provenance": "synthetic, scrubbed challenge markers",
+  "date": "2026-09-20",
+  "redaction": "contains no cookies, tokens, signed URLs, or response bodies from live providers",
+  "fixtures": [
+    {"name": "turnstile", "status": 403, "content_type": "text/html", "body": "<div class='cf-turnstile'></div>"},
+    {"name": "rate_limit", "status": 429, "content_type": "text/html", "body": "Too many requests"},
+    {"name": "authentication", "status": 401, "content_type": "text/html", "body": "Please sign in"},
+    {"name": "ordinary_html", "status": 500, "content_type": "text/html", "body": "<h1>Temporary error</h1>"},
+    {"name": "binary", "status": 200, "content_type": "application/octet-stream", "body": "not inspected"}
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "crawler": "voe_sx",
+  "generated": {
+    "source_sha256": "ecf6e9c2b62ca37c7c97c17a41a5017296d951004113a29ab61326859523a1a3",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "voe",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/voe_sx.py",
+    "source_file": "cyberdrop_dl/crawlers/voe_sx.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "voe_sx",
+    "crawler_class": "VoeSxCrawler",
+    "decorators": [],
+    "domain": "voe.sx",
+    "fixture_cases": [
+      {
+        "url": "https://jilliandescribecompany.com/bhrc4degufg9"
+      },
+      {
+        "url": "https://voe.sx/ueof3kkmzcal"
+      },
+      {
+        "url": "https://jilliandescribecompany.com/e/a8pkxqgb5kvy"
+      },
+      {
+        "count": 4,
+        "url": "https://voe.sx/bhrc4degufg9"
+      },
+      {
+        "count": 4,
+        "url": "https://voe.sx/e/bhrc4degufg9"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/voe_sx.py",
+    "local_hook_target": {
+      "class": "VoeProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "_handle_video",
+      "_video",
+      "embed",
+      "fetch"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "voe",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ". Falling back to HLS",
+      "alejandrocenturyoil.com",
+      "diananatureforeign.com",
+      "heatherwholeinvolve.com",
+      "jennifercertaindevelopment.com",
+      "jilliandescribecompany.com",
+      "jonathansociallike.com",
+      "mariatheserepublican.com",
+      "maxfinishseveral.com",
+      "nathanfromsubject.com",
+      "richardsignfish.com",
+      "robertordercharacter.com",
+      "sarahnewspaperbeat.com",
+      "voe.sx"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/voe_sx.py",
+    "supported_domains": [
+      "alejandrocenturyoil.com",
+      "diananatureforeign.com",
+      "heatherwholeinvolve.com",
+      "jennifercertaindevelopment.com",
+      "jilliandescribecompany.com",
+      "jonathansociallike.com",
+      "mariatheserepublican.com",
+      "maxfinishseveral.com",
+      "nathanfromsubject.com",
+      "richardsignfish.com",
+      "robertordercharacter.com",
+      "sarahnewspaperbeat.com",
+      "voe.sx"
+    ],
+    "supported_paths": {
+      "Embed": "/e/video_id"
+    },
+    "warnings": []
+  }
+}

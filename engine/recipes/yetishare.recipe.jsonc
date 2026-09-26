@@ -1,0 +1,40 @@
+{
+  // Declarative recipe for YetiShare cyberlockers.
+  // Matches standard YetiShare direct download token anchors and download buttons.
+  "limits": {
+    "response_bytes": 4194304,
+    "redirects": 5,
+    "pages": 2,
+    "items": 10
+  },
+  "operations": {
+    "resolve": {
+      "request": {
+        "url": "{url.value}",
+        "method": "GET"
+      },
+      "extract": {
+        "fields": {
+          "name": "css:meta[name='title']::attr(content)",
+          "item_id": "css:input[name='fileId']::attr(value)",
+          "url": "css:a.btn-free-download::attr(href)",
+          "size": "css:span.file-size::text"
+        }
+      }
+    }
+  },
+  "errors": [
+    {
+      "category": "not_found",
+      "status": [404]
+    },
+    {
+      "category": "password_required",
+      "status": [401, 403]
+    },
+    {
+      "category": "retryable",
+      "status": [429, 500, 502, 503, 504]
+    }
+  ]
+}

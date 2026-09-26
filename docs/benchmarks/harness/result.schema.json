@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mossdl.invalid/benchmarks/result.schema.json",
+  "title": "MossDL benchmark trial record (mossdl-bench/1)",
+  "description": "One record per client x scenario x trial. Measured fields are null when not measured; never estimated.",
+  "type": "object",
+  "required": ["schema", "record_id", "run_id", "trial", "round", "warmup", "scenario", "client",
+               "timing", "throughput", "correctness", "status"],
+  "properties": {
+    "schema": {"const": "mossdl-bench/1"},
+    "record_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "trial": {"type": "integer", "minimum": 0},
+    "round": {"type": "integer", "minimum": 0},
+    "warmup": {"type": "boolean", "description": "Warm-up trials are recorded but excluded from aggregates."},
+    "scenario": {
+      "type": "object",
+      "required": ["name", "kind", "profile", "total_bytes", "file_count", "source"],
+      "properties": {
+        "name": {"type": "string"},
+        "kind": {"enum": ["http", "hls", "resume", "public", "idle"]},
+        "profile": {"type": "object", "description": "NetProfile applied by the harness server."},
+        "total_bytes": {"type": "integer", "minimum": 0},
+        "file_count": {"type": "integer", "minimum": 0},
+        "source": {"enum": ["harness-server", "public"]}
+      }
+    },
+    "client": {
+      "type": "object",
+      "required": ["name", "adapter", "policy"],
+      "properties": {
+        "name": {"type": "string", "examples": ["MossDL", "IDM", "JDownloader 2", "FDM", "AB Download Manager", "Motrix"]},
+        "version": {"type": ["string", "null"]},
+        "adapter": {"type": "string"},
+        "mode": {"type": ["string", "null"], "description": "e.g. mossdl core|engine"},
+        "policy": {"enum": ["defaults", "equalized"]},
+        "automation": {"enum": ["api", "cli", "folderwatch", "manual"]},
+        "settings": {"type": "object", "description": "Settings the harness applied or the operator confirmed."}
+      }
+    },
+    "timing": {
+      "type": "object",
+      "description": "Epoch seconds (time.time) on the harness clock; server times are offset-corrected.",
+      "properties": {
+        "submitted_at": {"type": ["number", "null"]},
+        "first_byte_at": {"type": ["number", "null"]},
+        "last_byte_at": {"type": ["number", "null"]},
+        "completed_at": {"type": ["number", "null"]},
+        "total_s": {"type": ["number", "null"]},
+        "ttfb_s": {"type": ["number", "null"]},
+        "wire_s": {"type": ["number", "null"]},
+        "killed_at": {"type": ["number", "null"]},
+        "relaunched_at": {"type": ["number", "null"]}
+      }
+    },
+    "throughput": {
+      "type": "object",
+      "properties": {
+        "goodput_bytes_per_s": {"type": ["number", "null"], "description": "payload bytes / (completed_at - submitted_at)"},
+        "wire_bytes_per_s": {"type": ["number", "null"], "description": "payload bytes / (last_byte_at - first_byte_at)"}
+      }
+    },
+    "resources": {
+      "type": ["object", "null"],
+      "properties": {
+        "cpu_seconds": {"type": "number"},
+        "cpu_avg_pct_one_core": {"type": "number"},
+        "cpu_avg_pct_machine": {"type": "number"},
+        "peak_tree_wset_bytes": {"type": "integer"},
+        "peak_tree_private_bytes": {"type": "integer"},
+        "sum_process_peak_wset_bytes": {"type": "integer"},
+        "disk_write_bytes": {"type": "integer"},
+        "process_names": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "server": {
+      "type": ["object", "null"],
+      "description": "Harness-server counters for the trial (null for public sources).",
+      "properties": {
+        "requests": {"type": "integer"},
+        "range_requests": {"type": "integer"},
+        "peak_active": {"type": "integer", "description": "Observed peak concurrent payload connections."},
+        "bytes_sent": {"type": "integer"},
+        "overhead_ratio": {"type": ["number", "null"], "description": "bytes_sent / payload bytes - 1"},
+        "rejected_overlimit": {"type": "integer"},
+        "aborted": {"type": "integer"},
+        "user_agents": {"type": "object"}
+      }
+    },
+    "correctness": {
+      "type": "object",
+      "properties": {
+        "files_total": {"type": ["integer", "null"]},
+        "files_ok": {"type": ["integer", "null"]},
+        "all_ok": {"type": ["boolean", "null"]},
+        "problems": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "status": {"enum": ["ok", "failed", "timeout", "unsupported", "error"]},
+    "error": {"type": ["string", "null"]},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  }
+}

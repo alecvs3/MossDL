@@ -1,0 +1,44 @@
+/* Floating card internals (kit/ui/cards.js). Theme variables only, so a card
+   follows whichever app theme it is given. */
+.mk-cardtable { padding: 4px 8px 8px; overflow: hidden; }
+.mk-cardtable .xp-row { padding-left: 4px; }
+.mk-cardtable .xp-source { margin-top: 2px; }
+.mk-cardtable .xp-name { overflow: hidden; }
+.mk-cardtable .xp-label, .mk-cardtable .xp-source .xp-label { max-width: none; }
+.mk-cardfacts { margin: 0; padding: 10px 14px 12px; border-top: 1px solid var(--line-06); grid-template-columns: 70px minmax(0, 1fr); }
+
+/* The background browser used when following a button */
+.bw-bar { display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 10px; background: var(--titlebar-bg); border-bottom: 1px solid var(--line-06); }
+.bw-dots { display: flex; gap: 5px; }
+.bw-dots i { width: 9px; height: 9px; border-radius: 50%; background: var(--surface-12); }
+.bw-addr { flex: 1; min-width: 0; height: 22px; display: flex; align-items: center; padding: 0 10px; border-radius: 11px; background: var(--surface-06);
+  font: 10.5px var(--font-mono); color: var(--ink-60); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bw-tag { display: inline-flex; align-items: center; gap: 4px; padding: 2px 7px; border-radius: 4px; font-size: 10.5px; font-weight: 600; color: var(--success);
+  background: color-mix(in srgb, var(--success) 14%, transparent); white-space: nowrap; }
+.bw-page { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 12px 16px 16px; background: var(--app-bg); }
+.bw-ad { display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 6px; font-size: 10.5px; color: var(--ink-30);
+  border: 1px dashed var(--line-12); background: repeating-linear-gradient(135deg, var(--surface-03) 0 6px, transparent 6px 12px); }
+.bw-ads { display: flex; justify-content: space-between; width: 100%; }
+.bw-file { display: flex; align-items: center; gap: 10px; align-self: stretch; padding: 10px 12px; border-radius: 8px; background: var(--surface-04); border: 1px solid var(--line-07); }
+.bw-file b { display: block; font-size: 13px; color: var(--ink-90); }
+.bw-file span { font: 11px var(--font-mono); color: var(--ink-40); }
+.bw-count { display: flex; align-items: center; gap: 12px; font-size: 12.5px; color: var(--ink-70); line-height: 1.3; }
+.bw-count small { font-size: 11px; color: var(--ink-40); }
+.bw-ring { --p: 50; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+  background: conic-gradient(var(--accent-light) calc(var(--p) * 1%), var(--surface-08) 0); position: relative; }
+.bw-ring::before { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--app-bg); }
+.bw-ring b { position: relative; font: 700 16px var(--font-mono); color: var(--ink-90); }
+.bw-go { display: flex; align-items: center; justify-content: space-between; gap: 16px; align-self: stretch; }
+.mk-filtercard .xp-filters { border-left: 0; overflow: visible; }
+.bw-btn { display: inline-flex; align-items: center; gap: 7px; height: 32px; padding: 0 18px; border-radius: 6px; font-size: 12px; font-weight: 600; color: #fff; background: var(--accent); }
+.bw-btn.off { background: var(--surface-10); color: var(--ink-40); }
+
+/* Captcha handoff flow */
+.ho-flow { position: relative; display: flex; flex-direction: column; gap: 10px; padding: 14px 14px 16px; }
+.ho-flow::before { content: ""; position: absolute; left: 29px; top: 30px; bottom: 34px; width: 1.5px; background: var(--line-12); }
+.ho-step { position: relative; display: flex; align-items: center; gap: 12px; }
+.ho-ic { width: 32px; height: 32px; flex-shrink: 0; display: grid; place-items: center; border-radius: 8px; color: var(--accent-light);
+  background: var(--surface-strong); box-shadow: inset 0 0 0 1px var(--accent-line); }
+.ho-step.ok .ho-ic { color: var(--success); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--success) 40%, transparent); }
+.ho-step b { display: block; font-size: 12.5px; color: var(--ink-90); }
+.ho-step span { font-size: 11px; color: var(--ink-45); }

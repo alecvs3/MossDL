@@ -1,0 +1,47 @@
+# The same quality gate as a release build, on every push and pull request.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: Install dependencies
+        run: |
+          python -m pip install -r requirements.txt
+          npm ci
+
+      # The tests drive the real extension bundle and Rust helpers.
+      - name: Build the extension and Rust helpers
+        shell: pwsh
+        run: |
+          if (Test-Path browser_extension/package.json) {
+            npm ci --prefix browser_extension
+            npm run build --prefix browser_extension
+          }
+          cargo build --manifest-path src-tauri/Cargo.toml --bin transfer-core --bin archive-worker
+
+      - name: Quality gate
+        run: python scripts/check_all.py --profile fast

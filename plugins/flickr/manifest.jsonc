@@ -1,0 +1,43 @@
+{
+  "category": "images",
+  "capabilities": {
+    "folders": false,
+    "http": true,
+    "ranges": true,
+    "refresh": true
+  },
+  "display_name": "Flickr",
+  "hooks": {
+    "refresh": "refresh",
+    "resolve": "resolve"
+  },
+  "hosts": [
+    "flickr.com",
+    "www.flickr.com"
+  ],
+  "id": "flickr",
+  "implementation": "python",
+  "limits": {
+    "max_concurrent_items": 2,
+    "requests_per_second": 3
+  },
+  "match": {
+    "path_regex": ".*",
+    "schemes": [
+      "https",
+      "http"
+    ]
+  },
+  "permissions": {
+    "hosts": [
+      "flickr.com",
+      "www.flickr.com"
+    ],
+    "secrets": []
+  },
+  "roles": [
+    "resolver"
+  ],
+  "schema_version": 2,
+  "version": "cyberdrop-import-cyberdrop-import-1.0.0"
+}

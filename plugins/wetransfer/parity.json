@@ -1,0 +1,62 @@
+{
+  "crawler": "wetransfer",
+  "generated": {
+    "source_sha256": "ead04cf6ed823a853c96603bfa3c713103ca41325d87ab61cfcf0f20977d273f",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "wetransfer",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/wetransfer.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "wetransfer",
+    "crawler_class": "WeTransferCrawler",
+    "decorators": [],
+    "domain": "wetransfer",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "WeTransferProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__json_resp_check__",
+      "fetch",
+      "file"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "wetransfer",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "download.",
+      "we.tl",
+      "wetransfer.com"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/wetransfer.py",
+    "supported_domains": [
+      "wetransfer.com",
+      "we.tl"
+    ],
+    "supported_paths": {
+      "Direct links": "download.wetransfer.com/...",
+      "Public link": "wetransfer.com/downloads/<file_id>/<security_hash>",
+      "Share Link": "wetransfer.com/downloads/<file_id>/<recipient_id>/<security_hash>",
+      "Short Link": "we.tl/<short_file_id>"
+    },
+    "warnings": []
+  }
+}

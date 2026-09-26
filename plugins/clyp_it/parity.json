@@ -1,0 +1,58 @@
+{
+  "crawler": "clyp_it",
+  "generated": {
+    "source_sha256": "f5a31f8c115c39545babccc966cb0943712a80eca03a57f54ebf6b1bdf8d143b",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "clyp_it",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/clyp_it.py",
+    "source_file": "cyberdrop_dl/crawlers/clyp_it.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "clyp_it",
+    "crawler_class": "ClypItCrawler",
+    "decorators": [],
+    "domain": "clyp.it",
+    "fixture_cases": [],
+    "fixture_file": "tests/crawlers/test_cases/clyp_it.py",
+    "local_hook_target": {
+      "class": "ClypItProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__post_init__",
+      "_audio",
+      "_audio_task",
+      "audio",
+      "fetch",
+      "user"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "clyp_it",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "clyp.it"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/clyp_it.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Audio": "/<audio_id>",
+      "User": "/user/<user_id>"
+    },
+    "warnings": []
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "crawler": "pixeldrain",
+  "generated": {
+    "source_sha256": "001f0e3f0e5a2ab7e052d89f7bb5a641b39516db32a036fc60c23746a5600f6e",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "pixeldrain",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/pixeldrain.py",
+    "source_file": "cyberdrop_dl/crawlers/pixeldrain.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "pixeldrain",
+    "crawler_class": "PixelDrainCrawler",
+    "decorators": [
+      "DownloadConfig",
+      "HTTPConfig"
+    ],
+    "domain": "pixeldrain",
+    "fixture_cases": [
+      {
+        "count": 0,
+        "description": "URLs from non whitelisted domains should be ignored",
+        "url": "https://evil-pixeldrain.net/u/QMMLJjmb"
+      },
+      {
+        "count": 1,
+        "url": "https://pixeldrain.net/u/QMMLJjmb"
+      },
+      {
+        "count": 1,
+        "url": "https://pd.1drv.eu.org/QMMLJjmb"
+      },
+      {
+        "count": 1,
+        "description": "folder with an specific file selected (#4, index 3)",
+        "url": "https://pixeldrain.net/l/xe5AJy9v"
+      },
+      {
+        "count": 4,
+        "description": "folder",
+        "url": "https://pixeldrain.net/l/xe5AJy9v"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/pixeldrain.py",
+    "local_hook_target": {
+      "class": "PixeldrainProvider",
+      "module": "engine.providers.hosted"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__json_resp_check__",
+      "__post_init__",
+      "_file",
+      "_files",
+      "_filesystem",
+      "_prepare_headers",
+      "_text",
+      "fetch",
+      "file",
+      "filesystem",
+      "folder",
+      "subfolder",
+      "transform_url",
+      "walk_filesystem"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "pixeldrain",
+    "rate_limits": {
+      "rate_limit_window_seconds": 1,
+      "requests_per_second": 10.0
+    },
+    "request_contracts": [],
+    "selectors": [
+      ". Falling back to downloading the entire folder",
+      ".search_index.gz",
+      "Unknown node type:",
+      "pd.1drv.eu.org",
+      "pd.cybar.xyz",
+      "pixeldra.in",
+      "pixeldrain.biz",
+      "pixeldrain.com",
+      "pixeldrain.dev",
+      "pixeldrain.net",
+      "pixeldrain.nl",
+      "pixeldrain.tech"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/pixeldrain.py",
+    "supported_domains": [
+      "pixeldrain.com",
+      "pixeldrain.net",
+      "pixeldra.in",
+      "pixeldrain.nl",
+      "pixeldrain.biz",
+      "pixeldrain.tech",
+      "pixeldrain.dev"
+    ],
+    "supported_paths": {
+      "**NOTE**": "text files will not be downloaded but their content will be parsed for URLs",
+      "File": [
+        "/u/<file_id>",
+        "/l/<list_id>#item=<file_index>",
+        "/api/file/<file_id>"
+      ],
+      "Filesystem": [
+        "/d/<id>",
+        "/api/filesystem/<path>..."
+      ],
+      "Folder": [
+        "/l/<list_id>",
+        "/api/list/<list_id>"
+      ]
+    },
+    "warnings": []
+  }
+}

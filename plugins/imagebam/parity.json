@@ -1,0 +1,95 @@
+{
+  "crawler": "imagebam",
+  "generated": {
+    "source_sha256": "6a3f6398f815e44995ca996d2e491701cf53310786b36140fbe124540f887378",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "imagebam",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/imagebam.py",
+    "source_file": "cyberdrop_dl/crawlers/imagebam.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "imagebam",
+    "crawler_class": "ImageBamCrawler",
+    "decorators": [],
+    "domain": "imagebam",
+    "fixture_cases": [
+      {
+        "url": "https://www.imagebam.com/image/9b65e0342494935"
+      },
+      {
+        "url": "https://images3.imagebam.com/eb/21/02/9b65e0342494935.JPG"
+      },
+      {
+        "url": "https://thumbs3.imagebam.com/eb/21/02/9b65e0342494935.JPG"
+      },
+      {
+        "url": "https://www.imagebam.com/gallery/hfqrglgtcf4u143xlnvkpfksofn1et7w"
+      },
+      {
+        "url": "https://www.imagebam.com/view/ME5IIKF"
+      },
+      {
+        "count": 4,
+        "url": "https://www.imagebam.com/view/GA2LOS"
+      },
+      {
+        "url": "https://thumbs4.imagebam.com/e5/ab/48/ME5IIKD_t.png"
+      },
+      {
+        "url": "https://images4.imagebam.com/e5/ab/48/ME5IIKD_o.png"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/imagebam.py",
+    "local_hook_target": {
+      "class": "ImageBamProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__async_post_init__",
+      "fetch",
+      "gallery",
+      "image",
+      "transform_url",
+      "view"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "imagebam",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "a#gallery-name",
+      "a.page-link[rel=next]",
+      "img.main-image",
+      "ul.images a.thumbnail"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/imagebam.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Gallery": "/gallery/<id>",
+      "Gallery or Image": "/view/<id>",
+      "Image": [
+        "/image/<id>",
+        "images<x>.imagebam.com/<id>"
+      ],
+      "Thumbnails": "thumbs<x>.imagebam.com/<id>"
+    },
+    "warnings": [
+      "reference operations not implemented locally: enumerate"
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "catalog": "challenge-rules/1",
+  "rules": [
+    {
+      "id": "cf-turnstile-html-v1",
+      "family": "cloudflare",
+      "challenge_type": "turnstile",
+      "required_capability": "widget_token",
+      "artifact_scope": "task_attempt",
+      "minimum_status": 400,
+      "body_markers": [
+        "cf-turnstile",
+        "turnstile"
+      ]
+    },
+    {
+      "id": "cf-challenge-platform-v1",
+      "family": "cloudflare",
+      "challenge_type": "browser_session",
+      "required_capability": "edge_clearance",
+      "artifact_scope": "host_identity",
+      "minimum_status": 400,
+      "body_markers": [
+        "challenge-platform",
+        "just a moment"
+      ]
+    },
+    {
+      "id": "ddos-guard-v1",
+      "family": "ddos_guard",
+      "challenge_type": "browser_session",
+      "required_capability": "edge_clearance",
+      "artifact_scope": "host_identity",
+      "minimum_status": 403,
+      "body_markers": [
+        "ddos-guard"
+      ]
+    },
+    {
+      "id": "cf-turnstile-widget-v1",
+      "family": "cloudflare",
+      "challenge_type": "turnstile",
+      "required_capability": "widget_token",
+      "artifact_scope": "task_attempt",
+      "minimum_status": 0,
+      "body_markers": [
+        "class=\"cf-turnstile\"",
+        "challenges.cloudflare.com/turnstile"
+      ],
+      "confidence": "medium",
+      "automation": false
+    },
+    {
+      "id": "hcaptcha-widget-v1",
+      "family": "hcaptcha",
+      "challenge_type": "hcaptcha",
+      "required_capability": "widget_token",
+      "artifact_scope": "task_attempt",
+      "minimum_status": 0,
+      "body_markers": [
+        "class=\"h-captcha\"",
+        "hcaptcha.com/1/api.js"
+      ],
+      "confidence": "medium",
+      "automation": false
+    },
+    {
+      "id": "recaptcha-widget-v1",
+      "family": "recaptcha",
+      "challenge_type": "recaptcha_v2",
+      "required_capability": "widget_token",
+      "artifact_scope": "task_attempt",
+      "minimum_status": 0,
+      "body_markers": [
+        "class=\"g-recaptcha\"",
+        "google.com/recaptcha/api.js",
+        "recaptcha.net/recaptcha/api.js"
+      ],
+      "confidence": "medium",
+      "automation": false
+    }
+  ]
+}

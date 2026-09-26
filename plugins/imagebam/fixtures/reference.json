@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "url": "https://www.imagebam.com/image/9b65e0342494935"
+    },
+    {
+      "url": "https://images3.imagebam.com/eb/21/02/9b65e0342494935.JPG"
+    },
+    {
+      "url": "https://thumbs3.imagebam.com/eb/21/02/9b65e0342494935.JPG"
+    },
+    {
+      "url": "https://www.imagebam.com/gallery/hfqrglgtcf4u143xlnvkpfksofn1et7w"
+    },
+    {
+      "url": "https://www.imagebam.com/view/ME5IIKF"
+    },
+    {
+      "count": 4,
+      "url": "https://www.imagebam.com/view/GA2LOS"
+    },
+    {
+      "url": "https://thumbs4.imagebam.com/e5/ab/48/ME5IIKD_t.png"
+    },
+    {
+      "url": "https://images4.imagebam.com/e5/ab/48/ME5IIKD_o.png"
+    }
+  ],
+  "crawler": "imagebam",
+  "provider_id": "imagebam"
+}

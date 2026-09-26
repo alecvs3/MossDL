@@ -1,0 +1,51 @@
+{
+  "cases": [
+    {
+      "url": "https://cyberfile.me/c5w9"
+    },
+    {
+      "url": "https://cyberfile.me/shared/-dprdwxcs8"
+    },
+    {
+      "url": "https://cyberfile.me/b8lt"
+    },
+    {
+      "count": 44,
+      "url": "https://cyberfile.me/shared/avk-q2uqnz"
+    },
+    {
+      "description": "Password protected folder, no password supplied",
+      "url": "https://cyberfile.me/folder/30cab170dd652309c8b8f25aaba4ec85/Autumn_Falls_JulesJordan_Videos"
+    },
+    {
+      "description": "Password protected folder, invalid password supplied",
+      "url": "https://cyberfile.me/folder/30cab170dd652309c8b8f25aaba4ec85/Autumn_Falls_JulesJordan_Videos"
+    },
+    {
+      "count": 6,
+      "description": "Password protected folder, valid password supplied",
+      "url": "https://cyberfile.me/folder/30cab170dd652309c8b8f25aaba4ec85/Autumn_Falls_JulesJordan_Videos"
+    },
+    {
+      "description": "Password protected file",
+      "url": "https://cyberfile.me/ktP2"
+    },
+    {
+      "url": "https://cyberfile.me/ktP2"
+    },
+    {
+      "description": "File with malformed download URL (in the slug)",
+      "url": "https://cyberfile.me/7cfu"
+    },
+    {
+      "description": "File with emojis in the name. This will fail on Windows and MacOS",
+      "url": "https://cyberfile.me/7cfq"
+    },
+    {
+      "description": "Shared folder w only 1 file should be 'loose files'",
+      "url": "https://cyberfile.me/shared/2c96uzj717"
+    }
+  ],
+  "crawler": "cyberfile",
+  "provider_id": "cyberfile"
+}

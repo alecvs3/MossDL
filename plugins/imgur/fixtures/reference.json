@@ -1,0 +1,21 @@
+{
+  "cases": [
+    {
+      "url": "https://imgur.com/gallery/something-wholesome-uvh9Obt"
+    },
+    {
+      "url": "https://imgur.com/a/uvh9Obt"
+    },
+    {
+      "url": "https://imgur.com/rKn1KVv"
+    },
+    {
+      "url": "https://imgur.com/gallery/broken-egg-by-huleeb-42gHAIK"
+    },
+    {
+      "url": "https://imgur.com/download/rKn1KVv"
+    }
+  ],
+  "crawler": "imgur",
+  "provider_id": "imgur"
+}

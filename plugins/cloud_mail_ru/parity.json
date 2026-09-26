@@ -1,0 +1,65 @@
+{
+  "crawler": "cloud_mail_ru",
+  "generated": {
+    "source_sha256": "59dcac0e9ad6477d06cd56b4fbf0682100f0dfe68cfde9ff2b21c1a2a86a7369",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "cloud_mail_ru",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/cloud_mail_ru.py",
+    "source_file": "cyberdrop_dl/crawlers/cloud_mail_ru.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "cloud_mail_ru",
+    "crawler_class": "CloudMailRuCrawler",
+    "decorators": [],
+    "domain": "cloud.mail.ru",
+    "fixture_cases": [
+      {
+        "url": "https://cloud.mail.ru/public/d1LR/hMBXG2mFo"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/cloud_mail_ru.py",
+    "local_hook_target": {
+      "class": "CloudMailRuProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__async_post_init__",
+      "_file",
+      "_get_dispacher_server",
+      "_request_info",
+      "_walk_folder",
+      "fetch",
+      "public",
+      "transform_url"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "cloud_mail_ru",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "cloud.mail.ru"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/cloud_mail_ru.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Public files / folders": "/public/<web_path>"
+    },
+    "warnings": []
+  }
+}

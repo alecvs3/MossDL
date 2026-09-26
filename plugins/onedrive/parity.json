@@ -1,0 +1,70 @@
+{
+  "crawler": "onedrive",
+  "generated": {
+    "source_sha256": "8bfed4f35fc7d633b665fb34d5b69c750303196565180bd4c8ad47d30f5c616e",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "onedrive",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/onedrive.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "onedrive",
+    "crawler_class": "OneDriveCrawler",
+    "decorators": [
+      "URLConfig"
+    ],
+    "domain": "onedrive",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "OneDriveProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__async_post_init__",
+      "__post_init__",
+      "fetch",
+      "get_badger_token",
+      "link_with_credentials",
+      "make_api_request",
+      "process_access_details",
+      "process_file",
+      "process_folder",
+      "share_link"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "onedrive",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "1drv.ms",
+      "onedrive.live.com"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/onedrive.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Access Link": "https://onedrive.live.com/?authkey=<KEY>&id=<ID>&cid=<CID>",
+      "Share Link (anyone can access)": [
+        "https://1drv.ms/t/<KEY>",
+        "https://1drv.ms/f/<KEY>",
+        "https://1drv.ms/b/<KEY>",
+        "https://1drv.ms/u/<KEY>"
+      ]
+    },
+    "warnings": []
+  }
+}

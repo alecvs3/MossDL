@@ -1,0 +1,106 @@
+/* Layout glue for the mock app. The real components style themselves through
+   src/figma/index.css and the page stylesheets; this file only supplies what
+   Tailwind utilities do in the React tree, plus a few "demo state" helpers
+   (a pressed button, a visible hover). */
+
+.mk-frame { position: absolute; border-radius: 9px; overflow: hidden; isolation: isolate;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.09), 0 34px 90px -14px rgba(0,0,0,0.65), 0 14px 34px -8px rgba(0,0,0,0.4); }
+.mk-frame.light { box-shadow: 0 0 0 1px rgba(20,40,30,0.12), 0 30px 80px -16px rgba(20,50,35,0.28), 0 10px 26px -8px rgba(20,50,35,0.16); }
+.mk-zoom { position: relative; }
+.mk-shell { position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; overflow: hidden; font-family: var(--font-ui); color: var(--text-primary); }
+.mk-noise { position: absolute; inset: 0; pointer-events: none; opacity: 0.035; z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 256px; }
+.mk-shell button { font-family: inherit; }
+
+/* Title bar */
+.mk-titlebar { display: flex; align-items: center; justify-content: space-between; height: 36px; padding-left: 12px; flex-shrink: 0;
+  background: var(--titlebar-bg); border-bottom: 1px solid var(--border-subtle); }
+.mk-tb-left { display: flex; align-items: center; gap: 8px; height: 100%; }
+.mk-appname { font-size: 11.5px; font-weight: 700; color: var(--text-secondary); letter-spacing: 0.02em; }
+.mk-winctl { display: flex; align-self: stretch; }
+.mk-winctl span { width: 46px; display: grid; place-items: center; color: var(--ink-70); }
+
+/* Toolbar, sidebar, body */
+.mk-toolbar { position: relative; z-index: 1; }
+/* index.css leaves toolbar labels white in the light theme; the mock shows them legibly. */
+.figma-shell[data-theme="daylight"] .dl-toolbar-label { color: var(--text-secondary); }
+.dl-toolbar-btn.mk-press { background: var(--surface-10); transform: scale(0.96); }
+.mk-body { position: relative; z-index: 1; display: flex; flex: 1; min-height: 0; }
+.mk-sidebar { width: 76px; flex-shrink: 0; display: flex; flex-direction: column; padding: 8px 0; border-right: 1px solid var(--line-06); background: var(--surface-02); }
+.mk-nav { display: flex; flex-direction: column; gap: 4px; padding: 0 6px; }
+.mk-nav .nav-item { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 100%; padding: 12px 0; border: 0; border-radius: 6px; }
+.mk-nav .nav-item.mk-hover:not(.active) { background: var(--surface-3); color: var(--text-primary); }
+.mk-navicon { position: relative; display: grid; }
+.mk-navlabel { font-size: 10px; font-weight: 600; letter-spacing: 0.01em; line-height: 1; }
+.mk-navbadge { position: absolute; top: -6px; right: -8px; min-width: 14px; height: 14px; padding: 0 4px; border-radius: 7px; display: grid; place-items: center; font-size: 8.5px; font-weight: 800; }
+.mk-navbadge.amber { background: #f59e0b; color: #000; }
+.mk-navbadge.sky { background: #0ea5e9; color: #fff; }
+.mk-main { flex: 1; min-width: 0; min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+
+/* Downloads header, filter, rows */
+.mk-dlhead { display: flex; align-items: center; gap: 12px; padding: 10px 16px 10px 20px; flex-shrink: 0; border-bottom: 1px solid var(--line-07); }
+.mk-dlhead-l { flex: 1; display: flex; align-items: center; gap: 8px; }
+.mk-dlhead h1 { margin: 0; font-size: 12.5px; font-weight: 700; color: var(--ink-90); }
+.mk-active { color: var(--ink-30); font-size: 9px; font-weight: 500; letter-spacing: 0.02em; }
+.mk-total { font: 9.5px var(--font-mono); color: var(--ink-30); }
+.mk-filter { display: flex; align-items: center; gap: 8px; width: 118px; padding: 4px 8px !important; font-size: 11px; color: var(--ink-25); }
+.mk-dltable { padding: 6px 12px 8px; }
+.mk-rows { display: flex; flex-direction: column; gap: 4px; }
+.mk-rows-tight { gap: 3px; }
+.mk-group { margin-top: 4px; }
+.mk-gl { font-size: 9.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+.mk-gc, .mk-gs { font: 9px var(--font-mono); color: var(--ink-25); }
+.mk-gs { margin-left: 4px; color: var(--ink-30); }
+.mk-namecell { min-width: 0; }
+.mk-name { margin: 0; font-size: 11px; font-weight: 600; color: var(--ink-85); line-height: 1.1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mk-sub { margin: 2px 0 0; font-size: 8.5px; color: var(--ink-20); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mk-mono9 { font: 9px var(--font-mono); white-space: nowrap; }
+.mk-trunc { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mk-badge { display: inline-flex; align-items: center; gap: 4px; max-width: 100%; padding: 2px 8px; border-radius: 999px; border: 1px solid transparent; font-size: 9.5px; font-weight: 600; white-space: nowrap; overflow: hidden; }
+.mk-bdot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.mk-spark { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.mk-spark b { font: 500 9px var(--font-mono); color: var(--success); white-space: nowrap; }
+.mk-rowacts { display: flex; gap: 4px; justify-content: flex-end; opacity: 0; }
+.mk-rowacts.on { opacity: 1; }
+.mk-rowacts .row-action-btn { width: 24px; height: 24px; display: grid; place-items: center; border-radius: 4px; }
+.dl-row.mk-flash { box-shadow: inset 2px 0 var(--accent-light), 0 0 0 1px var(--accent-line); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.dl-row-small.mk-flash { background: color-mix(in srgb, var(--success) 9%, transparent); border-color: color-mix(in srgb, var(--success) 26%, transparent); }
+
+/* History */
+.mk-hname { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.mk-expand { width: 22px; height: 22px; display: grid; place-items: center; color: var(--ink-45); }
+.mk-hfilters { display: flex; gap: 4px; margin-left: 4px; }
+.mk-hfilter { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 6px; border: 1px solid transparent; font-size: 10.5px; font-weight: 600; text-transform: capitalize; color: var(--ink-40); }
+.mk-hfilter.on { background: var(--surface-08); color: var(--ink-90); }
+.mk-actchip { display: inline-flex; align-items: center; gap: 4px; }
+
+/* Explore */
+.xp-url .mk-url { color: var(--ink-90); font-size: 12px; white-space: nowrap; }
+.xp-url .grow { flex: 1; }
+.xp-url.mk-focus { border-color: var(--accent-light); background: var(--surface-06); }
+.mk-caret { width: 1px; height: 15px; margin-left: 1px; background: var(--ink-90); }
+.mk-ph { color: var(--ink-30); font-size: 11.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mk-cb { width: 13px; height: 13px; border-radius: 3px; border: 1.5px solid var(--ink-30); display: inline-grid; place-items: center; }
+.mk-cb.on { background: var(--accent); border-color: var(--accent); }
+.xp-go.mk-press, .mk-press.btn-accent { filter: brightness(1.18); transform: scale(0.97); }
+.xp-row.mk-hover { background: var(--surface-05); }
+.xp-row.mk-hover .xp-check { opacity: 1; }
+.xp-hint.mk-show, .xp-act-primary.mk-show { opacity: 1; }
+.xp-row.mk-fresh { box-shadow: inset 3px 0 0 color-mix(in srgb, var(--accent-light) calc(var(--fresh, 1) * 100%), transparent);
+  background: color-mix(in srgb, var(--accent) calc(var(--fresh, 1) * 16%), transparent); }
+.xp-empty svg { color: var(--ink-25); }
+.xp-filter-q .mk-ph { flex: 1; font-size: 11.5px; }
+.xp-fi .mk-trunc { flex: 1; }
+
+/* Connections */
+.head-switch { white-space: nowrap; }
+.cx-row.mk-hover:not(.picked) { background: var(--surface-04); }
+.cx-search .mk-ph { font-size: 11.5px; }
+.cx-split.mk-nolist { grid-template-columns: minmax(0, 1fr); }
+.cx-locations-3.mk-noside { grid-template-columns: minmax(0, 1fr); }
+.cx-side-primary { width: 100%; }
+
+/* Captchas */
+.mk-input { flex: 1 1 240px; display: flex; align-items: center; }
+.cp-item-actions .ui-primary:disabled { opacity: 0.45; }
+.ui-btn.mk-press { background: var(--accent-soft); border-color: var(--accent-line); color: var(--ink-90); }

@@ -1,0 +1,70 @@
+{
+  "crawler": "pillowcase",
+  "generated": {
+    "source_sha256": "514f815971213d13c346e01c7f186ecbe087c0ad2d1eed5118c79c884aa1318a",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "pillowcase",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/pillowcase.py",
+    "source_file": "cyberdrop_dl/crawlers/pillowcase.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "pillowcase",
+    "crawler_class": "PillowCaseCrawler",
+    "decorators": [],
+    "domain": "pillowcase",
+    "fixture_cases": [
+      {
+        "count": 1,
+        "url": "https://pillows.su/f/19ebe13944c4d628277e09c3eed52d09"
+      },
+      {
+        "url": "https://pillowcase.su/f/19ebe13944c4d628277e09c3eed52d09"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/pillowcase.py",
+    "local_hook_target": {
+      "class": "PillowCaseProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__post_init__",
+      "fetch",
+      "file"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "pillowcase",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".",
+      ".txt",
+      "FILENAME:",
+      "pillowcase.su"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/pillowcase.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "File": [
+        "/f/<file_uid>",
+        "/api/download/<file_uid>",
+        "/api/get/<file_uid>",
+        "/api/metadata/<file_uid>.txt"
+      ]
+    },
+    "warnings": []
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "crawler": "doodstream",
+  "generated": {
+    "source_sha256": "c7d95a1bd4a9781a7bcdc46daba6528ae5418762d9f91790016a3cdf7236b9ad",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "doodstream",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/doodstream.py",
+    "source_file": "cyberdrop_dl/crawlers/doodstream.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "doodstream",
+    "crawler_class": "DoodStreamCrawler",
+    "decorators": [],
+    "domain": "doodstream",
+    "fixture_cases": [
+      {
+        "url": "https://doodstream.com/e/l1ebnruggzly"
+      },
+      {
+        "url": "https://playmogo.com/e/l1ebnruggzly"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/doodstream.py",
+    "local_hook_target": {
+      "class": "DoodstreamProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "_get_video_info",
+      "fetch",
+      "video"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "doodstream",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".mp4",
+      "all3do.com",
+      "d000d.com",
+      "div#video_player video",
+      "do7go.com",
+      "dood.re",
+      "dood.yt",
+      "doodstream.co",
+      "dooodster.com",
+      "myvidplay.com",
+      "playmogo.com",
+      "vidply.com"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/doodstream.py",
+    "supported_domains": [
+      "all3do.com",
+      "d000d.com",
+      "do7go.com",
+      "dood.re",
+      "dood.yt",
+      "doodcdn",
+      "doodstream.co",
+      "doodstream",
+      "myvidplay.com",
+      "playmogo.com",
+      "vidply.com",
+      "dooodster.com"
+    ],
+    "supported_paths": {
+      "Video": "/e/<video_id>"
+    },
+    "warnings": []
+  }
+}

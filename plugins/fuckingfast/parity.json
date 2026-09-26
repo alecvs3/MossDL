@@ -1,0 +1,56 @@
+{
+  "crawler": "fucking_fast",
+  "generated": {
+    "source_sha256": "3bbba9e032eb663b40c22de6de29d55b58c5b9ed2d54ab2cf6c877aa2b7025db",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "fuckingfast",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/fucking_fast.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "fucking_fast",
+    "crawler_class": "FuckingFastCrawler",
+    "decorators": [],
+    "domain": "fuckingfast.co",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "FuckingFastProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "fetch",
+      "file",
+      "transform_url"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "fuckingfast",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".link-button",
+      ".zip",
+      "fuckingfast.co"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/fucking_fast.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Direct links": "/<file_id>"
+    },
+    "warnings": []
+  }
+}

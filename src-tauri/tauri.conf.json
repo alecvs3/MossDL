@@ -1,0 +1,62 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "MossDL",
+  "version": "0.1.0",
+  "identifier": "ai.transfer.manager",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:1420",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "MossDL",
+        "decorations": false,
+        "resizable": true,
+        "visible": false,
+        "focus": true,
+        "width": 1180,
+        "height": 780,
+        "minWidth": 720,
+        "minHeight": 600,
+        "transparent": true,
+        "windowEffects": {
+          "effects": [
+            "mica"
+          ],
+          "state": "active"
+        }
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' data: blob:; connect-src 'self' ipc: http://ipc.localhost http://localhost:* ws://localhost:*"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/icon.ico",
+      "icons/icon.png"
+    ],
+    "resources": [
+      "../engine",
+      "../plugins",
+      "../browser_extension",
+      "../scripts/build_browser_extension.py",
+      "resources/transfer-engine",
+      "resources/transfer-core",
+      "resources/archive-worker"
+    ]
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "",
+      "endpoints": []
+    }
+  },
+  "mainBinaryName": "MossDL"
+}

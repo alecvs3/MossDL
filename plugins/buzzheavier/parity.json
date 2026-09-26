@@ -1,0 +1,56 @@
+{
+  "crawler": "buzzheavier",
+  "generated": {
+    "source_sha256": "eb980ceb3502b07ca27ff2f88dd4bab64f5ab99588b346ff1e04215b8d772a28",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "buzzheavier",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/buzzheavier.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "buzzheavier",
+    "crawler_class": "BuzzHeavierCrawler",
+    "decorators": [],
+    "domain": "buzzheavier.com",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "BuzzHeavierProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "fetch",
+      "file"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "buzzheavier",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".download-btn",
+      ".file-name",
+      ".zip",
+      "buzzheavier.com"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/buzzheavier.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Direct links": ""
+    },
+    "warnings": []
+  }
+}

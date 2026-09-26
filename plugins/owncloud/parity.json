@@ -1,0 +1,57 @@
+{
+  "crawler": "owncloud",
+  "generated": {
+    "source_sha256": "0a0ed3d1b2352a9cebce90fa66f272704378adbcb1e2b16546a622302ba9bdce",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "owncloud",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/owncloud.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "owncloud",
+    "crawler_class": "OwnCloudCrawler",
+    "decorators": [
+      "URLConfig"
+    ],
+    "domain": null,
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "OwnCloudProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "_file",
+      "fetch",
+      "public_share",
+      "request_webdav"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "owncloud",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [],
+    "source_file": "cyberdrop_dl/crawlers/owncloud.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Public Share": "/s/<share_token>"
+    },
+    "warnings": []
+  }
+}

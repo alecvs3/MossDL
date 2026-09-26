@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MossDL demo</title>
+<script src="../kit/load.js"></script>
+<link rel="stylesheet" href="demo.css">
+</head>
+<body>
+<!-- A 1600x900 stage. Open this file to watch it play (click pauses, arrows step);
+     docs/brand/render.py records it frame by frame with ?capture=1. -->
+<div class="stage" id="stage">
+  <div id="backdrop" style="inset:0"></div>
+  <div class="glow" style="left:980px;top:300px;width:620px;height:440px;background:rgba(47,158,104,0.28)"></div>
+  <div class="mk-frame" id="cam" style="left:150px;top:58px;width:1300px;height:770px">
+    <div class="mk-zoom" id="app" style="zoom:1.15;width:1130.43px;height:669.57px"></div>
+  </div>
+  <div id="fx"></div>
+  <div id="titles"></div>
+  <div id="caption"></div>
+  <div id="cursor"></div>
+  <div class="grain"></div>
+</div>
+<script src="engine.js"></script>
+<script src="text.js"></script>
+<script src="timeline.js"></script>
+<script src="titles.js"></script>
+<script src="player.js"></script>
+</body>
+</html>

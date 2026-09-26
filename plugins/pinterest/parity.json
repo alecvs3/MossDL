@@ -1,0 +1,66 @@
+{
+  "crawler": "pinterest",
+  "generated": {
+    "source_sha256": "4b8b63a707971dea9709db57d2240a039888d3757eab838ff5e47a32765739ea",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "pinterest",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/pinterest.py",
+    "source_file": "cyberdrop_dl/crawlers/pinterest.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "pinterest",
+    "crawler_class": "PinterestCrawler",
+    "decorators": [],
+    "domain": "pinterest",
+    "fixture_cases": [],
+    "fixture_file": "tests/crawlers/test_cases/pinterest.py",
+    "local_hook_target": {
+      "class": "PinterestProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__async_post_init__",
+      "__post_init__",
+      "_board",
+      "_get_token",
+      "_m3u8_media",
+      "_media",
+      "_pin",
+      "board",
+      "fetch",
+      "pin",
+      "user"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "pinterest",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".m3u8",
+      ".mp4",
+      "www.pinterest.com"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/pinterest.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Board": "/<user>/<slug>",
+      "Pin": "/pin/<pin_id>",
+      "User Boards": "/<user>"
+    },
+    "warnings": []
+  }
+}

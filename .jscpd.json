@@ -1,0 +1,17 @@
+{
+  "threshold": 10,
+  "reporters": [
+    "console"
+  ],
+  "ignore": [
+    "**/node_modules/**",
+    "**/clone_reference/**",
+    "**/.planning/**",
+    "**/dist/**",
+    "**/src-tauri/target/**",
+    "**/.test-artifacts/**",
+    "**/hars/**",
+    "**/plugins/**/manifest.jsonc"
+  ],
+  "absolute": true
+}

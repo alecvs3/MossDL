@@ -1,0 +1,13 @@
+{
+  "category": "file-host",
+  "schema_version": 1,
+  "roles": ["resolver"],
+  "id": "krakenfiles",
+  "version": "1.0.0",
+  "display_name": "Krakenfiles",
+  "hosts": ["krakenfiles.com"],
+  "match": { "schemes": ["https"], "path_regex": ".*" },
+  "capabilities": { "http": true, "refresh": true, "ranges": true },
+  "limits": { "max_concurrent_items": 2, "requests_per_second": 4 },
+  "hooks": { "resolve": "resolve", "refresh": "refresh" }
+}

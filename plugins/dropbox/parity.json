@@ -1,0 +1,87 @@
+{
+  "crawler": "dropbox",
+  "generated": {
+    "source_sha256": "e9abea8cfb5896e5eb9086727d9e2f9c9513610a83a45323871bfc007ac8679a",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "dropbox",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/dropbox.py",
+    "source_file": "cyberdrop_dl/crawlers/dropbox.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "dropbox",
+    "crawler_class": "DropboxCrawler",
+    "decorators": [],
+    "domain": "dropbox",
+    "fixture_cases": [
+      {
+        "description": "folder with a single file inside",
+        "url": "https://www.dropbox.com/scl/fo/6rtuuvcnhe8e0oivnfqtx/AO-LDPRIE_wqGhz8ZyLPWY0?rlkey=zbjcf274goirtfak2prmizi5p&dl=0"
+      },
+      {
+        "count": 15,
+        "url": "https://www.dropbox.com/scl/fo/igg7i2bazu3g689tqf0i2/h?rlkey=kwqk2vzmiebn9esfgxsm25kaz&dl=0"
+      },
+      {
+        "description": "folder with subfolder",
+        "url": "https://www.dropbox.com/scl/fo/vdsh28mtrlz2dhgazoi6z/AFej9CAhhoEQJo4YDhlbZ0I?dl=0&rlkey=0887klgp6506j3jdy54dnwa6c"
+      },
+      {
+        "description": "zipfile. It has a folder URL but is a single file",
+        "url": "https://www.dropbox.com/scl/fo/vyuocyiqz1j93d71bdz18/ALdJdvzyF0lkH94c8dhztuw/afrojack_presskit_2014.zip?rlkey=hx60uhd3u1cecajczl1x9zn1l&e=1&dl=0"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/dropbox.py",
+    "local_hook_target": {
+      "class": "DropboxProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__async_post_init__",
+      "_ensure_rlkey",
+      "_file",
+      "_get_web_token",
+      "_walk_folder",
+      "_web_api_pager",
+      "fetch",
+      "file",
+      "folder",
+      "follow_db_redirect"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "dropbox",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [],
+    "source_file": "cyberdrop_dl/crawlers/dropbox.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "File": [
+        "/s/...",
+        "/scl/fi/<link_key>?rlkey=...",
+        "/scl/fo/<link_key>/<secure_hash>?preview=<filename>&rlkey=..."
+      ],
+      "Folder": [
+        "/sh/...",
+        "/scl/fo/<link_key>/<secure_hash>?rlkey=..."
+      ]
+    },
+    "warnings": [
+      "reference operations not implemented locally: enumerate"
+    ]
+  }
+}

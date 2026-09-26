@@ -1,0 +1,8636 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "host": "02ip.ru",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "10beasts.biz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "10short.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "1bitspace.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "1ink.cc",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "1link.club",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "1link",
+        "onelink"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "1link.vip",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "1short.io",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "1shortlink.com",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "1shortlink"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "1v.to",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "2linkes.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "2no.co",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "2the.space",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "365myoffice.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "4ace.online",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "4fnet.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "4hi.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "4shared.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "fourshared"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "5play.ru",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "fiveplay"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "7misr4day.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "8tm.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "a4a.site",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ac.totsugeki.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "acorme.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "acorta2.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "acortalink.me",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "acortalink"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "acortaphd.live",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "acorte.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ad4msan.win",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "adbtc.top",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "adbypass.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "adfoc.us",
+      "sources": [
+        "basd",
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "admiregirls-byme.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "adobedownload.org",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "adoc.pub",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "adpayl.ink",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "adsafelink.net",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "adsense.tupaste.top",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "adshnk.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "adshrink.it",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "adtival.network",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "adtival"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "advisecreate.fun",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "adz7short.space",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "aipebel.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "akash.classicoder",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "akcartoons.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "akoam.to",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "akoam"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "akw.to",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "akwam"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "akwam.org",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "akwam"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "all-fans.online",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "almontsf.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "alorra.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "altearnativasa.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "amanguides.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "an1.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "an1"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "anchoreth.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "androidtop.net",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "androidtop"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "animesgd.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "anmolbetiyojana.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "anonym.ninja",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "anonym"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "anonym.to",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "anonymfile.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "anonymz.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "antonimos.de",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "api.gplinks.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "api.php",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "apkadmin.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "apkhubs.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "apkhubs"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "apkmos.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "sfile"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "apkw.ru",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "aplicacionpara.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "app.khaddavi.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "app.link2unlock.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "app2.olamovies.download",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "article24.online",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "aryx.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "asdfiles.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "filefactory"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "ashrfd.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "asideway.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "askerlikforum.com.tr",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "askpaccosi.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "atglinks.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "atomicatlas.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "autodime.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "autofaucet.dutchycorp.space",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "awsubsco.cf",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "awsubsco.ml",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ay.live",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "aylink.co",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "aysodamag.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "azmath.info",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "aztravels.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "b.link",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "badgirlsdrop.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "bangclinic.life",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "bdzone.xyz",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "bebkub.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "beermoneyforum.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "beinglink.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "bercara.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "besargaji.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "bestfonts.pro",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "bewbin.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "bgmiaimassist.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "bigbtc.win",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "biharkhabar.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "binerfile.info",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "birdurls.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "bit.ly",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "bit4me.info",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "bitcotasks.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "bjp.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "blackmod.net",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "blasze.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "blasze.tk",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "blitly.io",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "blitly"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "blog.adscryp.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "blog.bloggerishyt.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "blog.disheye.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "blog.filepresident.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "blog.graphicuv.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "blog.klublog.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "blog.yurasu.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "bloggerishyt.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "bloggerpemula.pythonanywhere.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "blogging.techworldx.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "bloggingwow.store",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "blogspot.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "blogtechh.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "blogtech"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "bluemediafile.sbs",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "bluemediafile"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "bluemediafile.site",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "bluemediafile"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "bluemediafiles.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "bluemediafile"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "bluetechno.net",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "mobi2c"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "boiscd.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "bookszone.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "boost.ink",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "boost"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "bowfile.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "brpaper.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "brpaper"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "bstlar.com",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "bstlar"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "btcon.online",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "buff.ly",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "bursadrakor.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "bvog.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "bypass.city",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "camdigest.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "camnangvay.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cararoot.id",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "caraterbaik.my.id",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cariskuy.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "catsnthing.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "catsnthings.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "catsnthings.fun",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cb.click",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "cbrun"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "cb.run",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "cbrun"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "ceesty.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cekip.site",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ceksite.id",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cemendemons.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "cemiw.net",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cgsonglyricz.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cheatsquad.gg",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "cheatsquad"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "claimcrypto.cc",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "click.convertkit-mail.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "click.linksynergy.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "clictune.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "clictune"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "clk.kim",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "clk.sh",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "coinclix.co",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "coincroco.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "coinhub.wiki",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "coinilium.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "coinscap.info",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "coinsrev.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cointox.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "comohoy.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "comomedir.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "complete2unlock.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "complete2unlock"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "constanteonline.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cookad.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "copydev.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "corneey.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cosmobox.org",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "filefactory"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "count.vipurl.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "courselinkfree.us",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cpmlink.net",
+      "sources": [
+        "basd",
+        "fastforward",
+        "fastforward-rules"
+      ],
+      "definitions": [
+        "cpmlink"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "cpmlink.pro",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "crackedappsstore.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "crackedappsstore"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "creditcable.info",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "creditsgoal.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "crm.cekresi.me",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cryptings.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cryptly.site",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "crypto-fi.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cryptoinsights.site",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cryptomonitor.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cryptonews.faucetbin",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cryptonewssite.rf.gd",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cryptorex.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cryptorotator.website",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cshort.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "curiouscat.club",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "curseforge.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "curseforge"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "curto.win",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cutnet.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cutt.ly",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "cuturl.cc",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dailyuploads.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "daominhha.com/download",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "daominhha"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "datanodes.to",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dataupload.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dateing.club",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dayuploads.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dbree.me",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dddrive.me",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ddownload.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dear-lottery.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "defencewallah.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dekhe.click",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "delpez.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "deltabtc.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "depravityweb.co",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "desiupload.co",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "devdrive.cloud",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "filefactory"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "dhamakamusic.ink",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dietadisociada.info",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dikatekno.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dinheiromoney.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dis.gd",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "discord.kim",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "disheye.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "disq.us",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dixva.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "djbassking.live",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dl.pcgamestorrents.org",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "pcgamestorrents"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "dlandroid.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "getwallpapers"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "dlink2.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "clictune"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "dlink2.net",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "clictune"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "dlink4.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "clictune"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "docadvice.eu",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dogefury.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "doodrive.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "douploads.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dow-dow-dow-dow-dow.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "down.mdiaload",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "downfile.site",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "download.modsofapk.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "getwallpapers"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "downloadani.me",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "downloader.tips",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dramaday.me",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "drinkspartner.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "droidtamvan.me",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "drop.download",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dropgalaxy.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "droplink.co",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dsmusic.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "duit.cc",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dutchycorp.ovh",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dutchycorp.space",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "dw-anime.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "earnbee.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "earnbox.sattakingcharts.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "earningtime.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "earnme.club",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "earnme"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "earnmoneyyt.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "easy4skip.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "easylink.gamingwithtr.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "easyupload.io",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ecleneue.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "eldiario24hrs.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "empebau.eu",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "emulator.games",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "firefaucet"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "encurtads.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "enlacito.com",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "enlacito"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "epicload.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "evegor.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ewall.biz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "exactpay.online",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "exblog.jp",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "exe-urls.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "exego.app",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "exeo.app",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "extramovies.casa",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ez4mods.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ez4short.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ezstat.ru",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "f2h.io",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "falpus.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "fansmega.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "fansonlinehub.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "faucetsatoshi.site",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "favpng.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "favpng"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "fbol.top",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "fc-lc.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "fclc"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "fc-lc.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "fex.net",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "getwallpapers"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "file-upload.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "filefactory"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "file-upload.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "file-upload.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "filedm.com",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "filedm"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "filefactory.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "filefactory"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "filehorse.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "filehorse"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "filekita.me",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "filemoon.sx",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "filepuma.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "filepuma",
+        "longfiles"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "fileresources.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "files.fm",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "filespayouts.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "financacerta.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "financedoze.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "financenova.online",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "financenuz.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "financeyogi.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "financialstudy.me",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "finish.wlink.us",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "firefaucet.win",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "firefaucet"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "fishingbreeze.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "fitdynamos.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "fiuxy2.co",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "flamebook.eu.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "flash.getpczone.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "fluxteam.xyz",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "flyad.vip",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "flycutlink.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "folderenius.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "foodtechnos.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "forek.info",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "forex-22.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "forex-gold.net",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "mobi2c"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "forex-trnd.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "forex1pro.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "forex1pro"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "forexit.online",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "mobi2c"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "forocoches.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "fortnight.space",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "fortnitechat.site",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "frdl.is",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "free-leaks.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "freeat30.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "freebooter.pro",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "freegiftcards.co",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "freemodsapp.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "freepreset.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "freetutsdownload.net",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "fssquad.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "fssquad"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "fuglekos.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gadgetsweb.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gadifeed.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gally.shop",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gamalk-sehetk.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "mobi2c"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "gamcabd.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gamechilly.online",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gamerking.shop",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gamesmega.net",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "gamesmega"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "gamezigg.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gaming-at-my.best",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gamingfun.me",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gate.sc",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gdflix.dad",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gdslink.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "get-click2.blogspot.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "get2clickblogspot"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "get.cloudfam.io",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "get.instantearn.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "get.megaurl.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "get.rahim-soft.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "getfile.mobi",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "getpdf.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "getunic.info",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "getwallpapers.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "getwallpapers"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "giga74.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gilakerja.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gitlink.pro",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gixen.com/home_1.php",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "gixen"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "gkfun.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "go.bloggingaro.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "go.linkify.ru",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "go.moonlinks.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "go.paylinks.cloud",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "go.php",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "go.redirectingat.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "go.tnshort.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "go.zovo.ink",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gocmod.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gofile.to",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gold-24.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "goldmega.online",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "golink.bloggerishyt.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gomob.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "goo.gl",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "goo.st",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "goodssh.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "goodssh.com/li/go.php",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "squidssh"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "gotravelgo.space",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "grabify.link",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "grandmovie21.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "greenmountmotors.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gslink.co",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gtaall.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gubukbisnis.me",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gyanigurus.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gyanitheme.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gyazo.in",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gyazo.nl",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "gyazos.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "haipedia.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "hamody.pro",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "handydecor.com.vn",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "haxi.online",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "hdblurayindir.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "hdpastes.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "headlinerpost.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "headshot.monster",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "healdad.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "mobi2c"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "healthinsider.online",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "healthvainsure.site",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "healthy4pepole.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "mobi2c"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "hfiz.site",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "hidereferrer.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "highkeyfinance.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "hightech.web.id",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "hikarinoakari.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "hikarinoakariost.info",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "hitfile.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "hondachat.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "hotstars-leaks.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "hubdrive.me",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "hulblog.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "hypershort.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "icerik.site",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "lnk"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "iconicblogger.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "icutlink.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "idnation.net",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "idnation"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "ielts-isa.edu.vn",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ify.ac",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "iir.la",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ikramlar.online",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "imagereviser.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "imageshare.best",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "imgur.com.de",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "importantclass.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "in11.site",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "index.php",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "indianshortner.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "indishare.org",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "indishare",
+        "longfiles"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "indobo.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "infonerd.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "infosia.xyz",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "infotekno.net",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "inicerita.online",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "inshortnote.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "instander.me",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "instanders.app",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "instant-hack.to",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "instaserve.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "insurancegold.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ipamod.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ipgrab.org",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ipgrabber.ru",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ipgraber.ru",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "iplhd.cf",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "iplis.ru",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "iplo.ru",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "iplogger.co",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "iplogger.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "iplogger.info",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "iplogger.org",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "iplogger.ru",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "itijobalert.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "itsbx.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "itscybertech.com",
+      "sources": [
+        "basd",
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "jameen.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "japanpaw.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "jioupload.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "jioupload.icu",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "jobinmeghalaya.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "jobzhub.store",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "jobzspk.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "joinmy.site",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "jrlinks.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "k2nblog.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "k2s.cc",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "getwallpapers"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "kaomojihub.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "karanpc.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "karyawan.co.id",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "katfile.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "kbconlinegame.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "keedabankingnews.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "keeplinks.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "kharismanews.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "kingshortener.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "kisalt.digital",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "knowiz0.blogspot.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "kurosafety.menantisenja.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "kut.li",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "kvkparbhani.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "labgame.io",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "lajangspot.web.id",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "land.povathemes.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "lanoticia.cc",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "lanza.me",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "largestpanel.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "leakutopia.site",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "leancoding.co",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "learnmany.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "leechall.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "leechpremium.link",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "leitup.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "leitup"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "letsboost.net",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "letsboost"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "liblink.pl",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "liblink"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "librolandia.cc",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "librospdfgratismundo.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "lifgam.online",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "linegee.net",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "linegee"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "linepc.site",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "link-to.net",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "linkvertise"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "link.manudatos.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "link.paid4link.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "link.theflash.eu.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "link.unlockner.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "link.whf.bz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "link4earn.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "linkbox.to",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "linkforearn.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "linkjust.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "linkmo.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "links-loot.com",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "lootlink"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "links.cuevana.ac",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "links.kmhd.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "links.shortenbuddy.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "shortenbuddy"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "linkshortify.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "linksht.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "linksht"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "linksloot.net",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "lootlink"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "linksly.co",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "linkspy.cc",
+      "sources": [
+        "basd",
+        "fastforward",
+        "fastforward-rules"
+      ],
+      "definitions": [
+        "linkspy"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "linkvertise.com",
+      "sources": [
+        "basd",
+        "fastforward",
+        "fastforward-rules"
+      ],
+      "definitions": [
+        "linkvertise"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "linkvertise.net",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "linkvertise"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "linx.cc",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "liputannubi.net",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "litecoin.host",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "liveshootv.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "lkc21.net",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "lkc21"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "lkfms.pro",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "lksfy.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "lksfy.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "lnbz.la",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "lnk.news",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "lnk.parts",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "lnk"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "lnk2.cc",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "lnk2",
+        "lnk2cc"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "lnks.primarchweb.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "loanoffer.cc",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "locations.quest",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "lolinez.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "lompat.in",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "longfiles.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "longfiles"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "loot-link.com",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "lootlink"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "loot-links.com",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "lootlink"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "lootdest.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "lootlink"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "lootdest.info",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "lootlink"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "lootdest.org",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "lootlink"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "lootlink.org",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "lootlink"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "lootlinks.co",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "lootlink"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "lopteapi.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "losstor.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "lovebird.guru",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "m.flyad.vip",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "macdownload.org",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "made-by.org",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "magersari.web.id",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "main.php",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "maloma3arbi.blogspot.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "manga4nx.site",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mangalist.org",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "mangalist"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "manishclasses.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "manualsbooks.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "manualsbooks"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "maranhesduve.club",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "masreyhan.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mastramstories.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mayas.travel",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mazen-ve3.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mbantul.my.id",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mboost.me",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mcpedl.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mdsuuniversity.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mega-guy.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "mega4up.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "filefactory"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "mega4upload.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "megadropz.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "megadumpz.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "megafly.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "megalink.pro",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "megalinks.info",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "megaup.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "megaupto.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "megaurl.in",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mendationforc.info",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "metasafelink.site",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mexa.sh",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mh.gourlpro.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "michaelemad.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "minhapostagem.top",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "minimilionario.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mirrored.to",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mispuani.xyz",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "misterio.ro",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mitly.us",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mixrootmod.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mkvmoviespoint.casa",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mobi2c.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "mobi2c"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "mobile01.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mobilemodsapk.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "getwallpapers"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "mobilenagari.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mobitaak.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "mobi2c"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "modcombo.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "modebaca.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "modmania.eu.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "modsbase.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "modsfire.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mohtawaa.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "money.hustlershub.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "moneyblink.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "monoschinos.club",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "moonplusnews.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "motakhokhara.blogspot.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mp4upload.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mphealth.online",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mrproblogger.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mtmanagers.pro",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "multiup.io",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mundodocinema.ga",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mundopolo.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "musicc.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mydramalist.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "mydramalist"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "myfirstdollar.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "mymastah.xyz",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "myscheme.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "myshrinker.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "network-loop.com",
+      "sources": [
+        "built-in-safe-pattern"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "neverdims.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "newassets.hcaptcha.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "newforex.online",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "mobi2c"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "newhealthblog.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "news-gg.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "newsdecorate.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "newsminer.uno",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "newsociety0.co",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "newzwala.co",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "nidbd.me",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "nimebatch.net",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "nishankhatri.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "noodlemagazine.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "noriskdomain.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "noticia.php",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "novicearea.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "nurhamka.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "nyantaidulu.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "nyushuemu.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "nzarticles.pro",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "o-pro.online",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ocultandoo.blogspot.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "oei.la",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "offerboom.top",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "offerwall.me",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ofilmetorrent.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ofpacksmega.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "oii.io",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "oii.la",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "oii.si",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "oko.sh",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "blogtech",
+        "oko"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "olhonagrana.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "omglyrics.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "onepieceex.net",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "onepieceex"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "online-fix.me/ext",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "onlinefix"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "onlinetechsolution.link",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "onlinetntextbooks.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "only-fun.xyz",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "onlymega.co",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "onlypc.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ontechhindi.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "oracle.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "oracle"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "ouo.io",
+      "sources": [
+        "basd",
+        "fastforward",
+        "fastforward-rules"
+      ],
+      "definitions": [
+        "ouo"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "ouo.press",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "ouo"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "ouo.today",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "out.reddit.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "out.x-forex.site",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ovagames.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ow.ly",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "owllink.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "owoanime.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "oxy.cloud",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "oxy"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "oydir.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "p3dm.ru",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pafpaf.info",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "page.link",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pahe.plus",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pahe.win",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pallabmobile.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pandagamepad.co",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pandaznetwork.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pantauterus.me",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "panyhealth.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "partpicker.shop",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pasardownload.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "passivecryptos.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "paste.japan-paw.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pastebin.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "paster.gg",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "paster.so",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pastescript.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pastesmkv.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "payalgaming.co.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "paycut.pro",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pdfcoffee.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pelistop.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "petly.lat",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pirateproxy.wtf",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "pirateproxy"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "pixelshost.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pixiv.net",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "platinsport.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "playnano.online",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "playonpc.online",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "playpaste.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "playpastelinks.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pnp-drops.me",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "portableapps.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "longfiles",
+        "portableapps"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "posicionamientoweb.click",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "postalcode.com.pk",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "posterify.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "postku.org",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "premiumstashdrop.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "privatenudes.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "prntcrs.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "progaming.monster",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "programasvirtualespc.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pronosparadise.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ps3cfw.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ps4linux.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "ps4linux"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "psccapk.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pubghighdamage.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pwrpa.cc",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "pxanimeurdu.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "qiwi.gg",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "quesignifi.ca",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "quickeemail.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "rahwana.xyz",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "rapidgator.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "rareofhub.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "raretoonsindia.rtilinks.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "rb.gy",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "rcccn.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "readytechflip.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "rebrand.ly",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "rekonise.com",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "rekonise"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "reminimod.co",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "remiyu.me",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "render-state.to",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "revlink.pro",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "revly.click",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "rfaucet.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "rg.sattakingcharts.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "rikucan.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "rocklinks.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "rodimalam.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "rokni.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "rotizer.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "rtilinks.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ryn.cc",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "ryn"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "ryuugames.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "safelink.hargawebsite.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "safelinkconverter.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "safelinkgratis.info",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "safelinkreview.co",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "safelinkreview.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "safelinkreviewx.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "safelinku.icu",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "saferoms.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "safez.es",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sammobile.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "getwallpapers"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "sastainsurance.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "screenshot.best",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "secret-links.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "secretpack-links.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "secure.bgmiupdate.com.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "secure.moderngyan.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "segurosdevida.site",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sehuruf.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sekilastekno.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sekolahgan.my.id",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "semawur.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "seriezloaded.com.ng",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "servicemassar.ma",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "set.seturl.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "setroom.biz.id",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "seulink.digital",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "seulink.online",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sewdamp3.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sexyforums.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sfile.mobi",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "sfile"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "sfile.xyz",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "sfile"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "sfirmware.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "firefaucet"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "sfl.gl",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sh.st",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "share4u.men",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shareasale-analytics.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shareasale.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sharefile.co",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sharemods.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sharetext.me",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shareus.io",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sharphindi.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sheralinks.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shiroyasha.me",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shon.xyz",
+      "sources": [
+        "basd",
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shopforex.online",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "mobi2c"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "shopizo.fun",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "short-info.link",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "short-ly.co",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "short-url.link",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "short.croclix.me",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shortcm.li",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shortex.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shortfaster.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shortie.sbs",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shortit.pw",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shortlinks2btc.somee.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shortly.xyz",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "shortly"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "shortmoz.link",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "shortmoz"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "shrekis.life",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shrink-service.it",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shrink.world",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shrinkads.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shrinke.me",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shrinkforearn.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shrs.link",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "shrtbr.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sinsitio.site",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "skillheadlines.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "skyfreecoins.top",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "skyve.io",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "slink.bid",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "smallshorts.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "social-unlock.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "socialwolvez.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "softpedia.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "softpedia"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "solidcoins.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sololevelingmanga.pics",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "solvetube.site",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "indishare",
+        "longfiles"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "sopasti.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sourceforge.net/projects/.+/files/.+/download",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "sourceforge"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "spacetica.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sparbuttantowa.pro",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "spaste.com",
+      "sources": [
+        "basd",
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "spaste.com/s",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "spaste"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "spaste.com/site",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "spaste"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "speedynews.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sphinxanime.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sportif.id",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sportshub.bar",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sproutworkers.co",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "squidssh.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "squidssh.com/li/go.php",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "squidssh"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "srt.am",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "srtam"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "ss7.info",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "starsddl.me",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "steamcommumity.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "steamcommunity.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "stly.link",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "stockinsights.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "stockmarg.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "stopify.co",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sub2get.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sub2unlock.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "sub2unlock"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "sub4unlock.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "sub4unlock"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "subtituladas.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "subtituladas.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "sunci.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "surflink.tech",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "surl.gd",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "surl.li",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "syosetu.org",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "syosetu"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "t2m.io",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "taiyxd.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "takefile.link",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "tavernleaks.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "tawda.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "tech.hipsonyc.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "tech5s.co",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "techarmor.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "techfizia.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "techhubcap.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "techhype.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "techkhulasha.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "techrayzer.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "techreviewhub.store",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "techsl.online",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "techtnet.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "techxploitz.eu.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "techy.veganab.co",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "techyblogs.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "teknoasian.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "telolet.in",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "tempatwisata.pro",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "test.shrinkurl.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "tfly.link",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "thanks.tinygo.co",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "the2.link",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "theapknews.shop",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "thecryptoworld.site",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "thegadgetking.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "theglobaldiary.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "thelatintwistcafe.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "themezon.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "thepragatishilclasses.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "thepremium.online",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "thotpacks.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "thunder-appz.eu",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "tii.la",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "tii"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "tik.lat",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "tiklat"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "tiktokcounter.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "tiktokrealtime.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "tiny.ie",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "tl.gd",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "tlgd"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "tlkm.id",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "uiz"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "toilaquantri.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "tomxcontent.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "toonhub4u.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "topshare.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "tpayr.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "tpi.li",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "trangchu.news",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "travelinian.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "trendzguruji.me",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "trendzilla.club",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "triggeredplay.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "trimorspacks.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "trulove.guru",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "try2link.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "tucinehd.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "tuconstanteonline.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "tulink.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "tumangasdd.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "turbobit.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "tutwuri.id",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "tvi.la",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "u.to",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "getwallpapers"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "udlinks.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "udrop.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "uiz.app",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "uiz"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "uiz.io",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "uiz"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "unblockedgames.world",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "unlockapk.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "up-4ever.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "up-load.io",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "filefactory"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "updrop.link",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "upfiles.app",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "upfion.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "uploadev.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "uploadhaven.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "uploadking.net",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "uploadking"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "uploadrar.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "uploadrar"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "uploadrar.net",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "uploadrar"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "uploady.io",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "uprwssp.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "upshrink.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "uptomega.me",
+      "sources": [
+        "basd",
+        "fastforward"
+      ],
+      "definitions": [
+        "uploadrar"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "uqozy.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "urls.cx",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "urlx.one",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "urlz.fr",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "usandoapp.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "usanewstoday.club",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "earnme"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "usersdrive.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ux9.de",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "ux9"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "vbnmx.online",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "veganab.co",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "verpeliculasonline.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "vi-music.app",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "videolyrics.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "vidhidepro.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "viral.over-blog.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "viralmp3.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "vius.info",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "vk.com/away.php?to=",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "vk"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "vosan.co",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "vplink.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "w.linkspoint.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "wadooo.com",
+      "sources": [
+        "fastforward",
+        "fastforward-rules"
+      ],
+      "definitions": [
+        "wadooo"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "waezf.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "wastenews.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "web.admoneyclick.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "web1s.asia",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "web1s.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "webpanel.space",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "whatgame.xyz",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "whatstheirip.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "wii.si",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "wisatamu.my.id",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "woowebtools.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "wordcount.im",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "wordcounter.icu",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "work.ink",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "workink"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "workink.click",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "workclick"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "workupload.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "world-trips.net",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "mobi2c"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "world2our.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "mobi2c"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "worldwallpaper.top",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "wp.thunder-appz.eu.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "wp2host.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "writedroid.eu.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "writedroid.in",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "writeprofit.org",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "xn--yutube-iqc.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "xonnews.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "xprmpacks.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "admaven"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "xpshort.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "xtrabits.click",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ydfile.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "getwallpapers"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "yip.su",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "yitarx.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "yoshare.net",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "youramonkey.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "yourmy.monster",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "youtube.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "ytsubme.com",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "ytsubme"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "zaku.pro",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "zedge.net ",
+      "sources": [
+        "fastforward"
+      ],
+      "definitions": [
+        "getwallpapers"
+      ],
+      "status": "inventory"
+    },
+    {
+      "host": "zegtrends.com",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "zflas.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "zippynest.online",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "zodiark.xyz",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "zshort.io",
+      "sources": [
+        "basd"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    },
+    {
+      "host": "zxro.com",
+      "sources": [
+        "fastforward-rules"
+      ],
+      "definitions": [],
+      "status": "inventory"
+    }
+  ]
+}

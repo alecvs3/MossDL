@@ -1,0 +1,85 @@
+{
+  "crawler": "bandcamp",
+  "generated": {
+    "source_sha256": "8774a792abf3f42ede379087ee6105d1b67c48d9ebeb597e53a92fe741479b7b",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "bandcamp",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/bandcamp.py",
+    "source_file": "cyberdrop_dl/crawlers/bandcamp.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "bandcamp",
+    "crawler_class": "BandcampCrawler",
+    "decorators": [
+      "Crawler.db_path_builder"
+    ],
+    "domain": "bandcamp",
+    "fixture_cases": [
+      {
+        "url": "https://0101.bandcamp.com/track/mal-damour"
+      },
+      {
+        "url": "https://wetleg.bandcamp.com/album/moisturizer"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/bandcamp.py",
+    "local_hook_target": {
+      "class": "BandcampProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__post_init__",
+      "_get_best_format",
+      "_get_free_download",
+      "_get_page_info",
+      "_parse_formats",
+      "_stat_free_download",
+      "_track",
+      "album",
+      "fetch",
+      "song"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "bandcamp",
+    "rate_limits": {},
+    "request_contracts": [
+      {
+        "function": "download_url.replace",
+        "method": "GET",
+        "templates": [
+          "/download/",
+          "/statdownload/"
+        ]
+      }
+    ],
+    "selectors": [
+      ".",
+      ".rand",
+      "["
+    ],
+    "source_file": "cyberdrop_dl/crawlers/bandcamp.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Album": "/album/<slug>",
+      "Song": "/track/<slug>"
+    },
+    "warnings": [
+      "reference operations not implemented locally: enumerate"
+    ]
+  }
+}

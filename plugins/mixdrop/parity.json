@@ -1,0 +1,63 @@
+{
+  "crawler": "mixdrop",
+  "generated": {
+    "source_sha256": "d38fe0054a64f4ec87b899091b4af17a01c90a2bae3b82406913e8976eb131ba",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "mixdrop",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/mixdrop.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "mixdrop",
+    "crawler_class": "MixDropCrawler",
+    "decorators": [],
+    "domain": "mixdrop",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "MixdropProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "_prepare_headers",
+      "_request_file_info",
+      "fetch",
+      "file"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "mixdrop",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "MDCore.",
+      "div.tbl-c.title b"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/mixdrop.py",
+    "supported_domains": [
+      "mxdrop",
+      "mixdrop",
+      "m1xdrop"
+    ],
+    "supported_paths": {
+      "File": [
+        "/e/<file_id>",
+        "/f/<file_id>"
+      ]
+    },
+    "warnings": []
+  }
+}

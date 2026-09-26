@@ -1,0 +1,90 @@
+{
+  "crawler": "mediafire",
+  "generated": {
+    "source_sha256": "408ae068f0087c775276b4e8ca8dfdb70b03592866c0c0a104090b699ed7ac43",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "mediafire",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/mediafire.py",
+    "source_file": "cyberdrop_dl/crawlers/mediafire.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "mediafire",
+    "crawler_class": "MediaFireCrawler",
+    "decorators": [
+      "Crawler.db_path_builder",
+      "URLConfig"
+    ],
+    "domain": "mediafire",
+    "fixture_cases": [
+      {
+        "url": "https://www.mediafire.com/file/ctppmpm7giofsgv/ADOFAI.vpk/file"
+      },
+      {
+        "url": "https://www.mediafire.com/?511jd1358yxvf26="
+      },
+      {
+        "count": 11,
+        "url": "https://www.mediafire.com/folder/ixh40veo6hrc5/kcc_samples"
+      },
+      {
+        "count": 18,
+        "url": "https://www.mediafire.com/folder/m3sij67rizpb4/XJTU-SY_Bearing_Datasets"
+      },
+      {
+        "count": 36,
+        "url": "https://www.mediafire.com/folder/9a6a91cgbd7m8"
+      },
+      {
+        "description": "DMCA folder",
+        "fail": 410,
+        "url": "https://www.mediafire.com/folder/ujs6wzw0cecof/"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/mediafire.py",
+    "local_hook_target": {
+      "class": "MediaFireProvider",
+      "module": "engine.providers.hosted"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__json_resp_check__",
+      "__post_init__",
+      "_file",
+      "fetch",
+      "file",
+      "folder"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "mediafire",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "a#downloadButton"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/mediafire.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "File": [
+        "/file/<quick_key>",
+        "?<quick_key>"
+      ],
+      "Folder": "/folder/<folder_key>"
+    },
+    "warnings": []
+  }
+}

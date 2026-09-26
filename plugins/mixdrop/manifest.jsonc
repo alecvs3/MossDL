@@ -1,0 +1,51 @@
+{
+  "category": "video",
+  "capabilities": {
+    "folders": false,
+    "http": true,
+    "ranges": true,
+    "refresh": true
+  },
+  "display_name": "Mixdrop",
+  "hooks": {
+    "refresh": "refresh",
+    "resolve": "resolve"
+  },
+  "hosts": [
+    "mixdrop.co",
+    "mixdrop.to",
+    "mixdrop.sx",
+    "mixdrop.bz",
+    "mixdrop.ch",
+    "mixdrop.ag"
+  ],
+  "id": "mixdrop",
+  "implementation": "python",
+  "limits": {
+    "max_concurrent_items": 2,
+    "requests_per_second": 3
+  },
+  "match": {
+    "path_regex": ".*",
+    "schemes": [
+      "https",
+      "http"
+    ]
+  },
+  "permissions": {
+    "hosts": [
+      "mixdrop.co",
+      "mixdrop.to",
+      "mixdrop.sx",
+      "mixdrop.bz",
+      "mixdrop.ch",
+      "mixdrop.ag"
+    ],
+    "secrets": []
+  },
+  "roles": [
+    "resolver"
+  ],
+  "schema_version": 2,
+  "version": "cyberdrop-import-cyberdrop-import-1.0.0"
+}

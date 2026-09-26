@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MossDL feature card</title>
+<script src="../kit/load.js"></script>
+<link rel="stylesheet" href="scenes.css">
+</head>
+<body>
+<div class="stage" id="stage"></div>
+<script src="common.js"></script>
+<script src="features.js"></script>
+<script>
+  // ?f=downloads | explore | following | connections | captchas
+  const f = FEATURES[params.get("f") || "explore"];
+  const theme = "evergreen";
+  document.getElementById("stage").innerHTML = `
+    ${topo(1200, 700, [{ cx: 1120, cy: 40, count: 18, r0: 26, gap: 30, seed: 3 }, { cx: 40, cy: 760, count: 10, r0: 60, gap: 34, seed: 7, tilt: 0.3 }])}
+    <div class="glow" style="left:700px;top:220px;width:520px;height:380px;background:rgba(47,158,104,0.3)"></div>
+    ${f.visual(theme)}
+    <div class="feature-copy" style="left:72px;top:${f.top ?? 92}px">
+      <span class="eyebrow">${icon(f.icon, 15)} ${f.eyebrow}</span>
+      <h1 class="headline">${f.title}</h1>
+      <p class="lede">${f.lede}</p>
+      <div class="facts">${f.facts.map((x) => S.fact(...x)).join("")}</div>
+    </div>
+    <div class="feature-foot" style="left:72px;top:628px"><img src="${K.SRC}figma/assets/brand/mossdl-logo.svg" alt=""><b>MossDL</b> · free and open source</div>
+    <div class="grain"></div>`;
+  markReady();
+</script>
+</body>
+</html>

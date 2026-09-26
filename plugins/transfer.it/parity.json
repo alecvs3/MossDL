@@ -1,0 +1,65 @@
+{
+  "crawler": "transfer_it",
+  "generated": {
+    "source_sha256": "d7b2c14e83b7a7ac315b546f36569d9a2318c5aa13dd8430aec378ae44f6e294",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "transfer.it",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/transfer_it.py",
+    "source_file": "cyberdrop_dl/crawlers/transfer_it.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "transfer_it",
+    "crawler_class": "TransferItCrawler",
+    "decorators": [
+      "Crawler.db_path_builder",
+      "HTTPConfig.default_headers"
+    ],
+    "domain": "transfer.it",
+    "fixture_cases": [
+      {
+        "url": "https://transfer.it/t/mgxqsZtVCZCJ"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/transfer_it.py",
+    "local_hook_target": {
+      "class": "TransferItProvider",
+      "module": "engine.providers.transferit"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__post_init__",
+      "_file",
+      "_filesystem",
+      "fetch",
+      "transfer"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "transfer.it",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "transfer.it"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/transfer_it.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Transfer": "/t/<transfer_id>"
+    },
+    "warnings": []
+  }
+}

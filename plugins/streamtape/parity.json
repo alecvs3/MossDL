@@ -1,0 +1,55 @@
+{
+  "crawler": "streamtape",
+  "generated": {
+    "source_sha256": "85c9c299b2287429cc2860126986ce13fbf3ede50a4ce53599d1daa351f28d82",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "streamtape",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/streamtape.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "streamtape",
+    "crawler_class": "StreamtapeCrawler",
+    "decorators": [],
+    "domain": "streamtape.com",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "StreamtapeProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "fetch",
+      "video"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "streamtape",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "#ideoooolink",
+      "streamtape.com"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/streamtape.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Player": "/e/<video_id>",
+      "Videos": "/v/<video_id>"
+    },
+    "warnings": []
+  }
+}

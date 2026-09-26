@@ -1,0 +1,66 @@
+{
+  "crawler": "wordpress",
+  "generated": {
+    "source_sha256": "867f1b3ed2b5f51d211a52b36abe98381408737c7c22d53d1c5a01aa13c1efaf",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "wordpress_media",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/wordpress/__init__.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "wordpress",
+    "crawler_class": "WordPressMediaCrawler",
+    "decorators": [],
+    "domain": null,
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "WordPressMediaProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__collection",
+      "__init_subclass__",
+      "_post_pager",
+      "all_posts",
+      "category_or_tag",
+      "post"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "wordpress_media",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "#content .entry-content",
+      "#content .single-post-title",
+      ".",
+      ".wp-pagenavi .current + a[href]",
+      "[",
+      "a.page-numbers.next",
+      "article time.published",
+      "bestprettygirl.com",
+      "everia.club",
+      "html.parser",
+      "mitaku.net",
+      "ouo.io"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/wordpress/__init__.py",
+    "supported_domains": [],
+    "supported_paths": {},
+    "warnings": []
+  }
+}

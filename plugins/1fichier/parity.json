@@ -1,0 +1,92 @@
+{
+  "crawler": "onefichier",
+  "generated": {
+    "source_sha256": "b65c07ad3f962a47c72c56a04ae69efe166f62e852b93cc7aa92467fbd6e0d1c",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "1fichier",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/onefichier.py",
+    "source_file": "cyberdrop_dl/crawlers/onefichier.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "onefichier",
+    "crawler_class": "OneFichierCrawler",
+    "decorators": [
+      "DownloadConfig",
+      "HTTPConfig",
+      "URLConfig"
+    ],
+    "domain": "1fichier",
+    "fixture_cases": [
+      {
+        "url": "https://1fichier.com/?5n0mgbv5vm52t8091bxt="
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/onefichier.py",
+    "local_hook_target": {
+      "class": "OneFichierProvider",
+      "module": "engine.providers.hosted"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__async_post_init__",
+      "_request_download",
+      "_request_file",
+      "fetch",
+      "file",
+      "transform_url"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "1fichier",
+    "rate_limits": {
+      "rate_limit_window_seconds": 2,
+      "requests_per_second": 0.5
+    },
+    "request_contracts": [],
+    "selectors": [
+      "1fichier.com",
+      "Free download is temporarily disabled. Try again later",
+      "alterupload.com",
+      "cjoint.net",
+      "desfichiers.com",
+      "dfichiers.com",
+      "dl4free.com",
+      "megadl.fr",
+      "mesfichiers.org",
+      "piecejointe.net",
+      "pjointe.com",
+      "table td.normal span[style='font-weight:bold']",
+      "tenvoi.com"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/onefichier.py",
+    "supported_domains": [
+      "1fichier.com",
+      "alterupload.com",
+      "cjoint.net",
+      "desfichiers.com",
+      "dfichiers.com",
+      "megadl.fr",
+      "mesfichiers.org",
+      "piecejointe.net",
+      "pjointe.com",
+      "tenvoi.com",
+      "dl4free.com"
+    ],
+    "supported_paths": {
+      "File": "?<file_id>"
+    },
+    "warnings": []
+  }
+}

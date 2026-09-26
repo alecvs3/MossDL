@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "url": "https://fileditchfiles.me/file.php?f=%2Fb71%2FFrmLzfLKUHBWDTQfqaTZ.mp4"
+    },
+    {
+      "description": "multiple slashes on URL",
+      "url": "https://fileditchfiles.me//file.php?f=%2Fb70%2FjRuBeGZlRoBWPurUARg.mp4"
+    },
+    {
+      "count": 1,
+      "url": "https://fileditchfiles.me/beta5/a292619a708980582542/%5B8.11%5D_valk1.mp4"
+    },
+    {
+      "count": 1,
+      "url": "https://fileditchfiles.me/alpha7/adf9b7514d0d86d1cadd/Anai_Loves_-_Cheating_At_The_World_Cup_Match_1080p.mp4"
+    },
+    {
+      "count": 1,
+      "description": "short URL (new signed URLs)",
+      "url": "https://theditch.st/wtk8hvwb"
+    }
+  ],
+  "crawler": "fileditch",
+  "provider_id": "fileditch"
+}

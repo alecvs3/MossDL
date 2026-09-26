@@ -1,0 +1,113 @@
+{
+  "crawler": "twitter",
+  "generated": {
+    "source_sha256": "e6518f5bf9229c3fc25c28ca10fda0587319a238171d7964ddd52bd9ac104a75",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "twitter",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/twitter.py",
+    "source_file": "cyberdrop_dl/crawlers/twitter/crawler.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "twitter",
+    "crawler_class": "TwitterCrawler",
+    "decorators": [],
+    "domain": "twitter",
+    "fixture_cases": [
+      {
+        "count": 3,
+        "url": "https://x.com/matthewisabel/status/2014444098690613718"
+      },
+      {
+        "count": 1,
+        "url": "https://x.com/SpaceX/status/2079677787330289882"
+      },
+      {
+        "url": "https://x.com/i/broadcasts/1MKgNNXAZdmxL"
+      },
+      {
+        "count": 8,
+        "description": "article with videos and images",
+        "url": "https://x.com/borjafat/status/2077762204070220240"
+      },
+      {
+        "description": "This event requires an authenticated request to get a guest token",
+        "url": "https://x.com/i/events/1910629646300762112"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/twitter.py",
+    "local_hook_target": {
+      "class": "TwitterProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__extract_files",
+      "__post_init__",
+      "_broadcast",
+      "_broadcast_stream",
+      "_cursor_ctx",
+      "_iter_tweets",
+      "_since",
+      "_tweet",
+      "broadcast",
+      "fetch",
+      "search",
+      "separate_posts",
+      "thread",
+      "tweet",
+      "user_media",
+      "user_tweets"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "twitter",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".jpg",
+      ".m3u8",
+      ".mp4",
+      "article.cover",
+      "article.media",
+      "card.image",
+      "pbs.twimg.com",
+      "t.co",
+      "timeline.json",
+      "twitter.com",
+      "x.com"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/twitter/crawler.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Broadcast": [
+        "/i/broadcasts/<broadcast_id>",
+        "/i/events/<event_id>"
+      ],
+      "Search": [
+        "/search?q=<query>",
+        "/search?q=<query>&f=top",
+        "/search?q=<query>&f=latest",
+        "/search?q=<query>&f=media"
+      ],
+      "Tweet/Thread/Article": [
+        "/<user_handle>/status/<status_id>",
+        "/i/web/status/<status_id>"
+      ],
+      "User media": "/<user_handle>/media",
+      "User tweets": "/<user_handle>"
+    },
+    "warnings": []
+  }
+}

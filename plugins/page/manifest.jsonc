@@ -1,0 +1,13 @@
+{
+  "category": "any-site",
+  "schema_version": 1,
+  "id": "page",
+  "version": "1.0.0",
+  "display_name": "Page link finder",
+  "roles": ["decrypter"],
+  "hosts": ["*"],
+  "match": { "schemes": ["http", "https"], "path_regex": ".*" },
+  "capabilities": { "decrypter": true, "metadata": true },
+  "limits": { "max_concurrent_items": 1, "requests_per_second": 4 },
+  "hooks": { "extract_links": "extract_links" }
+}

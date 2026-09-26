@@ -1,0 +1,79 @@
+{
+  "crawler": "pixhost",
+  "generated": {
+    "source_sha256": "25b7574569ea987365933983e71c9579f76d21415e7e04bc7658810a18dfbb5f",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "pixhost",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/pixhost.py",
+    "source_file": "cyberdrop_dl/crawlers/pixhost.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "pixhost",
+    "crawler_class": "PixHostCrawler",
+    "decorators": [
+      "Registry.database.fix_referer"
+    ],
+    "domain": "pixhost",
+    "fixture_cases": [
+      {
+        "url": "https://pixhost.cc/show/491/538303562_035.jpg"
+      },
+      {
+        "url": "https://t100.pixhost.cc/thumbs/491/538303428_001.jpg"
+      },
+      {
+        "count": 7,
+        "url": "https://pixhost.cc/gallery/pgv5s"
+      },
+      {
+        "url": "https://img0.pixhost.cc/images/647/527555752_clips4sale-com-2023-09-29-angel-the-dreamgirl-her-horniness-and-lust-can.jpg"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/pixhost.py",
+    "local_hook_target": {
+      "class": "PixHostProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "fetch",
+      "gallery",
+      "image"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "pixhost",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".",
+      "a.link h2",
+      "div.images a img",
+      "img.image-img",
+      "pixhost.org",
+      "pixhost.to"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/pixhost.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Gallery": "/gallery/<gallery_id>",
+      "Image": "/show/<image_id>",
+      "Thumbnail": "/thumbs/.."
+    },
+    "warnings": []
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "transfer-manager",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "test:tree": "node --experimental-strip-types tests/tree_picker.test.ts",
+    "test:intake": "node --experimental-strip-types tests/intake.test.ts",
+    "test:captcha": "node --experimental-strip-types tests/captcha_ui.test.ts",
+    "test:multipart": "node --experimental-strip-types tests/multipart_ui_state.test.ts",
+    "test:projection": "node --experimental-strip-types tests/ui_projection.test.ts",
+    "test:pagelinks": "node --experimental-strip-types tests/page_links.test.ts",
+    "test:columnlayout": "node --experimental-strip-types tests/column_layout.test.ts",
+    "test:hotkeys": "node --experimental-strip-types tests/hotkeys.test.ts",
+    "test:explore": "node --experimental-strip-types tests/explore_model.test.ts",
+    "test:proxies": "node --experimental-strip-types tests/proxy_parse.test.ts",
+    "check:all": "python scripts/check_all.py",
+    "test:python:fast": "python scripts/run_all_tests.py --profile fast",
+    "test:python:full": "python scripts/run_all_tests.py --profile full",
+    "bloat:dups": "jscpd engine src --config .jscpd.json",
+    "bloat:dead": "knip --config knip.jsonc --exclude exports,types,nsExports,duplicates",
+    "browser:build": "python scripts/build_browser_extension.py --check",
+    "browser:install": "python scripts/build_browser_extension.py install",
+    "browser:uninstall": "python scripts/build_browser_extension.py uninstall",
+    "tauri": "tauri",
+    "tauri:dev:codex": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/tauri-dev.ps1"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "2.10.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@tauri-apps/cli": "2.10.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "jscpd": "^5.2.0",
+    "knip": "^6.35.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.0",
+    "vite": "^7.1.0"
+  },
+  "license": "GPL-3.0-or-later"
+}

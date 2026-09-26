@@ -1,0 +1,13 @@
+{
+  "display_name": "Video streams (HLS/DASH)",
+  "category": "video",
+  "schema_version": 1,
+  "roles": ["media"],
+  "id": "media",
+  "version": "1.0.0",
+  "hosts": ["*"],
+  "match": { "schemes": ["http", "https"] },
+  "capabilities": { "media": true, "metadata": true },
+  "limits": { "max_segments": 10000 },
+  "hooks": { "metadata": "metadata" }
+}

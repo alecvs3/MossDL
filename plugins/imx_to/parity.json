@@ -1,0 +1,87 @@
+{
+  "crawler": "imx_to",
+  "generated": {
+    "source_sha256": "9d89273312b57a6c4cb56720a441e3677523453a51b5abed4cb7aa7e99c63bb7",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "imx_to",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/imx_to.py",
+    "source_file": "cyberdrop_dl/crawlers/imx_to.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "imx_to",
+    "crawler_class": "ImxToCrawler",
+    "decorators": [],
+    "domain": "imx.to",
+    "fixture_cases": [
+      {
+        "url": "https://imx.to/i/65axjs"
+      },
+      {
+        "url": "https://imx.to/u/i/2025/06/07/65axjs.jpg"
+      },
+      {
+        "url": "https://i006.imx.to/i/2025/06/07/65axjs.jpg"
+      },
+      {
+        "url": "https://imx.to/g/1g79u"
+      },
+      {
+        "url": "https://imx.to/u/t/2025/08/01/68g6y2.jpg"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/imx_to.py",
+    "local_hook_target": {
+      "class": "ImxToProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__async_post_init__",
+      "fetch",
+      "gallery",
+      "image",
+      "transform_url"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "imx_to",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "Continue+to+image+...+",
+      "div#container a > img",
+      "div.title",
+      "div.tooltip a",
+      "imx.to"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/imx_to.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Gallery": "/g/<gallery_id>",
+      "Image": [
+        "/i/...",
+        "/u/i/..."
+      ],
+      "Thumbnail": [
+        "/t/...",
+        "/u/t/"
+      ]
+    },
+    "warnings": [
+      "reference operations not implemented locally: enumerate"
+    ]
+  }
+}

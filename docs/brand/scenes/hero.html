@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MossDL hero</title>
+<script src="../kit/load.js"></script>
+<link rel="stylesheet" href="scenes.css">
+</head>
+<body>
+<div class="stage" id="stage"></div>
+<script src="common.js"></script>
+<script>
+  // ?theme=dark (default dark app theme on the forest stage) or ?theme=light
+  const light = params.get("theme") === "light";
+  const app = light ? "daylight" : "midnight";
+  const card = app;
+  const stage = document.getElementById("stage");
+  stage.classList.toggle("light", light);
+  stage.innerHTML = `
+    ${topo(1600, 800, [{ cx: 1380, cy: 60, count: 20, r0: 30, gap: 32, seed: 2 }, { cx: 90, cy: 860, count: 12, r0: 60, gap: 36, seed: 5, tilt: 0.4 }],
+      light ? { color: "rgba(47,110,60,1)", opacity: 0.1 } : {})}
+    <div class="glow" style="left:900px;top:260px;width:620px;height:420px;background:${light ? "rgba(94,203,146,0.35)" : "rgba(47,158,104,0.32)"}"></div>
+    ${K.frame({ x: 712, y: 104, w: 800, h: 610, zoom: 1, cls: light ? "light" : "", inner: K.shell({ theme: app, page: "downloads", showToolbar: false,
+      body: K.downloadsPage({ list: S.downloads(), t: 3, columns: ["select", ["name", "minmax(120px,1fr)"], "status", ["speed", "108px"], ["pct", "110px"], ["size", "108px"]] }) }) })}
+    ${K.exploreCard({ x: 612, y: 488, w: 470, zoom: 1.2, theme: card, followed: true, files: 0, match: false })}
+    ${K.connectionCard({ x: 1270, y: 326, w: 300, zoom: 1.12, theme: card })}
+    <div style="left:96px;top:150px">${S.lockup(64, 44)}</div>
+    <h1 class="headline" style="left:96px;top:250px;font-size:60px">Point it at a page.<br><em>Get the file.</em></h1>
+    <span class="rule" style="left:98px;top:414px"></span>
+    <p class="lede" style="left:96px;top:442px;width:470px">A free, open-source download manager for Windows. It explores pages, follows download buttons past countdowns and ads, and sends each download down the route you pick.</p>
+    <div class="pills" style="left:96px;top:590px">${S.pill("heart", "Free &amp; open source · GPL-3.0")}${S.pill("windows", "Windows")}</div>
+    <div class="grain"></div>`;
+  markReady();
+</script>
+</body>
+</html>

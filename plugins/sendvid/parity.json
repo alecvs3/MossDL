@@ -1,0 +1,59 @@
+{
+  "crawler": "sendvid",
+  "generated": {
+    "source_sha256": "a35c383af89577736fc2685c4d821c39814131192c6308963bfba9b5e046af8a",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "sendvid",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/sendvid.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "sendvid",
+    "crawler_class": "SendVidCrawler",
+    "decorators": [],
+    "domain": "sendvid",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "SendVidProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "_video",
+      "fetch",
+      "video"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "sendvid",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".",
+      "URL is missing some of the required parameters:",
+      "p.video-title",
+      "video > source#video_source"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/sendvid.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Direct links": "",
+      "Embeds": "/embed/...",
+      "Videos": "/..."
+    },
+    "warnings": []
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "crawler": "yandex_disk",
+  "generated": {
+    "source_sha256": "10e1d140dff17600a681f6f932e6d248439705e48e6d307620bb7afebd61e6b8",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "yandex_disk",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/yandex_disk.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "yandex_disk",
+    "crawler_class": "YandexDiskCrawler",
+    "decorators": [],
+    "domain": "disk.yandex",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "YandexDiskProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "_process_file",
+      "_request_context",
+      "fetch",
+      "file",
+      "folder"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "yandex_disk",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "Sec-Fetch-Site: same-originPriority",
+      "disk.yandex",
+      "script#store-prefetch",
+      "yadi.sk"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/yandex_disk.py",
+    "supported_domains": [
+      "disk.yandex",
+      "yadi.sk"
+    ],
+    "supported_paths": {
+      "**NOTE**": "Does NOT support nested folders",
+      "File": [
+        "/d/<folder_id>/<file_name>",
+        "/i/<file_id>"
+      ],
+      "Folder": "/d/<folder_id>"
+    },
+    "warnings": []
+  }
+}

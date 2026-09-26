@@ -1,0 +1,92 @@
+{
+  "crawler": "twitch",
+  "generated": {
+    "source_sha256": "a23a333fb6c7dfe4e2bf0d5abee21eca440f3ecafb69b51c79c6c17ef8e434fd",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "twitch",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/twitch.py",
+    "source_file": "cyberdrop_dl/crawlers/twitch.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "twitch",
+    "crawler_class": "TwitchCrawler",
+    "decorators": [],
+    "domain": "twitch",
+    "fixture_cases": [
+      {
+        "url": "https://www.twitch.tv/fanfan/clip/GeniusDifficultSproutPhilosoraptor-5i5Qz2jiQArtBROM"
+      },
+      {
+        "url": "https://clips.twitch.tv/GeniusDifficultSproutPhilosoraptor-5i5Qz2jiQArtBROM"
+      },
+      {
+        "url": "https://clips.twitch.tv/embed?clip=GeniusDifficultSproutPhilosoraptor-5i5Qz2jiQArtBROM"
+      },
+      {
+        "url": "https://m.twitch.tv/clip/GeniusDifficultSproutPhilosoraptor-5i5Qz2jiQArtBROM"
+      },
+      {
+        "description": "hidden m3u8 data",
+        "url": "https://www.twitch.tv/videos/1744169736"
+      },
+      {
+        "count": 8,
+        "url": "https://www.twitch.tv/collections/3d4MEgywDhcOUg?filter=collections"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/twitch.py",
+    "local_hook_target": {
+      "class": "TwitchProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__post_init__",
+      "_request_m3u8",
+      "clip",
+      "collection",
+      "fetch",
+      "vod"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "twitch",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".m3u8",
+      ".mp4",
+      "clips.",
+      "com.amazon.ivs.unavailable-media"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/twitch.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Clip": [
+        "/<user>/clip/<slug>",
+        "/embed?clip=<slug>",
+        "https://clips.twitch.tv/<slug>"
+      ],
+      "Collection": "/collections/<collection_id>",
+      "VOD": [
+        "/video/<vod_id>",
+        "?video=<vod_id>",
+        "/<user>/v/<vod_id>",
+        "/videos/<vod_id>"
+      ]
+    },
+    "warnings": []
+  }
+}

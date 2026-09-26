@@ -1,0 +1,122 @@
+# Builds the Windows installers on GitHub's runners, has SignPath sign them,
+# and drafts a GitHub Release. Push a tag like v0.2.0, or run it by hand.
+#
+# Repository secrets (Settings -> Secrets and variables -> Actions):
+#   SIGNPATH_API_TOKEN          API token of the SignPath CI user (signing is skipped without it)
+#   SIGNPATH_ORGANIZATION_ID    From the SignPath organisation page
+#   TAURI_SIGNING_PRIVATE_KEY   (+ TAURI_SIGNING_PRIVATE_KEY_PASSWORD) update signing key, optional
+# Repository variables:
+#   SIGNPATH_PROJECT_SLUG       default: MossDL
+#   SIGNPATH_POLICY_SLUG        default: release-signing
+#   MOSSDL_UPDATER_PUBKEY, MOSSDL_UPDATE_URL, MOSSDL_DOWNLOAD_BASE_URL   optional, enable in-app updates
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    env:
+      SIGNPATH_API_TOKEN: ${{ secrets.SIGNPATH_API_TOKEN }}
+      TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+      TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+      MOSSDL_UPDATER_PUBKEY: ${{ vars.MOSSDL_UPDATER_PUBKEY }}
+      MOSSDL_UPDATE_URL: ${{ vars.MOSSDL_UPDATE_URL }}
+      MOSSDL_DOWNLOAD_BASE_URL: ${{ vars.MOSSDL_DOWNLOAD_BASE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: Install dependencies
+        run: |
+          python -m pip install -r requirements.txt
+          npm ci
+
+      # The tests drive the real extension bundle and Rust helpers.
+      - name: Build the extension and Rust helpers
+        shell: pwsh
+        run: |
+          if (Test-Path browser_extension/package.json) {
+            npm ci --prefix browser_extension
+            npm run build --prefix browser_extension
+          }
+          cargo build --manifest-path src-tauri/Cargo.toml --bin transfer-core --bin archive-worker
+
+      - name: Quality gate
+        run: python scripts/check_all.py --profile fast
+
+      - name: Build installers
+        shell: pwsh
+        run: ./scripts/release.ps1 -SkipGate
+
+      - name: Find the release folder
+        id: out
+        shell: pwsh
+        run: |
+          $version = (Get-Content src-tauri/tauri.conf.json -Raw | ConvertFrom-Json).version
+          "dir=dist/release/$version" >> $env:GITHUB_OUTPUT
+          "version=$version" >> $env:GITHUB_OUTPUT
+
+      - name: Upload unsigned installers
+        id: unsigned
+        uses: actions/upload-artifact@v4
+        with:
+          name: mossdl-unsigned
+          path: |
+            ${{ steps.out.outputs.dir }}/*.exe
+            ${{ steps.out.outputs.dir }}/*.msi
+          if-no-files-found: error
+
+      # Free code signing for open source by the SignPath Foundation.
+      - name: Sign with SignPath
+        if: env.SIGNPATH_API_TOKEN != ''
+        uses: signpath/github-action-submit-signing-request@v1
+        with:
+          api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
+          organization-id: ${{ secrets.SIGNPATH_ORGANIZATION_ID }}
+          project-slug: ${{ vars.SIGNPATH_PROJECT_SLUG || 'MossDL' }}
+          signing-policy-slug: ${{ vars.SIGNPATH_POLICY_SLUG || 'release-signing' }}
+          github-artifact-id: ${{ steps.unsigned.outputs.artifact-id }}
+          wait-for-completion: true
+          output-artifact-directory: signed
+
+      - name: Collect release files
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force upload | Out-Null
+          $installers = if (Test-Path signed) { "signed" } else { "${{ steps.out.outputs.dir }}" }
+          Get-ChildItem "$installers/*.exe", "$installers/*.msi" | Copy-Item -Destination upload
+          Get-ChildItem "${{ steps.out.outputs.dir }}/*.sig", "${{ steps.out.outputs.dir }}/latest.json" -ErrorAction SilentlyContinue |
+            Copy-Item -Destination upload
+          Get-ChildItem "${{ steps.out.outputs.dir }}/browser-extension/*.zip" -ErrorAction SilentlyContinue |
+            Copy-Item -Destination upload
+
+      - name: Draft the GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          name: MossDL ${{ steps.out.outputs.version }}
+          tag_name: ${{ github.ref_type == 'tag' && github.ref_name || format('v{0}', steps.out.outputs.version) }}
+          files: upload/*
+          generate_release_notes: true

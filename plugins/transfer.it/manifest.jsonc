@@ -1,0 +1,42 @@
+{
+  "display_name": "Transfer.it",
+  "category": "cloud",
+  "capabilities": {
+    "encrypted": true,
+    "folders": true,
+    "passwords": true,
+    "ranges": true,
+    "refresh": true
+  },
+  "hooks": {
+    "enumerate": "enumerate",
+    "refresh": "refresh",
+    "resolve": "resolve"
+  },
+  "hosts": [
+    "transfer.it"
+  ],
+  "id": "transfer.it",
+  "implementation": "python",
+  "limits": {
+    "max_concurrent_items": 2,
+    "requests_per_second": 8
+  },
+  "match": {
+    "path_regex": "^/t/",
+    "schemes": [
+      "https"
+    ]
+  },
+  "permissions": {
+    "hosts": [
+      "transfer.it"
+    ],
+    "secrets": []
+  },
+  "roles": [
+    "resolver"
+  ],
+  "schema_version": 2,
+  "version": "cyberdrop-import-cyberdrop-import-1.0.0"
+}

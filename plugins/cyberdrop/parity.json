@@ -1,0 +1,89 @@
+{
+  "crawler": "cyberdrop",
+  "generated": {
+    "source_sha256": "e1e4eaa2e4c2e0ee0d6d0b180914d5805979ec85883d830c46e95b4c32171772",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "cyberdrop",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/cyberdrop.py",
+    "source_file": "cyberdrop_dl/crawlers/cyberdrop.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "cyberdrop",
+    "crawler_class": "CyberdropCrawler",
+    "decorators": [
+      "HTTPConfig",
+      "Registry.database.fix_referer"
+    ],
+    "domain": "cyberdrop",
+    "fixture_cases": [
+      {
+        "url": "https://cyberdrop.cr/f/de155Wa0Z7OV59"
+      },
+      {
+        "url": "https://k1-cd.cdn.gigachad-cdn.ru/api/file/d/de155Wa0Z7OV59"
+      },
+      {
+        "url": "https://cyberdrop.cr/0h07ynuksluicazppofcw_source-ClHET0f7.mp4"
+      },
+      {
+        "count": 13,
+        "url": "https://cyberdrop.cr/a/eEwua7SZ"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/cyberdrop.py",
+    "local_hook_target": {
+      "class": "CyberdropProvider",
+      "module": "engine.providers.hosted"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__post_init__",
+      "album",
+      "fetch",
+      "file"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "cyberdrop",
+    "rate_limits": {
+      "rate_limit_window_seconds": 1,
+      "requests_per_second": 5.0
+    },
+    "request_contracts": [],
+    "selectors": [
+      "#title",
+      "a#file",
+      "cyberdrop.me",
+      "cyberdrop.to",
+      "k1-cd.cdn.gigachad-cdn.ru"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/cyberdrop.py",
+    "supported_domains": [
+      "k1-cd.cdn.gigachad-cdn.ru",
+      "cyberdrop"
+    ],
+    "supported_paths": {
+      "Album": "/a/<album_id>",
+      "Direct links": "/api/file/d/<file_id>",
+      "File": [
+        "/f/<file_id>",
+        "/e/<file_id>"
+      ]
+    },
+    "warnings": []
+  }
+}

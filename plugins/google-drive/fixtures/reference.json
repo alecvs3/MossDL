@@ -1,0 +1,44 @@
+{
+  "cases": [
+    {
+      "description": "small file with no warning",
+      "url": "https://drive.google.com/file/d/1F0YBsnQRvrMbK0p9UlnyLu88kqQ0j_F6/edit"
+    },
+    {
+      "description": "small file with no warning",
+      "url": "https://drive.google.com/file/d/15WghIO0iwekXStmVWeK5HxC566iN41l6/view"
+    },
+    {
+      "description": "file with warning doe to large size (529M)",
+      "url": "https://drive.usercontent.google.com/download?id=1fXgBupLzThTGLLsiYCHRQJixuDsR1bSI&export=download"
+    },
+    {
+      "description": "\n        Huge file with warning do to large size (9.8G), this test may fail.\n        Public download without an account are limited to about 5G per day and they return 429 with that happens",
+      "url": "https://drive.google.com/file/d/1WHv5Dm1GtrDZj-AxJZd3T-NMIBXty3eV/view"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1ZzEzJbemBMPm46O2q5VcGNoPbqDu9AhhUc2djQbvbTY/edit"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1ZzEzJbemBMPm46O2q5VcGNoPbqDu9AhhUc2djQbvbTY?format=txt"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1ZzEzJbemBMPm46O2q5VcGNoPbqDu9AhhUc2djQbvbTY?format=xlsx"
+    },
+    {
+      "description": "This is a spreeadsheet but the id is a normal file id. We won't be able to download it with a custom format",
+      "url": "https://docs.google.com/spreadsheets/d/1E3LpudUdUZycJpxSKK-c9-oIDuJoo5_7/edit?format=ods"
+    },
+    {
+      "description": "v0 file id (28 chars)",
+      "url": "https://drive.google.com/file/d/0ByeS4oOUV-49Zzh4R1J6R09zazQ/edit"
+    },
+    {
+      "count": 135,
+      "description": "Folder with +50 files",
+      "url": "https://drive.google.com/drive/folders/1k8pgIaGw6PribxVqMgmDtlpzbUPJuzrX"
+    }
+  ],
+  "crawler": "google_drive",
+  "provider_id": "google-drive"
+}

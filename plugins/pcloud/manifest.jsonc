@@ -1,0 +1,50 @@
+{
+  "category": "cloud",
+  "capabilities": {
+    "folders": true,
+    "http": true,
+    "ranges": true,
+    "refresh": true
+  },
+  "display_name": "pCloud",
+  "hooks": {
+    "enumerate": "enumerate",
+    "refresh": "refresh",
+    "resolve": "resolve"
+  },
+  "hosts": [
+    "pcloud.com",
+    "pcloud.link",
+    "pc.cd",
+    "e.pc.cd",
+    "u.pc.cd"
+  ],
+  "id": "pcloud",
+  "implementation": "python",
+  "limits": {
+    "max_concurrent_items": 2,
+    "requests_per_second": 3
+  },
+  "match": {
+    "path_regex": ".*",
+    "schemes": [
+      "https",
+      "http"
+    ]
+  },
+  "permissions": {
+    "hosts": [
+      "pcloud.com",
+      "pcloud.link",
+      "pc.cd",
+      "e.pc.cd",
+      "u.pc.cd"
+    ],
+    "secrets": []
+  },
+  "roles": [
+    "resolver"
+  ],
+  "schema_version": 2,
+  "version": "cyberdrop-import-cyberdrop-import-1.0.0"
+}

@@ -1,0 +1,107 @@
+{
+  "crawler": "imagepond",
+  "generated": {
+    "source_sha256": "fd107e03507636e0a2574e785edd4da29e561743d2af965696431d3dc1e783e6",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "imagepond",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/imagepond.py",
+    "source_file": "cyberdrop_dl/crawlers/imagepond.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "imagepond",
+    "crawler_class": "ImagePondCrawler",
+    "decorators": [
+      "HTTPConfig",
+      "URLConfig"
+    ],
+    "domain": "imagepond.net",
+    "fixture_cases": [
+      {
+        "url": "https://www.imagepond.net/image/zJfHAH"
+      },
+      {
+        "url": "https://www.imagepond.net/image/zJfHAH"
+      },
+      {
+        "url": "https://www.imagepond.net/image/zJfHAH/download"
+      },
+      {
+        "url": "https://media.imagepond.net/media/Palm-Desert-Resuscitation-Education-YourCPRMD.com8c5d221f74fbb880.png"
+      },
+      {
+        "url": "https://www.imagepond.net/i/3RxARn4j"
+      },
+      {
+        "url": "https://www.imagepond.net/i/9TVLS36c/download/file"
+      },
+      {
+        "count": 21,
+        "url": "https://www.imagepond.net/a/AY75C28f"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/imagepond.py",
+    "local_hook_target": {
+      "class": "ImagePondProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "album",
+      "fetch",
+      "file",
+      "transform_url",
+      "user"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "imagepond",
+    "rate_limits": {
+      "rate_limit_window_seconds": 3,
+      "requests_per_second": 0.333333
+    },
+    "request_contracts": [],
+    "selectors": [
+      "#embed-direct",
+      ".jpg",
+      ".mp4",
+      ".zip",
+      ":href",
+      "[user]",
+      "a.group.relative[href]",
+      "a[rel=next]",
+      "imagepond.net"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/imagepond.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Album": "/a/<slug>",
+      "Direct links": "/media/<slug>",
+      "Image / Video / Archive": [
+        "/i/<slug>",
+        "/img/<slug>",
+        "/image/<slug>",
+        "/video/<slug>",
+        "/videos/<slug>"
+      ],
+      "User": [
+        "/user/<user_name>",
+        "/<user_name>"
+      ]
+    },
+    "warnings": []
+  }
+}

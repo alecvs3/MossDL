@@ -1,0 +1,56 @@
+{
+  "crawler": "iceyfile",
+  "generated": {
+    "source_sha256": "d591a19e8cb6bc2941a362a47fca66cc2da7882c558a27fe48f125163812234b",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "iceyfile",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/iceyfile.py",
+    "source_file": "cyberdrop_dl/crawlers/iceyfile.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "iceyfile",
+    "crawler_class": "IceyFileCrawler",
+    "decorators": [],
+    "domain": "iceyfile",
+    "fixture_cases": [
+      {
+        "description": "This will fail. iceyfile now always requires a 1 type access only captcha for individual files",
+        "url": "https://iceyfile.com/be60cca8a9dec177/fff.png"
+      },
+      {
+        "url": "https://iceyfile.com/folder/75061972f799eeacba32ac81f37493bc/CDL_test"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/iceyfile.py",
+    "local_hook_target": {
+      "class": "IceyfileProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "iceyfile",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [],
+    "source_file": "cyberdrop_dl/crawlers/iceyfile.py",
+    "supported_domains": [],
+    "supported_paths": {},
+    "warnings": []
+  }
+}

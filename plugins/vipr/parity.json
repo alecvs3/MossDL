@@ -1,0 +1,58 @@
+{
+  "crawler": "vipr_dot_im",
+  "generated": {
+    "source_sha256": "8357eb293fd6d5ea1d9d580f7dc6a2096287ae77f413cc99dad3032379d632c4",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "vipr",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/vipr_dot_im.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "vipr_dot_im",
+    "crawler_class": "ViprImCrawler",
+    "decorators": [],
+    "domain": "vipr.im",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "ViprProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "fetch",
+      "image",
+      "transform_url"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "vipr",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "Vipr.im",
+      "div#body a > img",
+      "vipr.im"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/vipr_dot_im.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Direct Image": "/i/.../<slug>",
+      "Image": "/<id>",
+      "Thumbnail": "/th/.../<slug>"
+    },
+    "warnings": []
+  }
+}

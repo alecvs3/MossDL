@@ -1,0 +1,74 @@
+{
+  "crawler": "flickr",
+  "generated": {
+    "source_sha256": "87cc9e11b4985fe35f38ffa991164cce7db8318571c092e2e42484bd5c65dde8",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "flickr",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/flickr.py",
+    "source_file": "cyberdrop_dl/crawlers/flickr.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "flickr",
+    "crawler_class": "FlickrCrawler",
+    "decorators": [],
+    "domain": "flickr",
+    "fixture_cases": [
+      {
+        "url": "https://www.flickr.com/photos/jillblack33/42279501790/in/photolist-27q6uTq-64djfR-bFAauM-79mSQe-294ixC3-s1Ltu4-MaSsV-4CUE8Q-4Rkr8R-QtkbP-aD588-2wyM-2mB9CCC-6AS9fc-7gdV1m-5TjWGC-5TfCwR-3y72Tr-48JHn-nemFJ-9dCzq1-MU2AYb-ctYWi"
+      },
+      {
+        "url": "https://www.flickr.com/photos/soniaadammurray/52448052841"
+      },
+      {
+        "count": 30,
+        "url": "https://www.flickr.com/photos/bour3/albums/72157641382742025"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/flickr.py",
+    "local_hook_target": {
+      "class": "FlickrProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__async_post_init__",
+      "_get_source",
+      "_photo",
+      "fetch",
+      "photo",
+      "photoset"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "flickr",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "flickr.",
+      "flickr.api.site_key = \"",
+      "photos.getInfo",
+      "photos.getSizes",
+      "photosets.getPhotos",
+      "video.getStreamInfo"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/flickr.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Album": "/photos/<user_nsid>/albums/<photoset_id>/...",
+      "Photo": "/photos/<user_nsid>/<photo_id>/..."
+    },
+    "warnings": []
+  }
+}

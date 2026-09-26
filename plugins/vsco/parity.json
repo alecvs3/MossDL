@@ -1,0 +1,81 @@
+{
+  "crawler": "vsco",
+  "generated": {
+    "source_sha256": "b9bfee0fc05bb58e24e2b5a4743367eb210346096381abb90158bb6a916674a2",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "vsco",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/vsco.py",
+    "source_file": "cyberdrop_dl/crawlers/vsco.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "vsco",
+    "crawler_class": "VSCOCrawler",
+    "decorators": [
+      "DownloadConfig"
+    ],
+    "domain": "vsco",
+    "fixture_cases": [
+      {
+        "url": "http://vsco.co/heliaabbaszadeh/media/6966cb5dff125db06d53e4ee"
+      },
+      {
+        "url": "https://vsco.co/jollyt/gallery"
+      },
+      {
+        "url": "https://vsco.co/philippswildlife/video/6b31aa8f-de5d-452b-baf2-81d2b080997a"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/vsco.py",
+    "local_hook_target": {
+      "class": "VSCOProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "_api_pager",
+      "_file",
+      "_get_preloaded_state",
+      "_image",
+      "_video",
+      "fetch",
+      "gallery",
+      "media"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "vsco",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "\":null",
+      "\":undefined",
+      ".m3u8",
+      ".mp4"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/vsco.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Gallery": "/<user>/gallery",
+      "Media": [
+        "/<user>/media/<media_id>",
+        "/<user>/video/<media_id>"
+      ]
+    },
+    "warnings": [
+      "reference operations not implemented locally: enumerate"
+    ]
+  }
+}

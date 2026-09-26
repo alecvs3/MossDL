@@ -1,0 +1,60 @@
+{
+  "crawler": "gupload",
+  "generated": {
+    "source_sha256": "e60a9bca0dc16a0189f18e5c4c5b67096bd1badf6f5cd2601dae53e1bb16f3c1",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "gupload",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/gupload.py",
+    "source_file": "cyberdrop_dl/crawlers/gupload.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "gupload",
+    "crawler_class": "GUploadCrawler",
+    "decorators": [],
+    "domain": "gupload",
+    "fixture_cases": [
+      {
+        "url": "https://gupload.xyz/data/e/26011780d54f"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/gupload.py",
+    "local_hook_target": {
+      "class": "GUploadProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "_request_video_config",
+      "fetch",
+      "video"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "gupload",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".mp4"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/gupload.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Video": [
+        "/data/e/<video_id>"
+      ]
+    },
+    "warnings": []
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "count": 3,
+      "url": "https://x.com/matthewisabel/status/2014444098690613718"
+    },
+    {
+      "count": 1,
+      "url": "https://x.com/SpaceX/status/2079677787330289882"
+    },
+    {
+      "url": "https://x.com/i/broadcasts/1MKgNNXAZdmxL"
+    },
+    {
+      "count": 8,
+      "description": "article with videos and images",
+      "url": "https://x.com/borjafat/status/2077762204070220240"
+    },
+    {
+      "description": "This event requires an authenticated request to get a guest token",
+      "url": "https://x.com/i/events/1910629646300762112"
+    }
+  ],
+  "crawler": "twitter",
+  "provider_id": "twitter"
+}

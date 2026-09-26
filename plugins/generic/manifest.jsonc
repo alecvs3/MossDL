@@ -1,0 +1,14 @@
+{
+  "display_name": "Direct links",
+  "category": "any-site",
+  // Generic HTTP, HTTPS, and FTP resolver.
+  "schema_version": 1,
+  "roles": ["resolver"],
+  "id": "generic",
+  "version": "1.0.0",
+  "hosts": ["*"],
+  "match": { "schemes": ["http", "https", "ftp"] },
+  "capabilities": { "http": true, "ftp": true, "ranges": true, "refresh": true },
+  "limits": { "max_concurrent_items": 2, "requests_per_second": 8 },
+  "hooks": { "resolve": "resolve", "refresh": "refresh" }
+}

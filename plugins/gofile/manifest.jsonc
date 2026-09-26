@@ -1,0 +1,43 @@
+{
+  "display_name": "Gofile",
+  "category": "file-host",
+  "capabilities": {
+    "accounts": true,
+    "folders": true,
+    "passwords": true,
+    "ranges": true,
+    "refresh": true,
+    "token": true
+  },
+  "hooks": {
+    "enumerate": "enumerate",
+    "refresh": "refresh",
+    "resolve": "resolve"
+  },
+  "hosts": [
+    "gofile.io"
+  ],
+  "id": "gofile",
+  "implementation": "python",
+  "limits": {
+    "max_concurrent_items": 2,
+    "requests_per_second": 8
+  },
+  "match": {
+    "path_regex": "^/d/",
+    "schemes": [
+      "https"
+    ]
+  },
+  "permissions": {
+    "hosts": [
+      "gofile.io"
+    ],
+    "secrets": []
+  },
+  "roles": [
+    "resolver"
+  ],
+  "schema_version": 2,
+  "version": "cyberdrop-import-cyberdrop-import-1.0.0"
+}

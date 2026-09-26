@@ -1,0 +1,57 @@
+{
+  "crawler": "catbox",
+  "generated": {
+    "source_sha256": "2e3d1e5374973416ed70a1b8c4279b6574c562c1174ac1dfc9f3f3bc64afdec5",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "catbox",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/catbox.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "catbox",
+    "crawler_class": "CatboxCrawler",
+    "decorators": [],
+    "domain": "catbox.moe",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "CatboxProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "fetch"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "catbox",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".zip",
+      "catbox.moe",
+      "files.catbox.moe",
+      "files.fatbox.moe",
+      "litter.catbox.moe",
+      "litter.fatbox.moe"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/catbox.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Direct links": ""
+    },
+    "warnings": []
+  }
+}

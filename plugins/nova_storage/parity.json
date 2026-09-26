@@ -1,0 +1,57 @@
+{
+  "crawler": "nova",
+  "generated": {
+    "source_sha256": "329c4f75daf003f12ee1888d0513d9cfd648e87e3d98d9c36a12d2f2ad8a77ac",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "nova_storage",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/nova.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "nova",
+    "crawler_class": "NovaStorageCrawler",
+    "decorators": [],
+    "domain": "nova.storage",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "NovaStorageProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__post_init__",
+      "fetch"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "nova_storage",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "nova.storage"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/nova.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "**NOTE**": "text files will not be downloaded but their content will be parsed for URLs",
+      "Filesystem": [
+        "/d/<id>",
+        "/api/filesystem/<path>..."
+      ]
+    },
+    "warnings": []
+  }
+}

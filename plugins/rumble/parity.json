@@ -1,0 +1,78 @@
+{
+  "crawler": "rumble",
+  "generated": {
+    "source_sha256": "c9ae02700e9d05476488461bed860c3bd35fdd7c5c94d1413ab486004468c901",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "rumble",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/rumble.py",
+    "source_file": "cyberdrop_dl/crawlers/rumble.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "rumble",
+    "crawler_class": "RumbleCrawler",
+    "decorators": [
+      "HTTPConfig"
+    ],
+    "domain": "rumble",
+    "fixture_cases": [
+      {
+        "url": "https://rumble.com/vwu8gp-residente-bzrp-music-sessions-49.html?e9s=src_v1_s"
+      },
+      {
+        "url": "https://rumble.com/c/RumbleEvents"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/rumble.py",
+    "local_hook_target": {
+      "class": "RumbleProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "_get_best_format",
+      "_get_video_info",
+      "_pager",
+      "channel",
+      "embed",
+      "fetch",
+      "resolve_m3u8",
+      "transform_url",
+      "video"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "rumble",
+    "rate_limits": {
+      "rate_limit_window_seconds": 1,
+      "requests_per_second": 8.0
+    },
+    "request_contracts": [],
+    "selectors": [
+      ".auto",
+      ".html",
+      ".mp4",
+      "Video has an unknown format type:"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/rumble.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Channel": "/c/<name>",
+      "Embed": "/embed/<video_id>",
+      "User": "/user/<name>",
+      "Video": "<video_id>-<video-title>.html"
+    },
+    "warnings": []
+  }
+}

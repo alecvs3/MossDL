@@ -1,0 +1,96 @@
+{
+  "crawler": "cyberfile",
+  "generated": {
+    "source_sha256": "172546d750b11d713e3a8cf238a207393a8c2f8247458717b77715d2c31d198f",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "cyberfile",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/cyberfile.py",
+    "source_file": "cyberdrop_dl/crawlers/cyberfile.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "cyberfile",
+    "crawler_class": "CyberfileCrawler",
+    "decorators": [
+      "DownloadConfig"
+    ],
+    "domain": "cyberfile",
+    "fixture_cases": [
+      {
+        "url": "https://cyberfile.me/c5w9"
+      },
+      {
+        "url": "https://cyberfile.me/shared/-dprdwxcs8"
+      },
+      {
+        "url": "https://cyberfile.me/b8lt"
+      },
+      {
+        "count": 44,
+        "url": "https://cyberfile.me/shared/avk-q2uqnz"
+      },
+      {
+        "description": "Password protected folder, no password supplied",
+        "url": "https://cyberfile.me/folder/30cab170dd652309c8b8f25aaba4ec85/Autumn_Falls_JulesJordan_Videos"
+      },
+      {
+        "description": "Password protected folder, invalid password supplied",
+        "url": "https://cyberfile.me/folder/30cab170dd652309c8b8f25aaba4ec85/Autumn_Falls_JulesJordan_Videos"
+      },
+      {
+        "count": 6,
+        "description": "Password protected folder, valid password supplied",
+        "url": "https://cyberfile.me/folder/30cab170dd652309c8b8f25aaba4ec85/Autumn_Falls_JulesJordan_Videos"
+      },
+      {
+        "description": "Password protected file",
+        "url": "https://cyberfile.me/ktP2"
+      },
+      {
+        "url": "https://cyberfile.me/ktP2"
+      },
+      {
+        "description": "File with malformed download URL (in the slug)",
+        "url": "https://cyberfile.me/7cfu"
+      },
+      {
+        "description": "File with emojis in the name. This will fail on Windows and MacOS",
+        "url": "https://cyberfile.me/7cfq"
+      },
+      {
+        "description": "Shared folder w only 1 file should be 'loose files'",
+        "url": "https://cyberfile.me/shared/2c96uzj717"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/cyberfile.py",
+    "local_hook_target": {
+      "class": "CyberfileProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "cyberfile",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [],
+    "source_file": "cyberdrop_dl/crawlers/cyberfile.py",
+    "supported_domains": [],
+    "supported_paths": {},
+    "warnings": []
+  }
+}

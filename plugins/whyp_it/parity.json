@@ -1,0 +1,76 @@
+{
+  "crawler": "whyp_it",
+  "generated": {
+    "source_sha256": "e6b97f66d9c024cc6fff65e06547182f83716aa01e7b527933c637a35a96c347",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "whyp_it",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/whyp_it.py",
+    "source_file": "cyberdrop_dl/crawlers/whyp_it.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "whyp_it",
+    "crawler_class": "WhypItCrawler",
+    "decorators": [
+      "HTTPConfig"
+    ],
+    "domain": null,
+    "fixture_cases": [
+      {
+        "count": 1,
+        "description": "Private track (requires the ?token param to access)",
+        "url": "https://whyp.it/tracks/reading-your-shy-besties-mind-4eyNuDoUzLk1"
+      },
+      {
+        "count": 3,
+        "url": "https://whyp.it/users/brad-cGgThTrh8wcG"
+      },
+      {
+        "url": "https://whyp.it/collections/example-collection-hNdBmugKbF85"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/whyp_it.py",
+    "local_hook_target": {
+      "class": "WhypItProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__post_init__",
+      "_iter_tracks",
+      "_track",
+      "collection",
+      "fetch",
+      "track",
+      "user"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "whyp_it",
+    "rate_limits": {
+      "rate_limit_window_seconds": 1,
+      "requests_per_second": 5.0
+    },
+    "request_contracts": [],
+    "selectors": [],
+    "source_file": "cyberdrop_dl/crawlers/whyp_it.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Audio": "/tracks/<slug>-<id>",
+      "Collection": "/collections/<slug>-<id>",
+      "User": "/users/<slug>-<id>"
+    },
+    "warnings": []
+  }
+}

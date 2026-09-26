@@ -1,0 +1,54 @@
+.transfer-manager/
+.test-artifacts/
+dist/
+storybook-static/
+node_modules/
+__pycache__/
+*.pyc
+src-tauri/target/
+src-tauri/resources/transfer-engine/transfer-engine*
+
+# Local/generated workspace state
+.build/
+.pytest_cache/
+.test-temp/
+.cyberdrop-debug/
+.cyberdrop-generated/
+clone_reference/
+*.db
+*.sqlite3
+# SQLite writes these sidecars beside the database and recreates them on open.
+*.sqlite3-shm
+*.sqlite3-wal
+
+# Captures and downloaded validation artifacts
+/*.har
+/*.mp4
+/*.jpg
+downloads/
+validation_downloads/
+validation_downloads_final/
+
+# Packaged runtime binaries are produced during builds
+src-tauri/resources/**/*.exe
+
+# Runtime output: per-task logs, audit logs, and data dirs created by running
+# the engine with a CLI word where the data directory belongs
+download_logs/
+logs/
+browser-status/
+/--help/
+reports/live/
+artifacts/
+
+# Ephemeral probes (AGENTS.md: probes live in scratch/, never in commits)
+scratch/
+
+# Local tool state and build byproducts
+.claude/settings.local.json
+.planning/milestone.lock
+scripts/*.exe
+scripts/*.pdb
+
+# Independent private website repository (not a submodule)
+/website/

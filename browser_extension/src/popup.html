@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MossDL</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="popup">
+    <header class="top">
+      <img class="logo" src="icons/icon-48.png" alt="" width="28" height="28">
+      <div class="brand">
+        <span class="name">MossDL</span>
+        <span class="sub">Downloader companion</span>
+      </div>
+      <button type="button" class="status status-disconnected" id="connection-status" title="Connection to the MossDL app. Click to reconnect.">
+        <span class="dot" aria-hidden="true"></span>
+        <span id="connection-label">Connecting…</span>
+      </button>
+    </header>
+
+    <section class="page" aria-label="This page">
+      <div class="page-head">
+        <span class="kicker">This page</span>
+        <span class="host" id="page-host">—</span>
+      </div>
+      <button type="button" class="action primary" id="btn-scan-page">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M8 3.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9ZM2 8a6 6 0 1 1 10.9 3.46l4.32 4.33a1 1 0 0 1-1.41 1.41l-4.33-4.32A6 6 0 0 1 2 8Z"/></svg>
+        <span class="label"><b>Find downloads on this page</b><small>Links, buttons and mirrors go to Explore</small></span>
+        <span class="count" id="scan-badge">0</span>
+      </button>
+      <div class="pair">
+        <button type="button" class="action" id="btn-capture-media">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M3 6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6Zm11.55 1.1A1 1 0 0 0 14 8v4a1 1 0 0 0 .55.9l2 1A1 1 0 0 0 18 13V7a1 1 0 0 0-1.45-.9l-2 1Z"/></svg>
+          <span class="label"><b>Grab media</b></span>
+          <span class="count" id="media-badge">0</span>
+        </button>
+        <button type="button" class="action" id="btn-sync-session" title="Lets MossDL download from this site as you (only this site's cookies are shared)">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M18 8a6 6 0 0 1-7.74 5.74L9 15H7v2H3v-4l4.26-4.26A6 6 0 1 1 18 8Zm-6-3a1 1 0 1 0 0 2 1 1 0 0 1 1 1 1 1 0 1 0 2 0 3 3 0 0 0-3-3Z"/></svg>
+          <span class="label"><b>Share this site's login</b></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="settings" aria-label="Capture settings">
+      <label class="row" for="pref-intercept-downloads">
+        <span><b>Catch downloads</b><small>Send .zip, .iso, .exe and similar to MossDL</small></span>
+        <input type="checkbox" id="pref-intercept-downloads" checked><i class="switch" aria-hidden="true"></i>
+      </label>
+      <label class="row" for="pref-media-overlays">
+        <span><b>Media button</b><small>A small download button on videos and audio</small></span>
+        <input type="checkbox" id="pref-media-overlays" checked><i class="switch" aria-hidden="true"></i>
+      </label>
+      <label class="row" for="pref-stream-sniffer">
+        <span><b>Find streams</b><small>Notice HLS (.m3u8) and DASH (.mpd) playlists</small></span>
+        <input type="checkbox" id="pref-stream-sniffer" checked><i class="switch" aria-hidden="true"></i>
+      </label>
+      <label class="row" for="pref-clean-tracking">
+        <span><b>Clean links</b><small>Drop utm_*, fbclid and gclid from captured links</small></span>
+        <input type="checkbox" id="pref-clean-tracking" checked><i class="switch" aria-hidden="true"></i>
+      </label>
+    </section>
+
+    <div class="toast" id="toast-message" role="status" aria-live="polite" style="display: none;"></div>
+
+    <footer class="bottom">
+      <span class="stats"><b id="stat-captured-count">0</b> captured · <span id="stat-bridge-status">Ready</span></span>
+      <button type="button" class="open" id="btn-open-desktop">Open MossDL</button>
+    </footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

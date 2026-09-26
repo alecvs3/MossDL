@@ -1,0 +1,55 @@
+{
+  "crawler": "upload_ee",
+  "generated": {
+    "source_sha256": "4e7452eed94dca85cb99d43b97f8c7400afb49d62761d1087e964dc832768882",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "upload_ee",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/upload_ee.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "upload_ee",
+    "crawler_class": "UploadEECrawler",
+    "decorators": [],
+    "domain": "upload.ee",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "UploadEEProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "fetch",
+      "file"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "upload_ee",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "a#d_l",
+      "h1.pageTitle b",
+      "upload.ee"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/upload_ee.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "File": "/files/<file_id>"
+    },
+    "warnings": []
+  }
+}

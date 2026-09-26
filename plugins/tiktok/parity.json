@@ -1,0 +1,97 @@
+{
+  "crawler": "tiktok",
+  "generated": {
+    "source_sha256": "b1534bce35d389bd2f486bdf40d189c3151d16dd37ce3216550e4edfbf1553aa",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "tiktok",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/tiktok.py",
+    "source_file": "cyberdrop_dl/crawlers/tiktok.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "tiktok",
+    "crawler_class": "TikTokCrawler",
+    "decorators": [
+      "HTTPConfig"
+    ],
+    "domain": "tiktok",
+    "fixture_cases": [
+      {
+        "url": "https://tiktok.com/@_sophialocke_/video/7271803599443791146"
+      },
+      {
+        "count": 2,
+        "url": "https://www.tiktok.com/@ploense"
+      },
+      {
+        "count": null,
+        "url": "https://www.tiktok.com/@ggwendollyn/photo/7545228111973977374"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/tiktok.py",
+    "local_hook_target": {
+      "class": "TikTokProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__async_post_init__",
+      "__post_init__",
+      "_api_request",
+      "_get_task_result",
+      "_handle_audio",
+      "_handle_images",
+      "_handle_post",
+      "_handle_video",
+      "_profile_post_pager",
+      "download_src_quality_videos",
+      "fetch",
+      "handle_media_item",
+      "media",
+      "profile",
+      "src_quality_media"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "tiktok",
+    "rate_limits": {
+      "rate_limit_window_seconds": 2,
+      "requests_per_second": 0.5
+    },
+    "request_contracts": [],
+    "selectors": [
+      ".html",
+      ".mp3",
+      ".mp4",
+      "[",
+      "attempts. Total wait time:"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/tiktok.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Photo": [
+        "/@<user>/photo/<photo_id>",
+        "/@/photo/<photo_id>",
+        "/share/photo/<photo_id>"
+      ],
+      "User": "/@<user>",
+      "Video": [
+        "/@<user>/video/<video_id>",
+        "/@/video/<video_id>",
+        "/share/video/<video_id>"
+      ]
+    },
+    "warnings": []
+  }
+}

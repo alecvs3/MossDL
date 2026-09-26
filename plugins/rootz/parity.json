@@ -1,0 +1,62 @@
+{
+  "crawler": "rootz",
+  "generated": {
+    "source_sha256": "fb07f09b26c01e008efab25045ba86cd135e427ce078c82f3d7ca7348dcc0471",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "rootz",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/rootz.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "rootz",
+    "crawler_class": "RootzCrawler",
+    "decorators": [
+      "HTTPConfig"
+    ],
+    "domain": "rootz.so",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "RootzProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "_request_file",
+      "fetch",
+      "file"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "rootz",
+    "rate_limits": {
+      "rate_limit_window_seconds": 60,
+      "requests_per_second": 1.666667
+    },
+    "request_contracts": [],
+    "selectors": [
+      "rootz.so"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/rootz.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "File": [
+        "/d/<file_id>",
+        "/file/<file_id>"
+      ]
+    },
+    "warnings": []
+  }
+}
