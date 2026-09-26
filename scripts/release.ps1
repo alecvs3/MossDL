@@ -27,9 +27,6 @@ if (-not $SkipGate) {
 
 & "$PSScriptRoot/build_engine.ps1"
 
-python scripts/build_browser_extension.py package --output "$out/browser-extension"
-if ($LASTEXITCODE -ne 0) { throw "Browser extension packaging failed." }
-
 $overrides = @{ bundle = @{ windows = @{} } }
 if ($env:WINDOWS_SIGN_COMMAND) {
   $overrides.bundle.windows.signCommand = $env:WINDOWS_SIGN_COMMAND
@@ -42,11 +39,18 @@ if ($updates) {
 } else {
   Write-Warning "Update signing is not configured: this build will report 'updates not configured' in Settings."
 }
-$configFile = Join-Path $out "tauri.release.json"
+
+New-Item -ItemType Directory -Force -Path ".build" | Out-Null
+$configFile = Join-Path (Resolve-Path ".build") "tauri.release.json"
 $overrides | ConvertTo-Json -Depth 5 | Set-Content -Encoding utf8 $configFile
 
 npx tauri build --config $configFile
 if ($LASTEXITCODE -ne 0) { throw "tauri build failed." }
+
+New-Item -ItemType Directory -Force -Path $out | Out-Null
+
+python scripts/build_browser_extension.py package --output "$out/browser-extension"
+if ($LASTEXITCODE -ne 0) { throw "Browser extension packaging failed." }
 
 $bundle = "src-tauri/target/release/bundle"
 Get-ChildItem "$bundle/nsis/*.exe", "$bundle/msi/*.msi", "$bundle/nsis/*.sig", "$bundle/msi/*.sig" -ErrorAction SilentlyContinue |
