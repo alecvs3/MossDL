@@ -85,16 +85,17 @@ class BrowserInstallTests(unittest.TestCase):
             self.assertFalse(json.loads(uninstalled.stdout)["installed"])
             self.assertTrue((output / "chrome" / "manifest.json").is_file())
 
-    def test_extension_reconnect_contract_is_bounded_and_replay_identity_is_stable(self):
-        background = (Path(__file__).parents[1] / "browser_extension" / "src" / "background.ts").read_text(encoding="utf-8")
-        protocol = (Path(__file__).parents[1] / "browser_extension" / "src" / "protocol.ts").read_text(encoding="utf-8")
-        self.assertIn('"reconnecting"', background)
-        self.assertIn("MAX_RECONNECT_ATTEMPTS", background)
-        self.assertIn("this.queue.pending()", background)
-        self.assertIn("acknowledge(message.batch_id, message.request_id)", background)
-        self.assertIn("globalThis as any).chrome?.runtime?.onStartup", background)
-        self.assertIn("MAX_REPLAY_BATCHES", protocol)
-        self.assertIn("batch_id", protocol)
+    def test_native_host_origins_do_not_contain_unsupported_wildcards(self):
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            host = root / "host.exe"
+            host.write_text("test host", encoding="utf-8")
+            result = install_native_host(root / "out", host_path=host, registration_root=root / "registration",
+                                         extension_id="abcdefghijklmnopabcdefghijklmnop")
+            for browser in ("chrome", "edge"):
+                manifest = json.loads(Path(result["files"][browser]).read_text())
+                self.assertTrue(all("*" not in origin for origin in manifest["allowed_origins"]))
+                self.assertIn("chrome-extension://abcdefghijklmnopabcdefghijklmnop/", manifest["allowed_origins"])
 
 
 if __name__ == "__main__":

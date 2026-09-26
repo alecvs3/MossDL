@@ -7,6 +7,8 @@
 // this origin's cookies and returns them to the app over native messaging.
 // Nothing happens on pages the app did not open.
 
+import {createBrowserAdapter,callApi} from './browserApi.ts';
+import {report} from './diagnostics.ts';
 const FRAGMENT = "mossdl-handoff";
 const ANSWER_FIELDS = ["cf-turnstile-response", "g-recaptcha-response", "h-captcha-response"];
 
@@ -15,9 +17,10 @@ function takeTicket(): { ticket: string; challengeId: string; generation: number
   const ticket = params.get(FRAGMENT);
   const challengeId = params.get("mossdl-c");
   const generation = Number(params.get("mossdl-g"));
-  if (!ticket || !challengeId || !Number.isInteger(generation)) return null;
+  if (!ticket || !challengeId || !params.has('mossdl-g') || !Number.isInteger(generation) || generation < 0) return null;
   // Out of the address bar and history before the site can read it.
-  history.replaceState(history.state, "", location.pathname + location.search);
+  for(const key of [FRAGMENT,'mossdl-c','mossdl-g']) params.delete(key);
+  history.replaceState(history.state, "", location.pathname + location.search + (params.size ? '#'+params.toString() : ''));
   return { ticket, challengeId, generation };
 }
 
@@ -33,21 +36,27 @@ function answer(): string | null {
 
 const handoff = window.top === window ? takeTicket() : null;
 if (handoff) {
-  const runtime = (globalThis as any).browser?.runtime ?? (globalThis as any).chrome?.runtime;
+  const adapter=createBrowserAdapter();
   let sent = false;
-  const send = () => {
+  let inFlight = false;
+  let attempts = 0;
+  const send = async () => {
     const token = answer();
-    if (sent || !token) return;
-    sent = true;
-    observer.disconnect();
-    runtime?.sendMessage?.({ type: "challenge_solved", ...handoff, token });
+    if (sent || inFlight || !token || attempts >= 3) return;
+    inFlight=true; attempts++;
+    try {
+      const response=await callApi(adapter,adapter.runtime,'sendMessage',{type:'challenge_solved',...handoff,token});
+      if(!response?.success) throw new Error('Handoff not accepted');
+      sent=true;observer.disconnect();
+    } catch {report('handoff_failed','app_not_ready_or_ticket_rejected');}
+    finally {inFlight=false;}
   };
   const observer = new MutationObserver(send);
   const start = () => {
     observer.observe(document.documentElement, { subtree: true, childList: true, attributes: true, attributeFilter: ["value"] });
     // Widgets set .value without an attribute change; a light poll covers that.
     const poll = window.setInterval(() => { send(); if (sent) window.clearInterval(poll); }, 1000);
-    window.setTimeout(() => window.clearInterval(poll), 15 * 60 * 1000); // the ticket's own lifetime
+    window.setTimeout(() => {window.clearInterval(poll);observer.disconnect();}, 15 * 60 * 1000); // ticket lifetime
   };
   if (document.documentElement) start();
   else document.addEventListener("DOMContentLoaded", start, { once: true });

@@ -1,0 +1,61 @@
+{
+  "crawler": "pimpandhost",
+  "generated": {
+    "source_sha256": "dd18375a2b0f20bba285d73510161f5c11a30dd8938c9fbcb80af8577f354ffb",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "pimpandhost",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/pimpandhost.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "pimpandhost",
+    "crawler_class": "PimpAndHostCrawler",
+    "decorators": [],
+    "domain": "pimpandhost",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "PimpAndHostProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "album",
+      "fetch",
+      "image"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "pimpandhost",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".main-image-wrapper",
+      "li[class=next] a",
+      "span.author-header__album-name",
+      "span.date-time"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/pimpandhost.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Album": "/album/...",
+      "Image": "/image/..."
+    },
+    "warnings": [
+      "reference operations not implemented locally: enumerate"
+    ]
+  }
+}

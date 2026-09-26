@@ -330,7 +330,7 @@ class EngineService:
             context={"data_dir": str(self.data_dir)},
         )
         self.store = TaskStore(self.data_dir / "downloads.sqlite3")
-        concurrency_auditor.attach_store(self.store)
+        concurrency_auditor.attach_store(self.store, self.data_dir / "logs")
         concurrency_auditor.load_persisted_profiles()
 
         if self.store.get_setting("download_directory") is None:
@@ -5157,7 +5157,7 @@ class EngineService:
                                 and t.state in {"resolving", "preflight"}
                                 and (urlsplit(t.source_url or "").hostname or "").lower() == host
                             )
-                            if resolving_on_host >= 3:
+                            if resolving_on_host >= 3 and host not in {"127.0.0.1", "localhost", "::1", "0.0.0.0"}:
                                 last_warn = self._host_cooldown_warned.get(f"resolve:{host}", 0.0)
                                 if now - last_warn >= 30.0:
                                     self._host_cooldown_warned[f"resolve:{host}"] = now
@@ -5458,7 +5458,7 @@ class EngineService:
                     self._log_task(task, "info", "resolve", "Using pre-resolved direct download link (bypassing resolution)")
                 else:
                     # Stagger start of link resolutions on the same host domain to eliminate HTTP 429 anti-bot triggers
-                    if target_host:
+                    if target_host and target_host not in {"127.0.0.1", "localhost", "::1", "0.0.0.0"}:
                         if target_host not in self._domain_resolve_locks:
                             self._domain_resolve_locks[target_host] = asyncio.Lock()
                         domain_lock = self._domain_resolve_locks[target_host]

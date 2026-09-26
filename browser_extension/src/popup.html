@@ -27,7 +27,7 @@
       </div>
       <button type="button" class="action primary" id="btn-scan-page">
         <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M8 3.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9ZM2 8a6 6 0 1 1 10.9 3.46l4.32 4.33a1 1 0 0 1-1.41 1.41l-4.33-4.32A6 6 0 0 1 2 8Z"/></svg>
-        <span class="label"><b>Find downloads on this page</b><small>Links, buttons and mirrors go to Explore</small></span>
+        <span class="label"><b>Find downloads on this page</b><small>Send available file links to the app</small></span>
         <span class="count" id="scan-badge">0</span>
       </button>
       <div class="pair">
@@ -45,16 +45,16 @@
 
     <section class="settings" aria-label="Capture settings">
       <label class="row" for="pref-intercept-downloads">
-        <span><b>Catch downloads</b><small>Send .zip, .iso, .exe and similar to MossDL</small></span>
-        <input type="checkbox" id="pref-intercept-downloads" checked><i class="switch" aria-hidden="true"></i>
+        <span><b>Catch downloads</b><small>Only stop the browser after MossDL accepts</small></span>
+        <input type="checkbox" id="pref-intercept-downloads"><i class="switch" aria-hidden="true"></i>
       </label>
       <label class="row" for="pref-media-overlays">
         <span><b>Media button</b><small>A small download button on videos and audio</small></span>
         <input type="checkbox" id="pref-media-overlays" checked><i class="switch" aria-hidden="true"></i>
       </label>
       <label class="row" for="pref-stream-sniffer">
-        <span><b>Find streams</b><small>Notice HLS (.m3u8) and DASH (.mpd) playlists</small></span>
-        <input type="checkbox" id="pref-stream-sniffer" checked><i class="switch" aria-hidden="true"></i>
+        <span><b>Find streams</b><small>Keep detected streams until you choose Grab media</small></span>
+        <input type="checkbox" id="pref-stream-sniffer"><i class="switch" aria-hidden="true"></i>
       </label>
       <label class="row" for="pref-clean-tracking">
         <span><b>Clean links</b><small>Drop utm_*, fbclid and gclid from captured links</small></span>
@@ -66,9 +66,10 @@
 
     <footer class="bottom">
       <span class="stats"><b id="stat-captured-count">0</b> captured · <span id="stat-bridge-status">Ready</span></span>
-      <button type="button" class="open" id="btn-open-desktop">Open MossDL</button>
+      <button type="button" class="open" id="btn-open-desktop">Connect to MossDL</button>
     </footer>
   </main>
   <script src="popup.js"></script>
 </body>
 </html>
+

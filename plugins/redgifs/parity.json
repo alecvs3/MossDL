@@ -1,0 +1,70 @@
+{
+  "crawler": "redgifs",
+  "generated": {
+    "source_sha256": "7329322b15c90156753cf4aa1e3f32176753ae8abff99ab35780319187ce0720",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "redgifs",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/redgifs.py",
+    "source_file": "cyberdrop_dl/crawlers/redgifs.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "redgifs",
+    "crawler_class": "RedGifsCrawler",
+    "decorators": [
+      "HTTPConfig"
+    ],
+    "domain": "redgifs",
+    "fixture_cases": [],
+    "fixture_file": "tests/crawlers/test_cases/redgifs.py",
+    "local_hook_target": {
+      "class": "RedGifsProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__async_post_init__",
+      "__json_resp_check__",
+      "__post_init__",
+      "_gif",
+      "_profile_pager",
+      "fetch",
+      "gif",
+      "pager",
+      "parse_unique_gifs",
+      "user"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "redgifs",
+    "rate_limits": {
+      "rate_limit_window_seconds": 3,
+      "requests_per_second": 0.666667
+    },
+    "request_contracts": [],
+    "selectors": [
+      ".",
+      "["
+    ],
+    "source_file": "cyberdrop_dl/crawlers/redgifs.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Embeds": "/ifr/<gif_id>",
+      "Gif": "/watch/<gif_id>",
+      "Image": "/i/<image_id>",
+      "User": "/users/<user>"
+    },
+    "warnings": []
+  }
+}

@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::io::{self, BufRead};
 use std::path::{Component, Path, PathBuf};
-use std::sync::atomic::{AtomicU64, Ordering};
+use std::sync::atomic::{AtomicU64, AtomicUsize, Ordering};
 use std::sync::Arc;
 use std::time::{Duration, Instant};
 use tokio::fs::{self, File, OpenOptions};
@@ -18,6 +18,8 @@ mod checkpoint;
 mod checksum;
 #[path = "transfer_core/mega.rs"]
 mod mega;
+#[path = "transfer_core/scheduler.rs"]
+mod scheduler;
 #[path = "transfer_core/session.rs"]
 mod session;
 #[path = "transfer_core/tunnel/mod.rs"]
@@ -38,109 +40,6 @@ fn emit_progress(transfer_id: Option<&str>, bytes: u64, total: Option<u64>) {
             "total": total
         }
     }));
-}
-
-/// A single range slot with atomic boundaries for lock-free work-stealing.
-struct RangeSlot {
-    _start: u64,
-    /// Dynamically shortened by steal operations via compare_exchange.
-    end: Arc<AtomicU64>,
-    /// Tracks the current read offset (bytes consumed so far).
-    current: Arc<AtomicU64>,
-}
-
-/// Lock-free dynamic range scheduler enabling in-flight work-stealing.
-///
-/// When a worker finishes its assigned range, it asks the scheduler to steal
-/// bytes from the slowest in-flight connection. The scheduler atomically
-/// truncates the victim's end boundary and returns a new `(start, end)` range
-/// for the thief to download.
-struct RangeScheduler {
-    slots: Vec<RangeSlot>,
-    min_steal_bytes: u64,
-}
-
-impl RangeScheduler {
-    const BLOCK_ALIGN: u64 = 64 * 1024; // 64 KB
-
-    fn new(ranges: Vec<(u64, u64)>, min_steal_bytes: u64) -> Self {
-        let slots = ranges
-            .into_iter()
-            .map(|(start, end)| RangeSlot {
-                _start: start,
-                end: Arc::new(AtomicU64::new(end)),
-                current: Arc::new(AtomicU64::new(start)),
-            })
-            .collect();
-        Self {
-            slots,
-            min_steal_bytes,
-        }
-    }
-
-    /// Shared (end, current) trackers for the slot at `index`, so the worker
-    /// that owns this range observes truncations and reports its live offset.
-    fn slot_trackers(&self, index: usize) -> Option<(Arc<AtomicU64>, Arc<AtomicU64>)> {
-        self.slots.get(index).map(|slot| (slot.end.clone(), slot.current.clone()))
-    }
-
-    /// Attempt to steal work from the largest active slot.
-    ///
-    /// Returns `Some((new_start, old_end))` if a steal succeeded, or `None`
-    /// if no slot has enough remaining bytes to justify splitting.
-    fn try_steal(&self) -> Option<(u64, u64)> {
-        // Find the slot with the most remaining bytes
-        let mut best_idx = None;
-        let mut best_remaining: u64 = 0;
-
-        for (i, slot) in self.slots.iter().enumerate() {
-            let cur = slot.current.load(Ordering::Relaxed);
-            let end = slot.end.load(Ordering::Relaxed);
-            if cur <= end {
-                let remaining = end - cur + 1;
-                if remaining > best_remaining {
-                    best_remaining = remaining;
-                    best_idx = Some(i);
-                }
-            }
-        }
-
-        let idx = best_idx?;
-        if best_remaining < 2 * self.min_steal_bytes {
-            return None;
-        }
-
-        let slot = &self.slots[idx];
-        let old_end = slot.end.load(Ordering::Acquire);
-        let cur = slot.current.load(Ordering::Relaxed);
-        let remaining = if old_end >= cur {
-            old_end - cur + 1
-        } else {
-            return None;
-        };
-
-        if remaining < 2 * self.min_steal_bytes {
-            return None;
-        }
-
-        // Compute split point aligned DOWN to 64 KB boundary
-        let raw_split = cur + remaining / 2;
-        let split = raw_split & !(Self::BLOCK_ALIGN - 1);
-
-        // Ensure split is valid (within range and leaves both sides with bytes)
-        if split <= cur || split > old_end {
-            return None;
-        }
-
-        // Atomically truncate victim's end to `split - 1`
-        match slot
-            .end
-            .compare_exchange(old_end, split - 1, Ordering::AcqRel, Ordering::Relaxed)
-        {
-            Ok(_) => Some((split, old_end)),
-            Err(_) => None, // Another thief beat us; retry next time
-        }
-    }
 }
 
 #[derive(Debug, Deserialize)]
@@ -590,6 +489,22 @@ fn write_at_offset(file: &std::fs::File, mut offset: u64, mut buf: &[u8]) -> Res
     }
 }
 
+/// Counts a range worker as streaming for as long as it holds a 206 response.
+struct StreamingGuard(Arc<AtomicUsize>);
+
+impl StreamingGuard {
+    fn enter(counter: &Arc<AtomicUsize>) -> Self {
+        counter.fetch_add(1, Ordering::AcqRel);
+        Self(counter.clone())
+    }
+}
+
+impl Drop for StreamingGuard {
+    fn drop(&mut self) {
+        self.0.fetch_sub(1, Ordering::AcqRel);
+    }
+}
+
 async fn download_range(
     client: Client,
     params: DownloadParams,
@@ -599,6 +514,7 @@ async fn download_range(
     dynamic_end: Option<Arc<AtomicU64>>,
     current_tracker: Option<Arc<AtomicU64>>,
     expected_validator: Option<Arc<String>>,
+    streaming: Arc<AtomicUsize>,
 ) -> Result<u64, String> {
     let request_headers = headers(&params.headers)?;
     let _expected_total = end - start + 1;
@@ -638,7 +554,10 @@ async fn download_range(
             || response.status() == StatusCode::FORBIDDEN
             || response.status().is_server_error()
         {
-            if attempt == params.max_retries {
+            // Refused while sibling connections are streaming: the host is at its
+            // connection limit. Give the range back now; a streaming worker adopts
+            // it when it finishes, instead of this one sleeping on a slot.
+            if attempt == params.max_retries || streaming.load(Ordering::Acquire) > 0 {
                 return Err(structured_error(response, &params).await);
             }
             sleep_retry(Some(&response), &mut backoff).await;
@@ -654,6 +573,7 @@ async fn download_range(
         if response.status() != StatusCode::PARTIAL_CONTENT {
             return Err(structured_error(response, &params).await);
         }
+        let _streaming = StreamingGuard::enter(&streaming);
         let content_range = response
             .headers()
             .get(reqwest::header::CONTENT_RANGE)
@@ -1188,8 +1108,8 @@ async fn download(client: Client, params: DownloadParams) -> Result<DownloadResu
 
     // Build range plan and RangeScheduler for dynamic work-stealing
 
-    let scheduler = Arc::new(RangeScheduler::new(
-        ranges.clone(),
+    let scheduler = Arc::new(scheduler::RangeScheduler::new(
+        &ranges,
         8 * 1024 * 1024, // 8 MB minimum steal threshold
     ));
     let expected_validator = probe.validator.map(Arc::new);
@@ -1197,38 +1117,48 @@ async fn download(client: Client, params: DownloadParams) -> Result<DownloadResu
     let semaphore = std::sync::Arc::new(Semaphore::new(count));
     let mut jobs = tokio::task::JoinSet::new();
     let mut total_segments = count;
+    // Workers currently receiving body bytes (see download_range).
+    let streaming = Arc::new(AtomicUsize::new(0));
 
-    for (slot_index, &(seg_start, seg_end)) in ranges.iter().enumerate() {
+    // Every worker, initial or stolen/adopted, owns a scheduler slot and
+    // reports which one when it ends, so a refused connection's bytes can be
+    // handed to a worker that is still allowed in.
+    let spawn_worker = |jobs: &mut tokio::task::JoinSet<(usize, Result<u64, String>)>,
+                        trackers: scheduler::Trackers,
+                        start: u64,
+                        end: u64,
+                        tx: tokio::sync::mpsc::Sender<WriteChunk>,
+                        permit: Option<tokio::sync::OwnedSemaphorePermit>| {
         let client_clone = client.clone();
         let params_clone = params.clone();
+        let val_clone = expected_validator.clone();
+        let streaming_clone = streaming.clone();
+        jobs.spawn(async move {
+            let result = download_range(
+                client_clone,
+                params_clone,
+                start,
+                end,
+                tx,
+                Some(trackers.end),
+                Some(trackers.current),
+                val_clone,
+                streaming_clone,
+            )
+            .await;
+            drop(permit);
+            (trackers.index, result)
+        });
+    };
+
+    for (slot_index, &(seg_start, seg_end)) in ranges.iter().enumerate() {
         let permit = semaphore
             .clone()
             .acquire_owned()
             .await
             .map_err(|e| e.to_string())?;
-        let worker_tx = writer_tx.clone();
-        let val_clone = expected_validator.clone();
-        // Wire the slot's shared end/current atomics so a victim observes a
-        // thief's truncation and the scheduler sees real remaining bytes.
-        let (end_tracker, current_tracker) = scheduler
-            .slot_trackers(slot_index)
-            .unwrap_or((Arc::new(AtomicU64::new(seg_end)), Arc::new(AtomicU64::new(seg_start))));
-
-        jobs.spawn(async move {
-            let result = download_range(
-                client_clone,
-                params_clone,
-                seg_start,
-                seg_end,
-                worker_tx,
-                Some(end_tracker),
-                Some(current_tracker),
-                val_clone,
-            )
-            .await;
-            drop(permit);
-            result
-        });
+        let trackers = scheduler.trackers(slot_index).ok_or("range scheduler lost a slot")?;
+        spawn_worker(&mut jobs, trackers, seg_start, seg_end, writer_tx.clone(), Some(permit));
     }
 
     // Don't drop writer_tx yet — we may spawn steal tasks that need it
@@ -1239,44 +1169,38 @@ async fn download(client: Client, params: DownloadParams) -> Result<DownloadResu
     let mut unexpected_200 = false;
     let mut throttle_error: Option<String> = None;
 
-    // Process completed workers and spawn steal tasks
+    // Process completed workers: adopt refused ranges first, then steal.
     while let Some(result) = jobs.join_next().await {
         match result {
-            Ok(Ok(_)) => {
-                // Worker finished — try to steal work from a straggler
-                if !unexpected_200 && throttle_error.is_none() {
-                    if let Some((steal_start, steal_end)) = scheduler.try_steal() {
-                        total_segments += 1;
-                        let client_clone = client.clone();
-                        let params_clone = params.clone();
-                        let thief_tx = steal_tx.clone();
-                        let val_clone = expected_validator.clone();
-                        jobs.spawn(async move {
-                            download_range(
-                                client_clone,
-                                params_clone,
-                                steal_start,
-                                steal_end,
-                                thief_tx,
-                                None,
-                                None,
-                                val_clone,
-                            )
-                            .await
-                        });
-                    }
+            Ok((_, Ok(_))) => {
+                if unexpected_200 {
+                    continue;
+                }
+                // After a refusal the host has told us its limit: only take
+                // over orphaned bytes, never open an extra connection.
+                let next = scheduler
+                    .adopt()
+                    .or_else(|| if throttle_error.is_none() { scheduler.try_steal() } else { None });
+                if let Some((next_start, next_end)) = next {
+                    total_segments += 1;
+                    let trackers = scheduler.add_slot(next_start, next_end);
+                    spawn_worker(&mut jobs, trackers, next_start, next_end, steal_tx.clone(), None);
                 }
             }
-            Ok(Err(e)) => {
+            Ok((index, Err(e))) => {
                 if e == "UNEXPECTED_200" {
                     unexpected_200 = true;
                     jobs.abort_all();
                     break;
                 }
-                if is_retryable_transport_error(&e) && throttle_error.is_none() {
-                    throttle_error = Some(e.clone());
-                }
-                if range_error.is_none() {
+                if is_retryable_transport_error(&e) {
+                    // Refused or failing connection: its bytes go to a survivor.
+                    eprintln!("[RANGE_ABANDONED] slot {index}: {e}; its remaining bytes will be adopted");
+                    scheduler.abandon(index);
+                    if throttle_error.is_none() {
+                        throttle_error = Some(e);
+                    }
+                } else if range_error.is_none() {
                     range_error = Some(e);
                 }
             }
@@ -1323,7 +1247,11 @@ async fn download(client: Client, params: DownloadParams) -> Result<DownloadResu
     }
 
     if let Some(err) = throttle_error {
-        return Err(err);
+        let orphaned = scheduler.orphaned_bytes();
+        if orphaned > 0 {
+            return Err(err);
+        }
+        eprintln!("[RANGE_THROTTLE_ABSORBED] {err}; refused ranges were finished by the remaining connections");
     }
     if let Some(err) = range_error {
         return Err(err);

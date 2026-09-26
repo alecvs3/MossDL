@@ -21,7 +21,7 @@ class BrowserExtensionContractTests(unittest.TestCase):
             result = build_common_extension(Path(raw) / "common-artifact")
             common = Path(result["output"]) / "common"
             self.assertEqual(sorted(path.name for path in common.iterdir()),
-                             ["background.js", "browserApi.js", "content.js", "popup.js", "protocol.js"])
+                             ["background.js", "browserApi.js", "content.js", "handoff.js", "popup.js", "protocol.js"])
             protocol = (common / "protocol.js").read_text(encoding="utf-8")
             self.assertIn("browser-capture/1", protocol)
             self.assertIn("ReplayQueue", protocol)

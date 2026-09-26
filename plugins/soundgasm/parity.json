@@ -1,0 +1,62 @@
+{
+  "crawler": "soundgasm",
+  "generated": {
+    "source_sha256": "5aef22daa6e1f1743e5af4de36677e639bdb0140649bda52d771ce3a0259f643",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "soundgasm",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/soundgasm.py",
+    "source_file": "cyberdrop_dl/crawlers/soundgasm.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "soundgasm",
+    "crawler_class": "SoundGasmCrawler",
+    "decorators": [
+      "HTTPConfig"
+    ],
+    "domain": "soundgasm",
+    "fixture_cases": [],
+    "fixture_file": "tests/crawlers/test_cases/soundgasm.py",
+    "local_hook_target": {
+      "class": "SoundGasmProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "_request_audio",
+      "audio",
+      "fetch",
+      "user"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "soundgasm",
+    "rate_limits": {
+      "rate_limit_window_seconds": 1,
+      "requests_per_second": 5.0
+    },
+    "request_contracts": [],
+    "selectors": [
+      ".jp-title",
+      ".sound-details a"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/soundgasm.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Audio": "/u/<user>/<slug>",
+      "User": "/u/<user>"
+    },
+    "warnings": []
+  }
+}

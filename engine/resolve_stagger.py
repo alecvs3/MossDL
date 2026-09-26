@@ -26,8 +26,11 @@ class ResolveStaggerController:
         self._lock = threading.Lock()
 
     def delay(self, host: str) -> float:
+        clean = host.lower().strip()
+        if clean in {"127.0.0.1", "localhost", "::1", "0.0.0.0"}:
+            return 0.0
         with self._lock:
-            return self._states.setdefault(host.lower(), _HostState(self.initial)).delay_seconds
+            return self._states.setdefault(clean, _HostState(self.initial)).delay_seconds
 
     def observe_success(self, host: str) -> float:
         with self._lock:

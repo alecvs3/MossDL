@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 use std::fs::{self, File};
 use std::io::Write;
 use std::path::{Path, PathBuf};
-use std::time::{Instant, UNIX_EPOCH};
+use std::time::{Duration, Instant, UNIX_EPOCH};
 
 #[derive(Serialize, Deserialize)]
 pub struct Journal {
@@ -108,7 +108,13 @@ pub fn replace(source: &Path, destination: &Path) -> Result<(), String> {
     { fs::rename(source, destination).map_err(|e| e.to_string()) }
 }
 
-pub fn checkpoint_due(last: Instant) -> bool { last.elapsed().as_secs() >= 15 }
+/// How often the journal (and the data it vouches for) is made durable. A crash
+/// loses at most this much transfer time: at 15 s a 30 MB/s download killed at
+/// 6 s kept nothing and fetched 1.4x the file. The data has to reach the disk
+/// anyway, so flushing more often costs little extra.
+pub const CHECKPOINT_EVERY: Duration = Duration::from_secs(3);
+
+pub fn checkpoint_due(last: Instant) -> bool { last.elapsed() >= CHECKPOINT_EVERY }
 
 #[cfg(test)]
 mod tests {

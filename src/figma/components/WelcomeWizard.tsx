@@ -65,9 +65,16 @@ export function WelcomeWizard({
     onDismiss();
   };
 
-  const openExtensionFolder = async () => {
-    const candidatePath = "N:\\transfer\\.test-artifacts\\browser-extension\\chrome";
-    await openPath(candidatePath).catch(() => {});
+  const openChromeStore = () => {
+    void openPath("https://chromewebstore.google.com/detail/mossdl-capture/dknlgnaknfaoflbmobdknjfjdagieccm");
+  };
+
+  const openFirefoxStore = () => {
+    void openPath("https://addons.mozilla.org/firefox/addon/mossdl-capture/");
+  };
+
+  const openDocs = () => {
+    void openPath("https://mossdownloader.com/docs/extension/");
   };
 
   const openChromeExtensions = async () => {
@@ -323,59 +330,94 @@ export function WelcomeWizard({
                   <Icon d={ic.globe} size={18} />
                 </div>
                 <div className="min-w-0">
-                  <h3 className="text-xs font-bold text-white">MossDL Browser Extension</h3>
+                  <h3 className="text-xs font-bold text-white">MossDL Browser Extension (MossDL Capture)</h3>
                   <p className="text-[11px] text-[var(--ink-60)] mt-1 leading-relaxed">
-                    Intercept file downloads in Chrome, Edge, and Firefox automatically. Right-click any link or page to
-                    download with MossDL, or sync session cookies for authenticated hosters.
+                    Intercept file downloads in Chrome, Edge, Brave, and Firefox automatically. Right-click any link or page to
+                    capture media with MossDL, or sync session cookies for authenticated hosters.
                   </p>
                 </div>
               </div>
 
-              <div className="space-y-2 text-xs">
-                <div className="p-3 rounded-lg bg-[var(--surface-03)] border border-[var(--line-06)] flex items-start gap-2.5">
-                  <span className="w-5 h-5 rounded-full bg-blue-500/20 text-blue-300 flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
-                    1
-                  </span>
-                  <div>
-                    <span className="font-semibold text-white">Open Extensions Manager:</span> In Chrome or Edge, navigate to{" "}
-                    <code className="text-blue-300">chrome://extensions</code> and enable <strong>Developer mode</strong>.
-                  </div>
+              {/* Official Store Listings */}
+              <div className="space-y-2">
+                <div className="text-[10px] font-semibold text-[var(--ink-60)] uppercase tracking-wider px-0.5">
+                  Official Web Stores
                 </div>
-                <div className="p-3 rounded-lg bg-[var(--surface-03)] border border-[var(--line-06)] flex items-start gap-2.5">
-                  <span className="w-5 h-5 rounded-full bg-blue-500/20 text-blue-300 flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
-                    2
-                  </span>
-                  <div>
-                    <span className="font-semibold text-white">Click "Load unpacked":</span> Select the extension build directory
-                    from MossDL.
-                  </div>
-                </div>
-                <div className="p-3 rounded-lg bg-[var(--surface-03)] border border-[var(--line-06)] flex items-start gap-2.5">
-                  <span className="w-5 h-5 rounded-full bg-blue-500/20 text-blue-300 flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
-                    3
-                  </span>
-                  <div>
-                    <span className="font-semibold text-white">Connected:</span> The extension automatically connects to the native
-                    host and starts intercepting downloads.
-                  </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <button
+                    type="button"
+                    onClick={openChromeStore}
+                    className="p-3.5 rounded-xl bg-[var(--surface-04)] hover:bg-[var(--surface-07)] border border-[var(--line-08)] hover:border-blue-500/40 text-left transition-all group flex flex-col justify-between gap-2"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-xs font-bold text-white group-hover:text-blue-400 transition-colors">Chrome Web Store</span>
+                        <Icon d={ic.externalLink} size={11} className="text-[var(--ink-40)] group-hover:text-blue-400 transition-colors" />
+                      </div>
+                      <span className="px-1.5 py-0.5 rounded text-[9px] font-semibold bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                        Pending review
+                      </span>
+                    </div>
+                    <p className="text-[10.5px] text-[var(--ink-50)]">For Google Chrome, Microsoft Edge, Brave, and Opera</p>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={openFirefoxStore}
+                    className="p-3.5 rounded-xl bg-[var(--surface-04)] hover:bg-[var(--surface-07)] border border-[var(--line-08)] hover:border-orange-500/40 text-left transition-all group flex flex-col justify-between gap-2"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-xs font-bold text-white group-hover:text-orange-400 transition-colors">Firefox Add-ons</span>
+                        <Icon d={ic.externalLink} size={11} className="text-[var(--ink-40)] group-hover:text-orange-400 transition-colors" />
+                      </div>
+                      <span className="px-1.5 py-0.5 rounded text-[9px] font-semibold bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                        Pending review
+                      </span>
+                    </div>
+                    <p className="text-[10.5px] text-[var(--ink-50)]">For Mozilla Firefox and Gecko-based browsers</p>
+                  </button>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 pt-1">
-                <button
-                  onClick={openChromeExtensions}
-                  className="flex-1 py-2 px-3 rounded-xl text-xs font-semibold text-white bg-[var(--surface-05)] hover:bg-[var(--surface-08)] border border-[var(--line-08)] flex items-center justify-center gap-1.5 transition-colors"
-                >
-                  <Icon d={ic.externalLink} size={13} />
-                  Open chrome://extensions
-                </button>
-                <button
-                  onClick={openExtensionFolder}
-                  className="flex-1 py-2 px-3 rounded-xl text-xs font-semibold text-white bg-[var(--surface-05)] hover:bg-[var(--surface-08)] border border-[var(--line-08)] flex items-center justify-center gap-1.5 transition-colors"
-                >
-                  <Icon d={ic.folder} size={13} />
-                  Open Extension Folder
-                </button>
+              {/* Developer Mode / Unpacked Installation */}
+              <div className="p-3.5 rounded-xl bg-[var(--surface-03)] border border-[var(--line-06)] space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-semibold text-white">Manual / Developer Mode Installation</span>
+                    <span className="px-1.5 py-0.5 rounded text-[9.5px] font-medium bg-blue-500/15 text-blue-300 border border-blue-500/25">
+                      Available now
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={openDocs}
+                    className="text-[11px] text-blue-400 hover:text-blue-300 flex items-center gap-1 transition-colors"
+                  >
+                    Documentation <Icon d={ic.externalLink} size={11} />
+                  </button>
+                </div>
+                <p className="text-[10.5px] text-[var(--ink-50)] leading-relaxed">
+                  While store submissions complete review, you can load the unpacked extension in developer mode or follow the setup guide on mossdownloader.com.
+                </p>
+                <div className="flex items-center gap-2 pt-1">
+                  <button
+                    type="button"
+                    onClick={openChromeExtensions}
+                    className="flex-1 py-1.5 px-3 rounded-lg text-xs font-medium text-white bg-[var(--surface-05)] hover:bg-[var(--surface-08)] border border-[var(--line-08)] flex items-center justify-center gap-1.5 transition-colors"
+                  >
+                    <Icon d={ic.externalLink} size={12} />
+                    Open chrome://extensions
+                  </button>
+                  <button
+                    type="button"
+                    onClick={openDocs}
+                    className="flex-1 py-1.5 px-3 rounded-lg text-xs font-medium text-white bg-[var(--surface-05)] hover:bg-[var(--surface-08)] border border-[var(--line-08)] flex items-center justify-center gap-1.5 transition-colors"
+                  >
+                    <Icon d={ic.globe} size={12} />
+                    View Setup Guide
+                  </button>
+                </div>
               </div>
 
               <div className="flex items-center justify-between pt-2">

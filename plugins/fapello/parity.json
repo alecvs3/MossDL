@@ -1,0 +1,62 @@
+{
+  "crawler": "fapello",
+  "generated": {
+    "source_sha256": "8906349375e3d4b8d8128a6a80d89fda21e95ca0bd89202878b30b5e88375f19",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "fapello",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/fapello.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "fapello",
+    "crawler_class": "FapelloComCrawler",
+    "decorators": [
+      "HTTPConfig"
+    ],
+    "domain": "fapello.com",
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "FapelloProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "fetch",
+      "model",
+      "post"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "fapello",
+    "rate_limits": {
+      "rate_limit_window_seconds": 1,
+      "requests_per_second": 5.0
+    },
+    "request_contracts": [],
+    "selectors": [
+      ".main_content .uk-align-center [src]",
+      "div[id=\"next_page\"] a",
+      "fapello.com"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/fapello.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Individual Post": "/<model_nam>/<post_id>",
+      "Model": "/<name>"
+    },
+    "warnings": []
+  }
+}

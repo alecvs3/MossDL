@@ -34,6 +34,7 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; }
 body { width: 340px; background: var(--bg); color: var(--text); font: 13px/1.35 "Segoe UI Variable", "Segoe UI", system-ui, sans-serif; }
+@media (min-width: 700px) { body { margin: 36px auto; } }
 button { font: inherit; color: inherit; cursor: pointer; }
 button:focus-visible, .row:focus-within .switch { outline: 2px solid var(--accent); outline-offset: 2px; }
 
@@ -84,6 +85,9 @@ button:focus-visible, .row:focus-within .switch { outline: 2px solid var(--accen
 .switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 12px; height: 12px; border-radius: 50%; background: var(--muted); transition: left 0.15s, background 0.15s; }
 .row input:checked + .switch { background: var(--accent); border-color: transparent; }
 .row input:checked + .switch::after { left: 16px; background: var(--accent-ink); }
+.row input:focus-visible + .switch { outline: 2px solid var(--accent); outline-offset: 3px; }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+button:disabled { opacity: .65; cursor: progress; }
 
 /* Feedback and footer */
 .toast { padding: 8px 11px; border-radius: 9px; background: var(--surface-2); border: 1px solid var(--line); font-size: 12px; }

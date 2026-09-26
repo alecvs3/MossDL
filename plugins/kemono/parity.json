@@ -1,0 +1,81 @@
+{
+  "crawler": "kemono",
+  "generated": {
+    "source_sha256": "5b627fb94c9b123fe20a83cd4d71938db7e5127afef54e45c1fbfb9aeed0567a",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "kemono",
+  "reference": {
+    "fixture_file": null,
+    "source_file": "cyberdrop_dl/crawlers/kemono/kemono.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "kemono",
+    "crawler_class": "KemonoBaseCrawler",
+    "decorators": [],
+    "domain": null,
+    "fixture_cases": [],
+    "fixture_file": null,
+    "local_hook_target": {
+      "class": "KemonoProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "__async_post_init__",
+      "__check_for_ads",
+      "__iter_user_posts",
+      "__kemono_config__",
+      "_compose_file_url",
+      "_direct_file",
+      "_extract_post_files",
+      "_extract_urls_from_post_content",
+      "_post",
+      "_user_post",
+      "creator",
+      "favorites",
+      "fetch",
+      "post",
+      "search"
+    ],
+    "operations": [
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "kemono",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      "#ad",
+      "#ads",
+      "Post #",
+      "[search]",
+      "cum.st",
+      "pawchive.st"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/kemono/kemono.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Creator": "/<service>/user/<user_id>",
+      "Direct links": [
+        "/data/...",
+        "/thumbnail/..."
+      ],
+      "Favorites": [
+        "/favorites?type=post|artist",
+        "/account/favorites/posts|artists"
+      ],
+      "Post": "/<service>/user/<user_id>/post/<post_id>",
+      "Search": "/search?q=..."
+    },
+    "warnings": []
+  }
+}

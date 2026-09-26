@@ -41,8 +41,8 @@ def get_log_paths() -> LogPaths:
         engine_jsonl=app_data / "logs" / "engine.jsonl",
         download_logs_dir=workspace / "download_logs",
         task_store_db=app_data / "downloads.sqlite3",
-        host_concurrency_audit=workspace / "logs" / "host_concurrency_audit.jsonl",
-        host_concurrency_profiles=workspace / "logs" / "host_concurrency_profiles.json",
+        host_concurrency_audit=app_data / "logs" / "host_concurrency_audit.jsonl",
+        host_concurrency_profiles=app_data / "logs" / "host_concurrency_profiles.json",
     )
 
 

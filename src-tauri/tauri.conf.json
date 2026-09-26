@@ -45,7 +45,12 @@
     "resources": [
       "../engine",
       "../plugins",
-      "../browser_extension",
+      "../browser_extension/src",
+      "../browser_extension/assets/icons",
+      "../browser_extension/build/common",
+      "../browser_extension/build.config.json",
+      "../browser_extension/manifest.chrome.json",
+      "../browser_extension/manifest.firefox.json",
       "../scripts/build_browser_extension.py",
       "resources/transfer-engine",
       "resources/transfer-core",

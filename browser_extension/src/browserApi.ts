@@ -26,10 +26,25 @@ export function createBrowserAdapter(target?: string): Record<string, any> {
     cookies: api.cookies,
     notifications: api.notifications,
     scripting: api.scripting,
+    alarms: api.alarms,
     connectNative: (hostName: string) => api.runtime.connectNative(hostName),
     extensionOrigin: () => String(api.runtime.getURL("")).replace(/\/$/, ""),
     addListener: (event: any, listener: (...args: any[]) => void, ...extra: any[]) => event?.addListener?.(listener, ...extra),
   };
+}
+
+/** chrome namespace callbacks work in Chrome and Firefox; consume lastError exactly once. */
+export function callApi(adapter: Record<string, any>, owner: any, method: string, ...args: any[]): Promise<any> {
+  return new Promise((resolve,reject)=> {
+    if(typeof owner?.[method] !== 'function') { reject(new Error(`Browser capability unavailable: ${method}`)); return; }
+    try {
+      owner[method](...args,(value:any)=> {
+        const error=adapter.runtime?.lastError;
+        if(error) reject(new Error(error.message || `Browser ${method} failed`));
+        else resolve(value);
+      });
+    } catch(error) { reject(error); }
+  });
 }
 
 export function detectBrowserTarget(): "chrome" | "edge" | "firefox" {

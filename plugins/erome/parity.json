@@ -1,0 +1,73 @@
+{
+  "crawler": "erome",
+  "generated": {
+    "source_sha256": "780a42b1e54f18e607abe41b2b0faf772a0ed7b106765eb21cfe4668b49b0fbc",
+    "status": "generated"
+  },
+  "promotion": {
+    "eligible": false,
+    "reason": "not tested"
+  },
+  "provider_id": "erome",
+  "reference": {
+    "fixture_file": "tests/crawlers/test_cases/erome.py",
+    "source_file": "cyberdrop_dl/crawlers/erome.py"
+  },
+  "schema": 1,
+  "spec": {
+    "crawler": "erome",
+    "crawler_class": "EromeCrawler",
+    "decorators": [],
+    "domain": "erome",
+    "fixture_cases": [
+      {
+        "url": "https://www.erome.com/a/JSXnUS4Y"
+      },
+      {
+        "url": "https://www.erome.com/a/osUNHQvy"
+      }
+    ],
+    "fixture_file": "tests/crawlers/test_cases/erome.py",
+    "local_hook_target": {
+      "class": "EromeProvider",
+      "module": "engine.providers.cyberdrop_hosts"
+    },
+    "local_operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "methods": [
+      "album",
+      "fetch",
+      "profile",
+      "search"
+    ],
+    "operations": [
+      "enumerate",
+      "refresh",
+      "resolve"
+    ],
+    "provider_id": "erome",
+    "rate_limits": {},
+    "request_contracts": [],
+    "selectors": [
+      ".media-group .video video > source",
+      ".media-group img.img-front",
+      "Erome.fan",
+      "[search]",
+      "a.album-link",
+      "a.next",
+      "a[rel=\"next\"]",
+      "erome.fan"
+    ],
+    "source_file": "cyberdrop_dl/crawlers/erome.py",
+    "supported_domains": [],
+    "supported_paths": {
+      "Album": "/a/<album_id>",
+      "Profile": "/<name>",
+      "Search": "/search?q=<query>"
+    },
+    "warnings": []
+  }
+}

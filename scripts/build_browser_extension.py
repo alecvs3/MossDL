@@ -20,9 +20,9 @@ DEFAULT_CONFIG = {
     "protocol_version": PROTOCOL_VERSION,
     "native_host_name": HOST_NAME,
     "extension_ids": {
-        "chrome": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-        "edge": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-        "firefox": "transfer-manager@openai.example",
+        "chrome": "",
+        "edge": "",
+        "firefox": "capture@mossdl.com",
     },
     "allowed_origins": ["http://*/*", "https://*/*"],
     "passive_capture_default": False,
@@ -60,8 +60,8 @@ def validate_common_sources() -> dict[str, Any]:
     required = {
         "protocol.ts": (PROTOCOL_VERSION, "ReplayQueue", "redactUrl", "isEligibleRequest"),
         "browserApi.ts": ("createBrowserAdapter", "BROWSER_TARGETS"),
-        "background.ts": ("CaptureController", "reconnecting", "candidate_batch"),
-        "content.ts": ("Capture media", "capture_candidate"),
+        "background.ts": ("CaptureController", "installBackgroundCapture", "capture_batch"),
+        "content.ts": ("installMediaOverlay", "capture_batch"),
         "popup.ts": ("createBrowserAdapter", "initPopup"),
     }
     missing = {name: [item for item in needles if item not in sources[name]] for name, needles in required.items()}
@@ -73,46 +73,24 @@ def validate_common_sources() -> dict[str, Any]:
 
 def _bundle_script(source_file: Path, out_file: Path, format_type: str = "iife") -> None:
     out_file.parent.mkdir(parents=True, exist_ok=True)
-    npx = shutil.which("npx") or ("npx.cmd" if os.name == "nt" else "npx")
-    cmd = [
-        npx,
-        "esbuild",
-        str(source_file),
-        f"--outfile={out_file}",
-        "--bundle",
-        f"--format={format_type}",
-        "--target=chrome100",
-    ]
-    try:
-        proc = subprocess.run(cmd, shell=(os.name == "nt"), capture_output=True, text=True, check=True)
-        if out_file.is_file() and out_file.stat().st_size > 0:
-            return
-    except Exception:
-        pass
-
-    # Lightweight regex fallback if esbuild is unavailable
-    text = source_file.read_text(encoding="utf-8")
-    import re
-    # Strip basic type annotations
-    text = re.sub(r":\s*[A-Za-z0-9_<>\[\]|]+(\s*[,)=;])", r"\1", text)
-    out_file.write_text(text, encoding="utf-8", newline="\n")
+    node = shutil.which("node")
+    if not node:
+        raise RuntimeError("Node is required; install Node 24 and run npm ci in browser_extension")
+    subprocess.run([node, str(ROOT / "browser_extension" / "scripts" / "bundle.mjs"),
+                    str(source_file), str(out_file), format_type], check=True, capture_output=True, text=True)
+    if not out_file.is_file() or out_file.stat().st_size == 0:
+        raise RuntimeError(f"Bundler produced no output: {source_file.name}")
 
 
 def _generate_icons(icon_dir: Path) -> None:
     icon_dir.mkdir(parents=True, exist_ok=True)
-    icon_src = ROOT / "src-tauri" / "icons" / "icon.png"
-    if not icon_src.is_file():
-        return
-    try:
-        from PIL import Image
-        with Image.open(icon_src) as img:
-            for size in (16, 32, 48, 128):
-                out_path = icon_dir / f"icon-{size}.png"
-                img.resize((size, size), Image.Resampling.LANCZOS).save(out_path, format="PNG")
-    except Exception:
-        for size in (16, 32, 48, 128):
-            out_path = icon_dir / f"icon-{size}.png"
-            shutil.copyfile(icon_src, out_path)
+    import struct
+    for size in (16, 32, 48, 128):
+        source = ROOT / "browser_extension" / "assets" / "icons" / f"icon-{size}.png"
+        data = source.read_bytes()
+        if data[:8] != b"\x89PNG\r\n\x1a\n" or struct.unpack(">II", data[16:24]) != (size, size):
+            raise ValueError(f"Invalid extension icon dimensions: {source}")
+        shutil.copyfile(source, icon_dir / source.name)
 
 
 def build_common_extension(output: str | Path) -> dict[str, Any]:
@@ -121,7 +99,22 @@ def build_common_extension(output: str | Path) -> dict[str, Any]:
     common = destination / "common"
     common.mkdir(parents=True, exist_ok=True)
 
-    # Bundle each script
+    # Installed apps use checked prebuilt scripts; users do not need npm/esbuild.
+    prebuilt = ROOT / "browser_extension" / "build" / "common"
+    if not (ROOT / "browser_extension" / "node_modules" / "esbuild").is_dir():
+        import hashlib
+        digest = hashlib.sha256()
+        for source in sorted(SOURCE_ROOT.glob("*.ts")):
+            digest.update(source.name.encode())
+            digest.update(source.read_bytes())
+        if not (prebuilt / "source.sha256").is_file() or (prebuilt / "source.sha256").read_text().strip() != digest.hexdigest():
+            raise RuntimeError("Missing or stale browser bundles. Run npm ci and npm run build in browser_extension before packaging the app.")
+        print(json.dumps({"event": "extension_prebuilt_selected", "reason": "installed_runtime_without_build_dependencies"}), file=sys.stderr)
+        for name in SOURCE_FILES:
+            shutil.copyfile(prebuilt / name.replace(".ts", ".js"), common / name.replace(".ts", ".js"))
+        return {"output": str(destination), **validate_common_sources()}
+
+    # Development builds use the pinned local bundler and fail on compilation errors.
     for name in SOURCE_FILES:
         target_js = common / name.replace(".ts", ".js")
         _bundle_script(SOURCE_ROOT / name, target_js, format_type="iife")
@@ -170,8 +163,8 @@ def _manifest(browser: str, config: dict[str, Any]) -> dict[str, Any]:
         base["browser_specific_settings"] = {
             "gecko": {
                 "id": extension_id,
-                "strict_min_version": "109.0",
-                "data_collection_permissions": {"required": ["none"]},
+                "strict_min_version": "142.0",
+                "data_collection_permissions": {"required": ["browsingActivity", "websiteContent", "authenticationInfo"]},
             }
         }
         base["background"] = {"scripts": ["background.js"]}
@@ -194,10 +187,9 @@ def _host_manifest(browser: str, config: dict[str, Any], host_path: Path) -> dic
     if browser == "firefox":
         result["allowed_extensions"] = [extension_id]
     else:
-        result["allowed_origins"] = [
-            f"chrome-extension://{extension_id}/",
-            f"chrome-extension://{extension_id}/*",
-        ]
+        result["allowed_origins"] = [f"chrome-extension://{extension_id}/"] if extension_id else []
+        if not extension_id:
+            print(json.dumps({"event": "native_store_id_pending", "browser": browser}), file=sys.stderr)
     return result
 
 
@@ -358,18 +350,10 @@ def install_native_host(output: str | Path, *, host_path: str | Path, registrati
             clean_ext_id = str(extension_id).strip()
             manifest_json = json.loads(content)
             allowed = [str(o).strip() for o in manifest_json.get("allowed_origins", []) if str(o).strip()]
-            for o in (f"chrome-extension://{clean_ext_id}/", f"chrome-extension://{clean_ext_id}/*"):
+            for o in (f"chrome-extension://{clean_ext_id}/",):
                 if o not in allowed:
                     allowed.append(o)
             manifest_json["allowed_origins"] = allowed
-            content = json.dumps(manifest_json, indent=2, sort_keys=True) + "\n"
-        elif extension_id and browser == "firefox":
-            clean_ext_id = str(extension_id).strip()
-            manifest_json = json.loads(content)
-            allowed = [str(e).strip() for e in manifest_json.get("allowed_extensions", []) if str(e).strip()]
-            if clean_ext_id not in allowed:
-                allowed.append(clean_ext_id)
-            manifest_json["allowed_extensions"] = allowed
             content = json.dumps(manifest_json, indent=2, sort_keys=True) + "\n"
         target.write_text(content, encoding="utf-8", newline="\n")
         installed[browser] = str(target)
@@ -437,7 +421,7 @@ def package_extension(output: str | Path) -> dict[str, Any]:
     """
     import zipfile
     config = load_config()
-    build_extension(output)
+    build_extension(output, check=True)
     packages: dict[str, str] = {}
     for browser in BROWSERS:
         folder = Path(output) / browser

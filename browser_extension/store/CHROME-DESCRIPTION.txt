@@ -1,0 +1,11 @@
+MossDL Capture connects Chrome to the MossDL download manager for Windows.
+
+Send links from the right-click menu, find file links on a page, or send media addresses to the desktop app. Optional stream detection finds supported media addresses in the current tab; you choose which ones to send.
+
+Automatic download capture starts disabled. When enabled, the extension stops a browser download only after MossDL acknowledges the handoff. If the desktop connection fails, the browser download is left untouched.
+
+Optional site-session sharing asks before sending cookies to your local MossDL installation. Support varies by website; the extension does not guarantee access to protected streams or every download source.
+
+Requires Chrome 120 or later and the MossDL Windows desktop application with its browser connection enabled. This extension is not a standalone downloader.
+
+Support: https://github.com/alecvs3/MossDL/issues

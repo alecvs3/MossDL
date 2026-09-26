@@ -4,10 +4,13 @@
   "protocol_version": "browser-capture/1",
   "native_host_name": "ai.transfer.manager.browser",
   "extension_ids": {
-    "chrome": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-    "edge": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-    "firefox": "transfer-manager@openai.example"
+    "chrome": "dknlgnaknfaoflbmobdknjfjdagieccm",
+    "edge": "",
+    "firefox": "capture@mossdl.com"
   },
-  "allowed_origins": ["http://*/*", "https://*/*"],
+  "allowed_origins": [
+    "http://*/*",
+    "https://*/*"
+  ],
   "passive_capture_default": false
 }

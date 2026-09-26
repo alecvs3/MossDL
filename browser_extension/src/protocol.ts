@@ -136,6 +136,6 @@ export function frameBatch(batch: Record<string, unknown>): Record<string, unkno
   const candidates = rankCandidates(Array.isArray(batch.candidates) ? batch.candidates as Record<string, unknown>[] : []);
   const frame = { version: PROTOCOL_VERSION, type: "candidate_batch", request_id: batch.request_id,
     batch_id: batch.batch_id, origin: batch.origin, page: batch.page, session_ref: batch.session_ref, candidates };
-  if (JSON.stringify(frame).length > MAX_BATCH_BYTES) throw new Error("candidate batch exceeds extension limit");
+  if (new TextEncoder().encode(JSON.stringify(frame)).length > MAX_BATCH_BYTES) throw new Error("candidate batch exceeds extension limit");
   return frame;
 }

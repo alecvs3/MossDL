@@ -259,6 +259,24 @@ export function SettingsPage({
                 Launch Wizard
               </button>
             </SettingRow>
+            <SettingRow label="Browser Extension" sub="MossDL Capture for Chrome, Edge, and Firefox">
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  className="px-2.5 py-1 rounded text-xs font-medium text-white bg-[var(--surface-08)] hover:bg-[var(--surface-12)] border border-[var(--line-09)] transition-colors flex items-center gap-1.5"
+                  onClick={() => void openPath("https://chromewebstore.google.com/detail/mossdl-capture/dknlgnaknfaoflbmobdknjfjdagieccm")}
+                >
+                  Chrome Store <Icon d={ic.externalLink} size={11} />
+                </button>
+                <button
+                  type="button"
+                  className="px-2.5 py-1 rounded text-xs font-medium text-white bg-[var(--surface-08)] hover:bg-[var(--surface-12)] border border-[var(--line-09)] transition-colors flex items-center gap-1.5"
+                  onClick={() => void openPath("https://addons.mozilla.org/firefox/addon/mossdl-capture/")}
+                >
+                  Firefox AMO <Icon d={ic.externalLink} size={11} />
+                </button>
+              </div>
+            </SettingRow>
             <SectionLabel title="Storage" />
             <SettingRow label="Default save location" sub="Where files are saved by default">
               <div className="flex items-center gap-1.5">

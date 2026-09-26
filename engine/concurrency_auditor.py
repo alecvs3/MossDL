@@ -261,8 +261,9 @@ class HostConcurrencyAuditor:
         store: Optional[Any] = None,
         profiles_path: Optional[Path] = None,
     ) -> None:
+        # Until an engine attaches its data folder, nothing is written here:
+        # the program folder is read-only once installed.
         self.log_path = log_path or DEFAULT_AUDIT_LOG
-        self.log_path.parent.mkdir(parents=True, exist_ok=True)
         self.profiles_path = profiles_path or (self.log_path.parent / "host_concurrency_profiles.json")
         self.store = store
         self._lock = threading.RLock()
@@ -286,6 +287,7 @@ class HostConcurrencyAuditor:
         }
         try:
             line = json.dumps(entry) + "\n"
+            self.log_path.parent.mkdir(parents=True, exist_ok=True)
             with open(self.log_path, "a", encoding="utf-8") as f:
                 f.write(line)
         except Exception as exc:
@@ -301,8 +303,19 @@ class HostConcurrencyAuditor:
             tier="engine",
         )
 
-    def attach_store(self, store: Any) -> None:
+    def attach_store(self, store: Any, log_dir: Optional[Path] = None) -> None:
+        """Use this engine's database and data folder for learned host limits.
+
+        Limits learned against one data folder (a benchmark, a test run, another
+        install) must not throttle another: they used to share a JSON file in the
+        program folder, so a strict test host capped every later run at one file.
+        """
         self.store = store
+        if log_dir is not None:
+            with self._lock:
+                self._profiles.clear()
+            self.log_path = Path(log_dir) / "host_concurrency_audit.jsonl"
+            self.profiles_path = Path(log_dir) / "host_concurrency_profiles.json"
         self.load_persisted_profiles()
 
     def is_host_in_cooldown(self, host: str) -> CooldownStatus:
