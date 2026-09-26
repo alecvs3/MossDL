@@ -42,32 +42,33 @@ Prepare, verify, and execute the official v0.1.0 release for MossDL: integrate C
 - **Status:** completed
 
 ### Phase 4: Git Repository Staging & Remote Push
-- [ ] Review git status and untracked files
-- [ ] Add remote `origin`: `https://github.com/alecvs3/MossDL.git`
-- [ ] Stage and commit all release preparations with descriptive, conventional commit messages
-- [ ] Push to `master` on `origin`
-- **Status:** ready
+- [x] Review git status and untracked files
+- [x] Add remote `origin`: `https://github.com/alecvs3/MossDL.git`
+- [x] Stage and commit all release preparations with descriptive conventional commit
+- [x] Push to `main` on `origin` (`https://github.com/alecvs3/MossDL.git`)
+- **Status:** completed
 
 ### Phase 5: Build Release Installers & Publish GitHub Release (v0.1.0)
-- [ ] Package browser extension artifacts (Chrome & Firefox ZIPs) via `scripts/build_browser_extension.py package`
-- [ ] Build release binaries and Windows installers (`scripts/release.ps1` or `npx tauri build`)
-- [ ] Generate SHA-256 checksums for all release artifacts
-- [ ] Create GitHub Release `v0.1.0` via `gh release create v0.1.0` with release notes and attach all assets:
+- [x] Package browser extension artifacts (Chrome & Firefox ZIPs) via `scripts/build_browser_extension.py package`
+- [x] Build release binaries and Windows installers (`scripts/release.ps1` or `npx tauri build`)
+- [x] Generate SHA-256 checksums for all release artifacts
+- [x] Create GitHub Release `v0.1.0` via `gh release create v0.1.0` with release notes and attach all assets:
   - `MossDL_0.1.0_x64-setup.exe` (NSIS installer)
   - `MossDL_0.1.0_x64_en-US.msi` (MSI installer)
-  - `mossdl-capture-chrome-0.1.0.zip`
-  - `mossdl-capture-firefox-0.1.0.zip`
-  - `checksums-sha256.txt`
-- **Status:** ready
+  - `chrome-extension.zip`
+  - `firefox-extension.zip`
+  - `edge-extension.zip`
+  - `SHA256SUMS.txt`
+- **Status:** completed
 
 ### Phase 6: Website Deployment & Verification
-- [ ] Run `npm --prefix website run build` (now fetches `v0.1.0` from GitHub API, making installer download live!)
-- [ ] Deploy website via `npm --prefix website run deploy` (or `wrangler pages deploy website/dist --project-name=mossdl-website`)
-- [ ] Verify live domains:
-  - `https://mossdownloader.com/` (loads homepage with new graphics)
-  - `https://mossdownloader.com/download/` (offers live v0.1.0 download)
-  - `https://mossdl.com/` (redirects properly)
-- **Status:** ready
+- [x] Run `npm --prefix website run build` (fetched `v0.1.0` from GitHub API, installer download live!)
+- [x] Deploy website via `npx wrangler pages deploy dist --project-name mossdl-website --branch main`
+- [x] Verify live domains:
+  - `https://mossdownloader.com/` (loads homepage with new graphics, video, and extension callout)
+  - `https://mossdownloader.com/download/` (offers live v0.1.0 download button pointing to GitHub asset)
+  - `https://mossdl.com/` (redirects 301 to `mossdownloader.com`)
+- **Status:** completed
 
 ---
 
